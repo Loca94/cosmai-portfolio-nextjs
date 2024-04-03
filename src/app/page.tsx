@@ -34,27 +34,26 @@ function DesktopHeroTitle({ className, ...props }: { className?: string }) {
 }
 
 function SelectedProjects({ className, ...props }: { className?: string }) {
-  // TODO: Add alt attribute to every image
   let projects = [
     {
       projectName: 'DiBarro',
       title: 'Designing a Storybrand Website for a family-owned winery',
       images: [
         {
-          src: 'dibarro-1.jpg',
-          alt: 'Image alt description',
+          src: 'dibarro-preview-1.png',
+          alt: 'Homepage call to action section of DiBarro website',
         },
         {
-          src: 'dibarro-2.jpg',
-          alt: 'Image alt description',
+          src: 'dibarro-preview-2.png',
+          alt: 'Address map section of DiBarro website',
         },
         {
-          src: 'dibarro-3.jpg',
-          alt: 'Image alt description',
+          src: 'dibarro-preview-3.png',
+          alt: 'Bottle of wine of DiBarro website',
         },
         {
-          src: 'dibarro-4.jpg',
-          alt: 'Image alt description',
+          src: 'dibarro-preview-4.png',
+          alt: 'Philosophy section of DiBarro website',
         },
       ],
     },
@@ -63,20 +62,20 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
       title: 'Ideating a “mobile-first” One Page Website for a Dental Clinic',
       images: [
         {
-          src: 'vierin-1.jpg',
-          alt: 'Image alt description',
+          src: 'vierin-preview-1.png',
+          alt: 'Service card filler animation of Vierin website',
         },
         {
-          src: 'vierin-2.jpg',
-          alt: 'Image alt description',
+          src: 'vierin-preview-2.png',
+          alt: 'Direct call section of Vierin website',
         },
         {
-          src: 'vierin-3.jpg',
-          alt: 'Image alt description',
+          src: 'vierin-preview-3.png',
+          alt: 'Hero section of Vierin website',
         },
         {
-          src: 'vierin-4.jpg',
-          alt: 'Image alt description',
+          src: 'vierin-preview-4.png',
+          alt: 'Reviews section of Vierin website',
         },
       ],
     },
@@ -85,20 +84,20 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
       title: 'Creating a Digital Startup’s Design identity and Website',
       images: [
         {
-          src: 'alpitude-1.jpg',
-          alt: 'Image alt description',
+          src: 'alpitude-preview-1.png',
+          alt: 'Hero section of Alpitude website',
         },
         {
-          src: 'alpitude-2.jpg',
-          alt: 'Image alt description',
+          src: 'alpitude-preview-2.png',
+          alt: 'Profile section of Alpitude website',
         },
         {
-          src: 'alpitude-3.jpg',
-          alt: 'Image alt description',
+          src: 'alpitude-preview-3.png',
+          alt: 'Activity search section of Alpitude website',
         },
         {
-          src: 'alpitude-4.jpg',
-          alt: 'Image alt description',
+          src: 'alpitude-preview-4.png',
+          alt: 'Profile avatars section of Alpitude website',
         },
       ],
     },
@@ -119,7 +118,7 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
                     key={image.src}
                     src={`/homepage/${image.src}`}
                     alt={image.alt}
-                    className="h-48 w-full rounded-lg border-2 border-slate-800 object-cover"
+                    className="h-32 w-full rounded-lg border-2 border-slate-800 object-cover"
                   />
                 ))}
               </div>
