@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Container from "@/components/Container";
-import Link from "next/link";
+import Container from '@/components/Container';
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -16,14 +16,14 @@ export default function Header() {
           <div className="flex flex-1 justify-end gap-3">
             <Link
               href="/about"
-              className="p-1.5 text-sm font-semibold text-slate-300"
+              className="p-1.5 text-sm font-semibold text-slate-300 transition hover:text-slate-50 focus:text-slate-50"
             >
               About
             </Link>
             <a
               href="https://www.saracosmai.com/cv-sara-cosmai.pdf"
               target="_blank"
-              className="p-1.5 text-sm font-semibold text-slate-300"
+              className="p-1.5 text-sm font-semibold text-slate-300 transition hover:text-slate-50 focus:text-slate-50"
             >
               Resume
             </a>
