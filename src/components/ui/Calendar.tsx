@@ -77,18 +77,6 @@ Calendar.displayName = 'Calendar';
 
 export { Calendar };
 
-function TableHeaderCell({ day }: { day: string }) {
-  return (
-    <th
-      scope="col"
-      className="flex w-8 items-center justify-center rounded-md p-1"
-      aria-label={day}
-    >
-      <div className="h-3 w-3 rounded-[1px] bg-slate-700 md:h-5 md:w-5" />
-    </th>
-  );
-}
-
 function TableHeader(): JSX.Element {
   const daysOfWeek: string[] = [
     'Sunday',
@@ -108,5 +96,17 @@ function TableHeader(): JSX.Element {
         ))}
       </tr>
     </thead>
+  );
+}
+
+function TableHeaderCell({ day }: { day: string }): JSX.Element {
+  return (
+    <th
+      scope="col"
+      className="flex w-8 items-center justify-center rounded-md p-1"
+      aria-label={day}
+    >
+      <div className="h-3 w-3 rounded-[1px] bg-slate-700 md:h-5 md:w-5" />
+    </th>
   );
 }
