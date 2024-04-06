@@ -132,8 +132,8 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
 
 export default function Home() {
   return (
-    <main className="pt-14">
-      <Container>
+    <>
+      <Container className="mt-14">
         <div className="mb-8">
           <MobileHeroTitle className="block md:hidden" />
           <DesktopHeroTitle className="hidden md:block" />
@@ -153,7 +153,7 @@ export default function Home() {
 
         <div>
           <div className="mb-10">
-            <h2 className="mb-2 text-lg font-semibold text-slate-200">
+            <h2 className="mb-2 text-xl font-semibold text-slate-200">
               Some Projects
             </h2>
             <p className="text-base text-slate-400">
@@ -165,6 +165,6 @@ export default function Home() {
           <SelectedProjects />
         </div>
       </Container>
-    </main>
+    </>
   );
 }
