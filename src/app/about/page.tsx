@@ -60,8 +60,11 @@ function MissionSection() {
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="background">
-              <TabsList className="grid grid-cols-3">
-                <TabsTrigger value="background">
+              <TabsList className="grid h-11 w-fit grid-cols-3 [&>*]:h-10">
+                <TabsTrigger
+                  value="background"
+                  className="rounded-l border-r border-slate-700"
+                >
                   <span className="sr-only">Background</span>
                   <BGIcon className="h-6 w-6" />
                 </TabsTrigger>
@@ -69,7 +72,10 @@ function MissionSection() {
                   <span className="sr-only">Interests</span>
                   <HeartIcon className="h-6 w-6" />
                 </TabsTrigger>
-                <TabsTrigger value="profile">
+                <TabsTrigger
+                  value="profile"
+                  className="rounded-r border-l border-slate-700"
+                >
                   <span className="sr-only">Profile</span>
                   <ProfileIcon className="h-6 w-6" />
                 </TabsTrigger>
@@ -114,7 +120,7 @@ function ToolboxSection() {
     {
       name: 'Figma',
       description: 'Used to build high fidelity prototypes',
-      categories: ['Wireframes', 'Prototyping', 'Design Systems'],
+      categories: ['Wireframes', 'Prototyping', 'Components'],
       startDate: 2019,
     },
     {
