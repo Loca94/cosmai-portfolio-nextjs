@@ -2,6 +2,7 @@
 
 import Container from '@/components/Container';
 import Link from 'next/link';
+import { HoverUnderline } from './animations/HoverUnderline';
 
 export default function Header() {
   return (
@@ -18,14 +19,14 @@ export default function Header() {
               href="/about"
               className="p-1.5 text-sm font-semibold text-slate-300 transition hover:text-slate-50 focus:text-slate-50"
             >
-              About
+              <HoverUnderline>About</HoverUnderline>
             </Link>
             <a
               href="https://www.saracosmai.com/cv-sara-cosmai.pdf"
               target="_blank"
               className="p-1.5 text-sm font-semibold text-slate-300 transition hover:text-slate-50 focus:text-slate-50"
             >
-              Resume
+              <HoverUnderline>Resume</HoverUnderline>
             </a>
           </div>
         </div>
