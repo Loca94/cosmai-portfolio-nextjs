@@ -118,7 +118,7 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
                     key={image.src}
                     src={`/homepage/${image.src}`}
                     alt={image.alt}
-                    className="h-32 w-full rounded-lg border-2 border-slate-800 object-cover"
+                    className="pointer-events-none h-32 w-full rounded-lg border-2 border-slate-800 object-cover"
                   />
                 ))}
               </div>
