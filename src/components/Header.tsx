@@ -1,12 +1,10 @@
-'use client';
-
 import Container from '@/components/Container';
 import Link from 'next/link';
 import { HoverUnderline } from './animations/HoverUnderline';
 
 export default function Header() {
   return (
-    <header className="relative z-50">
+    <header className="relative z-50 bg-slate-950">
       <Container className="py-6">
         <div className="flex gap-4">
           <div className="flex flex-1">

@@ -23,9 +23,9 @@ export default function Footer() {
 
   return (
     <FadeIn>
-      <footer className="pb-12 pt-6">
+      <footer className="py-12">
         <Container className="text-slate-400">
-          <div className="mt-16">
+          <div>
             <div className="flex flex-col-reverse md:flex-row md:justify-between">
               <div className="space-y-5 font-light max-md:text-center">
                 <h3 className="text-lg">Sara Cosmai</h3>
