@@ -2,6 +2,7 @@ import Container from '@/components/Container';
 import HeroComponents from '@/components/HeroComponents';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 function MobileHeroTitle({ className, ...props }: { className?: string }) {
   return (
@@ -37,6 +38,7 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
   let projects = [
     {
       projectName: 'DiBarro',
+      href: 'barro',
       title: 'Designing a Storybrand Website for a family-owned winery',
       images: [
         {
@@ -59,6 +61,7 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
     },
     {
       projectName: 'Vierin',
+      href: 'vierin',
       title: 'Ideating a “mobile-first” One Page Website for a Dental Clinic',
       images: [
         {
@@ -81,6 +84,7 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
     },
     {
       projectName: 'Alpitude',
+      href: 'alpitude',
       title: 'Creating a Digital Startup’s Design identity and Website',
       images: [
         {
@@ -106,25 +110,27 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
-        <Card className="pt-3" key={project.projectName}>
-          <CardHeader>
-            <CardTitle>{project.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="rounded-xl border-2 border-slate-800 p-1">
-              <div className="grid grid-cols-2 gap-1">
-                {project.images.map((image) => (
-                  <img
-                    key={image.src}
-                    src={`/homepage/${image.src}`}
-                    alt={image.alt}
-                    className="pointer-events-none h-32 w-full rounded-lg border-2 border-slate-800 object-cover"
-                  />
-                ))}
+        <Link href={`/work/${project.href}`} passHref key={project.projectName}>
+          <Card className="pt-3">
+            <CardHeader>
+              <CardTitle>{project.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="rounded-xl border-2 border-slate-800 p-1">
+                <div className="grid grid-cols-2 gap-1">
+                  {project.images.map((image) => (
+                    <img
+                      key={image.src}
+                      src={`/homepage/${image.src}`}
+                      alt={image.alt}
+                      className="pointer-events-none h-32 w-full rounded-lg border-2 border-slate-800 object-cover"
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </Link>
       ))}
     </div>
   );
