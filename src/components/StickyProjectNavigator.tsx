@@ -6,10 +6,10 @@ import {
 
 export default function StickyProjectNavigator() {
   return (
-    <div className="sticky top-0 z-50 -mb-8 mt-2 sm:top-4 sm:-mb-[4.5rem] sm:mt-6">
+    <div className="sticky top-0 z-50 sm:top-4 sm:-mb-[4.5rem] sm:mt-4">
       <div className="flex w-full justify-center">
         <div className="relative w-full border-2 border-slate-200 bg-slate-100 transition-colors hover:border-slate-300 sm:w-fit sm:rounded">
-          <div className="flex divide-x-2 divide-slate-200 text-slate-600">
+          <div className="flex justify-center divide-x-2 divide-slate-200 text-slate-600">
             <a
               href="/dentist-vierin"
               className="flex items-center px-4 py-3 font-bold transition-colors hover:bg-slate-200 focus:bg-slate-200"

@@ -8,7 +8,7 @@ export function TagList({
   className?: string;
 }) {
   return (
-    <ul role="list" className={clsx(className, 'flex flex-wrap gap-4')}>
+    <ul role="list" className={clsx(className, 'flex flex-wrap gap-2')}>
       {children}
     </ul>
   );
@@ -24,7 +24,7 @@ export function TagListItem({
   return (
     <li
       className={clsx(
-        'inline-flex items-center rounded-full border border-slate-200 bg-slate-200 px-2 py-1 text-xs font-medium text-slate-600 transition-colors hover:border-slate-300',
+        'inline-flex items-center rounded-full bg-slate-200 px-2 py-1 text-sm font-medium text-slate-600',
         className,
       )}
     >
