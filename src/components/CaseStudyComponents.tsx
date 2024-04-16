@@ -5,6 +5,16 @@ import { TagList, TagListItem } from '@/components/TagList';
 import Balancer from 'react-wrap-balancer';
 import { FadeIn, FadeInStagger } from './animations/FadeIn';
 import { cn } from '@/lib/utils';
+import { GrayscaleTransitionImage } from './animations/GrayscaleTransitionImage';
+import { StaticImageData } from 'next/image';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from './ui/carousel';
+import { ImgProp } from '@/lib/types/ImgProp';
 
 export function CaseStudyLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -49,14 +59,14 @@ export function MobileOverlappingImages({ className }: { className?: string }) {
         <FadeIn className="w-full">
           <div className="h-52 w-full max-w-sm rotate-[4deg] rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
             <div className="h-full w-full rounded border-2 border-slate-600">
-              {/* Image Here */}
+              {/* Image Here with priority */}
             </div>
           </div>
         </FadeIn>
         <FadeIn className="w-full">
           <div className="-mt-20 h-52 w-full max-w-sm -rotate-[4deg] rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
             <div className="h-full w-full rounded border-2 border-slate-600">
-              {/* Image Here */}
+              {/* Image Here with priority */}
             </div>
           </div>
         </FadeIn>
@@ -71,21 +81,21 @@ export function DesktopBentoGrid({ className }: { className?: string }) {
       <FadeInStagger faster>
         <div className="grid auto-rows-[270px] grid-cols-3 gap-4 lg:auto-rows-[330px]">
           <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100">
-            {/* Image Here  */}
+            {/* Image Here with priority  */}
           </FadeIn>
           <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
             <div className="h-full w-full rounded border-2 border-slate-600">
-              {/* Image Here */}
+              {/* Image Here with priority */}
             </div>
           </FadeIn>
 
           <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
             <div className="h-full w-full rounded border-2 border-slate-600">
-              {/* Image Here */}
+              {/* Image Here with priority */}
             </div>
           </FadeIn>
           <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100">
-            {/* Image Here */}
+            {/* Image Here with priority */}
           </FadeIn>
         </div>
       </FadeInStagger>
@@ -122,19 +132,45 @@ export function Paragraph({ children }: { children: React.ReactNode }) {
 export function CaseStudyImage({
   src,
   alt,
+  sizes,
   className,
 }: {
-  src: string;
-  alt: string;
+  src: string | StaticImageData;
+  alt?: string;
+  sizes?: string;
   className?: string;
 }) {
   return (
-    <div className="rounded-lg bg-slate-200/70">
-      <img
-        className={cn('h-full w-full rounded-lg object-cover', className)}
+    <div className="group isolate my-10 overflow-hidden rounded-lg bg-slate-200/70">
+      <GrayscaleTransitionImage
+        className={className}
         src={src}
         alt={alt}
+        quality={90}
+        sizes={sizes}
       />
     </div>
+  );
+}
+
+export function CaseStudyCarousel({
+  images,
+  className,
+}: {
+  images: ImgProp[];
+  className?: string;
+}) {
+  return (
+    <Carousel className={cn('w-full', className)}>
+      <CarouselPrevious />
+      <CarouselContent>
+        {images.map((image) => (
+          <CarouselItem>
+            <CaseStudyImage src={image.src} alt={image.alt} />
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselNext />
+    </Carousel>
   );
 }
