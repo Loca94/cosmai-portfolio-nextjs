@@ -110,8 +110,13 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
-        <Link href={`/work/${project.href}`} passHref key={project.projectName}>
-          <Card className="pt-3">
+        <Link
+          href={`/work/${project.href}`}
+          className="group md:transition-transform md:hover:-translate-y-2"
+          passHref
+          key={project.projectName}
+        >
+          <Card className="border border-transparent pt-3 md:group-hover:border-slate-400/30">
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
             </CardHeader>
