@@ -6,11 +6,11 @@ import Balancer from 'react-wrap-balancer';
 import { FadeIn, FadeInStagger } from './animations/FadeIn';
 import { cn } from '@/lib/utils';
 
-export function CaseStudyWrapper({ children }: { children: React.ReactNode }) {
+export function CaseStudyLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <StickyProjectNavigator />
-      <Container className="py-28">{children}</Container>
+      <Container className="py-12 sm:py-24 lg:py-28">{children}</Container>
     </>
   );
 }
@@ -24,7 +24,7 @@ export function PageIntro({
 }) {
   return (
     <FadeIn className="flex flex-col max-lg:space-y-6 lg:flex-row lg:justify-between">
-      <h1 className="text-4xl font-bold text-slate-600 lg:w-3/5">
+      <h1 className="text-3xl font-bold text-slate-600 md:text-4xl lg:w-3/5">
         <Balancer>{title}</Balancer>
       </h1>
       <aside className="flex flex-col items-end justify-center lg:w-2/5">
@@ -103,7 +103,7 @@ export function Chapter({ children }: { children: React.ReactNode }) {
 
 export function ChapterTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-6 flex text-[32px] font-bold leading-9">
+    <h2 className="mb-6 flex items-center text-2xl font-bold">
       <CheckIcon className="mr-2 h-8 w-8" />
       {children}
     </h2>
@@ -116,4 +116,25 @@ export function Prose({ children }: { children: React.ReactNode }) {
 
 export function Paragraph({ children }: { children: React.ReactNode }) {
   return <p className="mb-4 text-lg leading-relaxed">{children}</p>;
+}
+
+// TODO: Add GrayscaleTransitionImage component to every image
+export function CaseStudyImage({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <div className="rounded-lg bg-slate-200/70">
+      <img
+        className={cn('h-full w-full rounded-lg object-cover', className)}
+        src={src}
+        alt={alt}
+      />
+    </div>
+  );
 }

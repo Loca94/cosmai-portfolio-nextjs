@@ -6,14 +6,16 @@ import {
   PageIntro,
   Paragraph,
   Prose,
-  CaseStudyWrapper,
+  CaseStudyLayout,
 } from '@/components/CaseStudyComponents';
-import { FadeIn } from '@/components/animations/FadeIn';
+import { GrayscaleTransitionImage } from '@/components/animations/GrayscaleTransitionImage';
+import exampleImage from '@/images/example-image.jpeg';
+import exampleImage2 from '@/images/example-image-2.avif';
 
 export default function WineryWebsite() {
   return (
     <>
-      <CaseStudyWrapper>
+      <CaseStudyLayout>
         <PageIntro
           title={`Designing a Storybrand Website for a family-owned winery`}
           tools={['Figma', 'Photoshop']}
@@ -34,10 +36,18 @@ export default function WineryWebsite() {
               collaboration with a Web Developer during the development stage.
             </Paragraph>
           </Prose>
-          <div className="h-96">
-            <img
-              src="/images/case-studies/winery-website/hero.jpg"
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-4 lg:gap-x-6">
+            <GrayscaleTransitionImage
+              src={exampleImage}
               alt="Di Barrò's winery website hero"
+              quality={90}
+              sizes="(min-width: 1216px) 76rem, 100vw"
+            />
+            <GrayscaleTransitionImage
+              src={exampleImage2}
+              alt="Di Barrò's winery website hero"
+              quality={90}
+              sizes="(min-width: 1216px) 76rem, 100vw"
             />
           </div>
         </Chapter>
@@ -55,12 +65,13 @@ export default function WineryWebsite() {
           </Prose>
           <div className="h-96">
             <img
+              className="pointer-events-none"
               src="/images/case-studies/winery-website/hero.jpg"
               alt="Di Barrò's winery website hero"
             />
           </div>
         </Chapter>
-      </CaseStudyWrapper>
+      </CaseStudyLayout>
     </>
   );
 }
