@@ -13,7 +13,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from './ui/carousel';
+} from '@/components/ui/Carousel';
 import { ImgProp } from '@/lib/types/ImgProp';
 
 export function CaseStudyLayout({ children }: { children: React.ReactNode }) {
@@ -103,10 +103,23 @@ export function DesktopBentoGrid({ className }: { className?: string }) {
   );
 }
 
-export function Chapter({ children }: { children: React.ReactNode }) {
+export function Chapter({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
   return (
     <FadeIn>
-      <section className="mt-15 space-y-12 text-slate-600">{children}</section>
+      <section
+        className={cn(
+          'mt-8 space-y-6 text-slate-600 md:mt-10 md:space-y-8 lg:mt-15 lg:space-y-12',
+          className,
+        )}
+      >
+        {children}
+      </section>
     </FadeIn>
   );
 }
@@ -141,7 +154,7 @@ export function CaseStudyImage({
   className?: string;
 }) {
   return (
-    <div className="group isolate my-10 overflow-hidden rounded-lg bg-slate-200/70">
+    <div className="group isolate my-6 overflow-hidden rounded-lg bg-slate-200/70 md:my-8 lg:my-10">
       <GrayscaleTransitionImage
         className={className}
         src={src}

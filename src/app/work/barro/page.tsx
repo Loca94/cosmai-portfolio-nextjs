@@ -37,7 +37,7 @@ export default function WineryWebsite() {
         <MobileOverlappingImages className="mt-9 md:hidden" />
         <DesktopBentoGrid className="mt-12 hidden md:block" />
 
-        <Chapter>
+        <Chapter className="mt-15">
           <Prose>
             <ChapterTitle>Project</ChapterTitle>
             <Paragraph>
