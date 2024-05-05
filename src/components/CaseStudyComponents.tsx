@@ -1,5 +1,14 @@
 import Container from '@/components/Container';
-import { CheckIcon, PackageIcon } from '@/components/Icons';
+import {
+  CheckIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CopyIcon,
+  PackageIcon,
+  PlusIcon,
+  ShareIcon,
+  SideBarIcon,
+} from '@/components/Icons';
 import StickyProjectNavigator from '@/components/StickyProjectNavigator';
 import { TagList, TagListItem } from '@/components/TagList';
 import Balancer from 'react-wrap-balancer';
@@ -81,6 +90,7 @@ export function DesktopBentoGrid({ className }: { className?: string }) {
       <FadeInStagger faster>
         <div className="grid auto-rows-[270px] grid-cols-3 gap-4 lg:auto-rows-[330px]">
           <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100">
+            <SafariBrowserHeaderSkeleton />
             {/* Image Here with priority  */}
           </FadeIn>
           <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
@@ -95,10 +105,42 @@ export function DesktopBentoGrid({ className }: { className?: string }) {
             </div>
           </FadeIn>
           <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100">
+            <SafariBrowserHeaderSkeleton />
             {/* Image Here with priority */}
           </FadeIn>
         </div>
       </FadeInStagger>
+    </div>
+  );
+}
+
+export function SafariBrowserHeaderSkeleton() {
+  return (
+    <div className="flex h-8 w-full items-center justify-between space-x-6 border-b-2 border-slate-600 px-2 text-slate-600">
+      <div className="flex space-x-3">
+        <div className="flex items-center space-x-1">
+          <div className="h-2 w-2 rounded-full bg-slate-600"></div>
+          <div className="h-2 w-2 rounded-full bg-slate-800"></div>
+          <div className="h-2 w-2 rounded-full bg-slate-900"></div>
+        </div>
+        <div className="flex items-center">
+          <SideBarIcon className="size-4" />
+          <span className="mx-1">|</span>
+          <ChevronRightIcon className="size-2 rotate-90" strokeWidth="3" />
+        </div>
+        <div className="flex items-center">
+          <ChevronLeftIcon className="size-4" />
+          <ChevronRightIcon className="size-4" />
+        </div>
+      </div>
+      {/* Search Bar */}
+      <div className="h-4 max-w-[60%] flex-1 rounded-lg border-2 border-slate-600"></div>
+      <div className="flex items-center space-x-1">
+        <ShareIcon className="size-4" />
+        <PlusIcon className="size-4" />
+        {/* TODO: Technically this is not the right icon to use, I have to change it! */}
+        <CopyIcon className="size-4" />
+      </div>
     </div>
   );
 }
