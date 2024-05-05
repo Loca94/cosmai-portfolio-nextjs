@@ -3,6 +3,7 @@ import HeroComponents from '@/components/HeroComponents';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import Balancer from 'react-wrap-balancer';
 
 function MobileHeroTitle({ className, ...props }: { className?: string }) {
   return (
@@ -111,14 +112,16 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <Link
+          key={project.projectName}
           href={`/work/${project.href}`}
           className="group md:transition-transform md:hover:-translate-y-2"
           passHref
-          key={project.projectName}
         >
           <Card className="border border-transparent pt-3 md:group-hover:border-slate-400/30">
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
+              <CardTitle className="mb-2">
+                <Balancer>{project.title}</Balancer>
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="rounded-xl border-2 border-slate-800 p-1">
