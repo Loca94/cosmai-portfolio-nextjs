@@ -2,6 +2,7 @@
 
 import Container from '@/components/Container';
 import {
+  DribbbleIcon,
   InstagramIcon,
   LinkedInIcon,
   MailIcon,
@@ -62,7 +63,7 @@ export default function Footer() {
                 />
                 <SocialLink
                   href="https://dribbble.com/WhatEverSara"
-                  icon={InstagramIcon}
+                  icon={DribbbleIcon}
                   tooltip="Dribbble"
                 />
                 <SocialLink
