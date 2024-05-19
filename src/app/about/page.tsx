@@ -184,9 +184,9 @@ function ToolboxSection() {
                           {tool.description}
                         </p>
                       </div>
-                      <div className="group relative flex size-9 flex-col items-center justify-center rounded border border-slate-500 leading-tight text-slate-400 transition-colors hover:border-slate-200">
+                      <div className="group relative flex size-10 flex-col items-center justify-center rounded border border-slate-500 leading-tight text-slate-400 transition-colors hover:border-slate-200">
                         {/* Add star SVG */}
-                        <span className="text-base leading-3 group-hover:text-slate-200">
+                        <span className="text-base font-medium leading-3 group-hover:text-slate-200">
                           {getYearsOfExperience(tool.startDate)}
                         </span>
                         <span className="text-xs group-hover:text-slate-200">
