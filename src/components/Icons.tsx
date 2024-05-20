@@ -15,7 +15,9 @@ export function BGIcon(
   );
 }
 
-export function HeartIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function HeartIcon(
+  props: React.ComponentPropsWithoutRef<'svg'>,
+): JSX.Element {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path
@@ -26,7 +28,9 @@ export function HeartIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
-export function ProfileIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function ProfileIcon(
+  props: React.ComponentPropsWithoutRef<'svg'>,
+): JSX.Element {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path
@@ -55,7 +59,9 @@ export function ProfileIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
-export function PackageIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function PackageIcon(
+  props: React.ComponentPropsWithoutRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +74,9 @@ export function PackageIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
-export function CheckBadgeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function CheckBadgeIcon(
+  props: React.ComponentPropsWithoutRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +95,9 @@ export function CheckBadgeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
-export function ChevronRightIcon(props: React.ComponentPropsWithRef<'svg'>) {
+export function ChevronRightIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +116,9 @@ export function ChevronRightIcon(props: React.ComponentPropsWithRef<'svg'>) {
   );
 }
 
-export function ChevronLeftIcon(props: React.ComponentPropsWithRef<'svg'>) {
+export function ChevronLeftIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +137,9 @@ export function ChevronLeftIcon(props: React.ComponentPropsWithRef<'svg'>) {
   );
 }
 
-export function ExternalLinkIcon(props: React.ComponentPropsWithRef<'svg'>) {
+export function ExternalLinkIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +158,9 @@ export function ExternalLinkIcon(props: React.ComponentPropsWithRef<'svg'>) {
   );
 }
 
-export function CheckIcon(props: React.ComponentPropsWithRef<'svg'>) {
+export function CheckIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +173,9 @@ export function CheckIcon(props: React.ComponentPropsWithRef<'svg'>) {
   );
 }
 
-export function SideBarIcon(props: React.ComponentPropsWithRef<'svg'>) {
+export function SideBarIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +188,9 @@ export function SideBarIcon(props: React.ComponentPropsWithRef<'svg'>) {
   );
 }
 
-export function ShareIcon(props: React.ComponentPropsWithRef<'svg'>) {
+export function ShareIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +203,9 @@ export function ShareIcon(props: React.ComponentPropsWithRef<'svg'>) {
   );
 }
 
-export function PlusIcon(props: React.ComponentPropsWithRef<'svg'>) {
+export function PlusIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +218,9 @@ export function PlusIcon(props: React.ComponentPropsWithRef<'svg'>) {
   );
 }
 
-export function CopyIcon(props: React.ComponentPropsWithRef<'svg'>) {
+export function CopyIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -205,6 +229,21 @@ export function CopyIcon(props: React.ComponentPropsWithRef<'svg'>) {
       {...props}
     >
       <path d="M216,28H88A12,12,0,0,0,76,40V76H40A12,12,0,0,0,28,88V216a12,12,0,0,0,12,12H168a12,12,0,0,0,12-12V180h36a12,12,0,0,0,12-12V40A12,12,0,0,0,216,28ZM156,204H52V100H156Zm48-48H180V88a12,12,0,0,0-12-12H100V52H204Z"></path>
+    </svg>
+  );
+}
+
+export function SearchIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path>
     </svg>
   );
 }
