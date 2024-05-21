@@ -1,19 +1,28 @@
 'use client';
 
 import SkeletonProfileDropdown from '@/components/SkeletonProfileDropdown';
-import SkeletonInput from '@/components/ui/SkeletonInput';
+import SkeletonInput from '@/components/SkeletonInput';
 import { SkeletonMenuBar } from '@/components/SkeletonMenuBar';
+import { SkeletonSelect } from '@/components/SkeletonSelect';
+import { SkeletonTabs } from '@/components/SkeletonTabs';
 
 export default function HeroComponents({ className }: { className?: string }) {
   return (
     <div className={className}>
-      <div className="grid md:grid-cols-2 md:gap-4">
-        <div className="flex w-full space-x-2">
+      <div className="grid grid-rows-[auto_auto_auto] gap-4 md:grid-cols-2 md:grid-rows-[auto_auto]">
+        <div className="row flex w-full space-x-2">
           <SkeletonInput />
           <SkeletonProfileDropdown />
         </div>
         <div className="flex w-full space-x-2">
           <SkeletonMenuBar />
+          <SkeletonSelect />
+        </div>
+        <div>
+          <SkeletonTabs />
+        </div>
+        <div className="hidden md:block">
+          qui deve venire il componente rich text editor
         </div>
       </div>
     </div>

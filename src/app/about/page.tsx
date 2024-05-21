@@ -4,7 +4,7 @@ import {
   CheckBadgeIcon,
   HeartIcon,
   PackageIcon,
-  ProfileIcon,
+  ProfileCircleIcon,
 } from '@/components/Icons';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 import { Separator } from '@/components/ui/Separator';
@@ -82,7 +82,7 @@ function MissionSection() {
                       className="rounded-r border-l border-slate-700"
                     >
                       <span className="sr-only">Profile</span>
-                      <ProfileIcon className="h-6 w-6" />
+                      <ProfileCircleIcon className="h-6 w-6" />
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent value="background">

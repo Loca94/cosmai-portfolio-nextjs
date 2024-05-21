@@ -28,7 +28,7 @@ export function HeartIcon(
   );
 }
 
-export function ProfileIcon(
+export function ProfileCircleIcon(
   props: React.ComponentPropsWithoutRef<'svg'>,
 ): JSX.Element {
   return (
@@ -244,6 +244,34 @@ export function SearchIcon(
       {...props}
     >
       <path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path>
+    </svg>
+  );
+}
+
+export function ProfileIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M11.6061 14.7233C14.5671 14.7233 16.9675 12.3228 16.9675 9.36165C16.9675 6.40049 14.5671 4 11.6061 4C8.64503 4 6.24463 6.40049 6.24463 9.36165C6.24463 12.3228 8.64503 14.7233 11.6061 14.7233Z"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M3 19.9998C3.80678 18.4107 5.03783 17.0759 6.5567 16.1436C8.07557 15.2113 9.82293 14.7178 11.6051 14.7178C13.3873 14.7178 15.1346 15.2113 16.6535 16.1436C18.1724 17.0759 19.4034 18.4107 20.2102 19.9998"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
   );
 }

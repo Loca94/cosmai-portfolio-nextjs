@@ -17,9 +17,9 @@ export default function ProfileDropdown() {
         <Button
           variant="outline"
           size="icon"
-          className="overflow-hidden rounded-full"
+          className="w-9 min-w-9 overflow-hidden rounded-full"
         >
-          <ProfileIcon className="size-6 text-slate-700" />
+          <ProfileIcon className="size-5 text-slate-700" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

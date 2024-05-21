@@ -25,11 +25,9 @@ export function SkeletonMenuBar() {
         <MenubarContent>
           <MenubarItem>
             <Skeleton className="h-4 w-14" />{' '}
-            <MenubarShortcut>⌘T</MenubarShortcut>
           </MenubarItem>
           <MenubarItem>
             <Skeleton className="h-4 w-24" />
-            <MenubarShortcut>⌘N</MenubarShortcut>
           </MenubarItem>
           <MenubarItem disabled>
             <Skeleton className="h-4 w-44" />
@@ -54,7 +52,6 @@ export function SkeletonMenuBar() {
           <MenubarSeparator />
           <MenubarItem>
             <Skeleton className="h-4 w-14" />
-            <MenubarShortcut>⌘P</MenubarShortcut>
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
@@ -72,11 +69,9 @@ export function SkeletonMenuBar() {
           <MenubarSeparator />
           <MenubarItem inset>
             <Skeleton className="h-4 w-16" />
-            <MenubarShortcut>⌘R</MenubarShortcut>
           </MenubarItem>
           <MenubarItem disabled inset>
             <Skeleton className="h-4 w-24" />
-            <MenubarShortcut>⇧⌘R</MenubarShortcut>
           </MenubarItem>
           <MenubarSeparator />
           <MenubarItem inset>
