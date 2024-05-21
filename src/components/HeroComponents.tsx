@@ -5,6 +5,7 @@ import SkeletonInput from '@/components/SkeletonInput';
 import { SkeletonMenuBar } from '@/components/SkeletonMenuBar';
 import { SkeletonSelect } from '@/components/SkeletonSelect';
 import { SkeletonTabs } from '@/components/SkeletonTabs';
+import RichTextEditor from '@/components/ui/RichTextEditor';
 
 export default function HeroComponents({ className }: { className?: string }) {
   return (
@@ -22,7 +23,7 @@ export default function HeroComponents({ className }: { className?: string }) {
           <SkeletonTabs />
         </div>
         <div className="hidden md:block">
-          qui deve venire il componente rich text editor
+          <RichTextEditor />
         </div>
       </div>
     </div>

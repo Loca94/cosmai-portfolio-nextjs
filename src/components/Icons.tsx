@@ -1,6 +1,4 @@
-export function BGIcon(
-  props: React.ComponentPropsWithoutRef<'svg'>,
-): JSX.Element {
+function BGIcon(props: React.ComponentPropsWithoutRef<'svg'>): JSX.Element {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path
@@ -15,9 +13,7 @@ export function BGIcon(
   );
 }
 
-export function HeartIcon(
-  props: React.ComponentPropsWithoutRef<'svg'>,
-): JSX.Element {
+function HeartIcon(props: React.ComponentPropsWithoutRef<'svg'>): JSX.Element {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path
@@ -28,7 +24,7 @@ export function HeartIcon(
   );
 }
 
-export function ProfileCircleIcon(
+function ProfileCircleIcon(
   props: React.ComponentPropsWithoutRef<'svg'>,
 ): JSX.Element {
   return (
@@ -59,7 +55,7 @@ export function ProfileCircleIcon(
   );
 }
 
-export function PackageIcon(
+function PackageIcon(
   props: React.ComponentPropsWithoutRef<'svg'>,
 ): JSX.Element {
   return (
@@ -74,7 +70,7 @@ export function PackageIcon(
   );
 }
 
-export function CheckBadgeIcon(
+function CheckBadgeIcon(
   props: React.ComponentPropsWithoutRef<'svg'>,
 ): JSX.Element {
   return (
@@ -95,7 +91,7 @@ export function CheckBadgeIcon(
   );
 }
 
-export function ChevronRightIcon(
+function ChevronRightIcon(
   props: React.ComponentPropsWithRef<'svg'>,
 ): JSX.Element {
   return (
@@ -116,7 +112,7 @@ export function ChevronRightIcon(
   );
 }
 
-export function ChevronLeftIcon(
+function ChevronLeftIcon(
   props: React.ComponentPropsWithRef<'svg'>,
 ): JSX.Element {
   return (
@@ -137,7 +133,7 @@ export function ChevronLeftIcon(
   );
 }
 
-export function ExternalLinkIcon(
+function ExternalLinkIcon(
   props: React.ComponentPropsWithRef<'svg'>,
 ): JSX.Element {
   return (
@@ -158,9 +154,7 @@ export function ExternalLinkIcon(
   );
 }
 
-export function CheckIcon(
-  props: React.ComponentPropsWithRef<'svg'>,
-): JSX.Element {
+function CheckIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -173,9 +167,7 @@ export function CheckIcon(
   );
 }
 
-export function SideBarIcon(
-  props: React.ComponentPropsWithRef<'svg'>,
-): JSX.Element {
+function SideBarIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -188,9 +180,7 @@ export function SideBarIcon(
   );
 }
 
-export function ShareIcon(
-  props: React.ComponentPropsWithRef<'svg'>,
-): JSX.Element {
+function ShareIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -203,9 +193,7 @@ export function ShareIcon(
   );
 }
 
-export function PlusIcon(
-  props: React.ComponentPropsWithRef<'svg'>,
-): JSX.Element {
+function PlusIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -218,9 +206,7 @@ export function PlusIcon(
   );
 }
 
-export function CopyIcon(
-  props: React.ComponentPropsWithRef<'svg'>,
-): JSX.Element {
+function CopyIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -233,9 +219,7 @@ export function CopyIcon(
   );
 }
 
-export function SearchIcon(
-  props: React.ComponentPropsWithRef<'svg'>,
-): JSX.Element {
+function SearchIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -248,9 +232,7 @@ export function SearchIcon(
   );
 }
 
-export function ProfileIcon(
-  props: React.ComponentPropsWithRef<'svg'>,
-): JSX.Element {
+function ProfileIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -275,3 +257,147 @@ export function ProfileIcon(
     </svg>
   );
 }
+
+function BoldIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M185.08,114.46A48,48,0,0,0,148,36H80A12,12,0,0,0,68,48V200a12,12,0,0,0,12,12h80a52,52,0,0,0,25.08-97.54ZM92,60h56a24,24,0,0,1,0,48H92Zm68,128H92V132h68a28,28,0,0,1,0,56Z"></path>
+    </svg>
+  );
+}
+
+function ItalicIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M204,56a12,12,0,0,1-12,12H160.65l-40,120H144a12,12,0,0,1,0,24H64a12,12,0,0,1,0-24H95.35l40-120H112a12,12,0,0,1,0-24h80A12,12,0,0,1,204,56Z"></path>
+    </svg>
+  );
+}
+
+function UnderlineIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M204,224a12,12,0,0,1-12,12H64a12,12,0,0,1,0-24H192A12,12,0,0,1,204,224Zm-76-28a68.07,68.07,0,0,0,68-68V56a12,12,0,0,0-24,0v72a44,44,0,0,1-88,0V56a12,12,0,0,0-24,0v72A68.07,68.07,0,0,0,128,196Z"></path>
+    </svg>
+  );
+}
+
+function TextAlignLeftIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M28,64A12,12,0,0,1,40,52H216a12,12,0,0,1,0,24H40A12,12,0,0,1,28,64Zm12,52H168a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24Zm176,16H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm-48,40H40a12,12,0,0,0,0,24H168a12,12,0,0,0,0-24Z"></path>
+    </svg>
+  );
+}
+
+function TextAlignRightIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M28,64A12,12,0,0,1,40,52H216a12,12,0,0,1,0,24H40A12,12,0,0,1,28,64ZM216,92H88a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm0,40H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm0,40H88a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"></path>
+    </svg>
+  );
+}
+
+function TextAlignJustifyIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M28,64A12,12,0,0,1,40,52H216a12,12,0,0,1,0,24H40A12,12,0,0,1,28,64ZM216,92H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm0,40H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm0,40H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"></path>
+    </svg>
+  );
+}
+
+function TextAlignCenterIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M28,64A12,12,0,0,1,40,52H216a12,12,0,0,1,0,24H40A12,12,0,0,1,28,64ZM64,92a12,12,0,0,0,0,24H192a12,12,0,0,0,0-24Zm152,40H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm-24,40H64a12,12,0,0,0,0,24H192a12,12,0,0,0,0-24Z"></path>
+    </svg>
+  );
+}
+
+function ArrowBendUpLeftIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M236,200a12,12,0,0,1-24,0,84.09,84.09,0,0,0-84-84H61l27.52,27.51a12,12,0,0,1-17,17l-48-48a12,12,0,0,1,0-17l48-48a12,12,0,0,1,17,17L61,92h67A108.12,108.12,0,0,1,236,200Z"></path>
+    </svg>
+  );
+}
+
+function ArrowBendUpRightIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M232.49,112.49l-48,48a12,12,0,0,1-17-17L195,116H128a84.09,84.09,0,0,0-84,84,12,12,0,0,1-24,0A108.12,108.12,0,0,1,128,92h67L167.51,64.48a12,12,0,0,1,17-17l48,48A12,12,0,0,1,232.49,112.49Z"></path>
+    </svg>
+  );
+}
+
+export {
+  ArrowBendUpLeftIcon,
+  ArrowBendUpRightIcon,
+  BGIcon,
+  BoldIcon,
+  CheckBadgeIcon,
+  CheckIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CopyIcon,
+  ExternalLinkIcon,
+  HeartIcon,
+  ItalicIcon,
+  PackageIcon,
+  PlusIcon,
+  ProfileCircleIcon,
+  ProfileIcon,
+  SearchIcon,
+  ShareIcon,
+  SideBarIcon,
+  TextAlignCenterIcon,
+  TextAlignJustifyIcon,
+  TextAlignLeftIcon,
+  TextAlignRightIcon,
+  UnderlineIcon,
+};
