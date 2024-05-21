@@ -105,7 +105,7 @@ function SocialLink({
               <Icon className="h-6 w-6 flex-none fill-slate-500 transition group-hover:fill-slate-200" />
             </Link>
           </TooltipTrigger>
-          <TooltipContent>
+          <TooltipContent side="left">
             <p>{tooltip}</p>
           </TooltipContent>
         </Tooltip>
