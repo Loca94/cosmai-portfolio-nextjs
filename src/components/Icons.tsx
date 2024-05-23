@@ -243,16 +243,16 @@ function ProfileIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
       <path
         d="M11.6061 14.7233C14.5671 14.7233 16.9675 12.3228 16.9675 9.36165C16.9675 6.40049 14.5671 4 11.6061 4C8.64503 4 6.24463 6.40049 6.24463 9.36165C6.24463 12.3228 8.64503 14.7233 11.6061 14.7233Z"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M3 19.9998C3.80678 18.4107 5.03783 17.0759 6.5567 16.1436C8.07557 15.2113 9.82293 14.7178 11.6051 14.7178C13.3873 14.7178 15.1346 15.2113 16.6535 16.1436C18.1724 17.0759 19.4034 18.4107 20.2102 19.9998"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
