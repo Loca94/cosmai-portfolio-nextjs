@@ -98,7 +98,7 @@ function SocialLink({
 }) {
   return (
     <li className={clsx(className, 'flex')}>
-      <TooltipProvider>
+      <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger>
             <Link href={href} target="_blank" className="group">
