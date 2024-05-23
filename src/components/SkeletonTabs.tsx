@@ -44,24 +44,26 @@ function EditTeamSkeletonCard() {
 
 export function SkeletonTabs() {
   return (
-    <Tabs className="w-full" defaultValue="edit-profile">
-      <TabsList className="grid h-11 w-full grid-cols-2 [&>*]:h-10">
-        <TabsTrigger
-          value="edit-profile"
-          className="rounded-l border-slate-700"
-        >
-          <Skeleton className="h-4 w-36" />
-        </TabsTrigger>
-        <TabsTrigger value="edit-team" className="rounded-r border-slate-700">
-          <Skeleton className="h-4 w-36" />
-        </TabsTrigger>
-      </TabsList>
-      <TabsContent value="edit-profile">
-        <EditProfileSkeletonCard />
-      </TabsContent>
-      <TabsContent value="edit-team">
-        <EditTeamSkeletonCard />
-      </TabsContent>
-    </Tabs>
+    <div className="max-h-[310px] min-h-[310px]">
+      <Tabs className="w-full" defaultValue="edit-profile">
+        <TabsList className="grid h-[50px] w-full grid-cols-2 [&>*]:h-11">
+          <TabsTrigger
+            value="edit-profile"
+            className="rounded-l border-slate-700"
+          >
+            <Skeleton className="h-4 w-36" />
+          </TabsTrigger>
+          <TabsTrigger value="edit-team" className="rounded-r border-slate-700">
+            <Skeleton className="h-4 w-36" />
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="edit-profile" className="mt-4">
+          <EditProfileSkeletonCard />
+        </TabsContent>
+        <TabsContent value="edit-team" className="mt-4">
+          <EditTeamSkeletonCard />
+        </TabsContent>
+      </Tabs>
+    </div>
   );
 }

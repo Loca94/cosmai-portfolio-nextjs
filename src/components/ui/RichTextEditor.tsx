@@ -18,7 +18,7 @@ import StarterKit from '@tiptap/starter-kit';
 import TextAlign from '@tiptap/extension-text-align';
 import Underline from '@tiptap/extension-underline';
 
-const MenuBar = ({ editor }: { editor: Editor | null }) => {
+function MenuBar({ editor }: { editor: Editor | null }) {
   if (!editor) {
     return null;
   }
@@ -31,7 +31,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
   };
 
   return (
-    <div className="flex flex-col divide-y divide-slate-700 border-l border-slate-700">
+    <div className="flex w-9 flex-col divide-y divide-slate-700 border-l border-slate-700 text-slate-200">
       <Button
         onClick={() => editor.chain().focus().toggleBold().run()}
         className={`${editor.isActive('bold') ? 'bg-slate-700 text-slate-50' : ''}`}
@@ -110,10 +110,16 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </Button>
     </div>
   );
-};
+}
 
 const RichTextEditor = () => {
   const editor = useEditor({
+    editorProps: {
+      attributes: {
+        class:
+          'focus:outline-none w-full h-full overflow-y-auto p-4 text-slate-200',
+      },
+    },
     extensions: [
       StarterKit,
       TextAlign.configure({
@@ -122,7 +128,7 @@ const RichTextEditor = () => {
       }),
       Underline.configure({
         HTMLAttributes: {
-          class: 'text-red-600',
+          class: 'underline',
         },
       }),
     ],
@@ -130,8 +136,8 @@ const RichTextEditor = () => {
   });
 
   return (
-    <div className="flex rounded border border-slate-700 text-slate-200">
-      <div className="flex-1 p-4">
+    <div className="flex max-h-[310px] min-h-[310px] rounded border border-slate-700">
+      <div className="flex-1">
         <EditorContent className="h-full" editor={editor} />
       </div>
       <MenuBar editor={editor} />

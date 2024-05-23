@@ -21,7 +21,7 @@ const buttonVariants = cva(
         link: 'text-slate-50',
         empty: 'text-slate-400 hover:text-slate-200',
         richTextEditor:
-          '!rounded-none hover:text-slate-50 hover:bg-slate-800 w-full h-full',
+          '!rounded-none hover:text-slate-50 hover:bg-slate-800 w-full h-full !p-0',
       },
       size: {
         default: 'h-9 px-4 py-2',
