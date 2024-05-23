@@ -24,7 +24,7 @@ export function TagListItem({
   return (
     <li
       className={clsx(
-        'inline-flex items-center rounded-full bg-slate-200 px-2 py-1 text-sm font-medium text-slate-600',
+        'inline-flex items-center rounded-full bg-slate-900 px-2 py-1 text-sm font-medium text-slate-400',
         className,
       )}
     >

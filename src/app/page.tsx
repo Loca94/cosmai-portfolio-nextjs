@@ -124,14 +124,14 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="rounded-xl border-2 border-slate-800 p-1">
+              <div className="rounded-xl border border-slate-700 p-1">
                 <div className="grid grid-cols-2 gap-1">
                   {project.images.map((image) => (
                     <img
                       key={image.src}
                       src={`/homepage/${image.src}`}
                       alt={image.alt}
-                      className="pointer-events-none h-32 w-full rounded-lg border-2 border-slate-800 object-cover"
+                      className="pointer-events-none h-32 w-full rounded-lg border border-slate-700 object-cover"
                     />
                   ))}
                 </div>

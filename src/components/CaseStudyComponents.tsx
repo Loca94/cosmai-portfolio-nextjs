@@ -25,7 +25,7 @@ import {
 } from '@/components/ui/Carousel';
 import { ImgProp } from '@/lib/types/ImgProp';
 
-export function CaseStudyLayout({ children }: { children: React.ReactNode }) {
+function CaseStudyLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <StickyProjectNavigator />
@@ -34,20 +34,14 @@ export function CaseStudyLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function PageIntro({
-  title,
-  tools,
-}: {
-  title: string;
-  tools: string[];
-}) {
+function PageIntro({ title, tools }: { title: string; tools: string[] }) {
   return (
     <FadeIn className="flex flex-col max-lg:space-y-6 lg:flex-row lg:justify-between">
-      <h1 className="text-3xl font-bold text-slate-600 md:text-4xl lg:w-3/5">
+      <h1 className="text-3xl font-bold text-slate-200 md:text-4xl lg:w-3/5">
         <Balancer>{title}</Balancer>
       </h1>
       <aside className="flex flex-col items-end justify-center lg:w-2/5">
-        <h2 className="mb-2 flex items-center text-xl font-semibold text-slate-600">
+        <h2 className="mb-2 flex items-center text-xl font-semibold text-slate-200">
           <PackageIcon className="h-6 w-6" />
           <span className="ml-2 text-lg font-semibold">Toolbox</span>
         </h2>
@@ -61,20 +55,20 @@ export function PageIntro({
   );
 }
 
-export function MobileOverlappingImages({ className }: { className?: string }) {
+function MobileOverlappingImages({ className }: { className?: string }) {
   return (
     <FadeInStagger>
       <div className={cn('flex flex-col items-center', className)}>
         <FadeIn className="w-full">
-          <div className="h-52 w-full max-w-sm rotate-[4deg] rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
-            <div className="h-full w-full rounded border-2 border-slate-600">
+          <div className="h-52 w-full max-w-sm rotate-[4deg] rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full rounded border-2 border-slate-700">
               {/* Image Here with priority */}
             </div>
           </div>
         </FadeIn>
         <FadeIn className="w-full">
-          <div className="-mt-20 h-52 w-full max-w-sm -rotate-[4deg] rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
-            <div className="h-full w-full rounded border-2 border-slate-600">
+          <div className="-mt-20 h-52 w-full max-w-sm -rotate-[4deg] rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full rounded border-2 border-slate-700">
               {/* Image Here with priority */}
             </div>
           </div>
@@ -84,27 +78,27 @@ export function MobileOverlappingImages({ className }: { className?: string }) {
   );
 }
 
-export function DesktopBentoGrid({ className }: { className?: string }) {
+function DesktopBentoGrid({ className }: { className?: string }) {
   return (
     <div className={className}>
       <FadeInStagger faster>
         <div className="grid auto-rows-[270px] grid-cols-3 gap-4 lg:auto-rows-[330px]">
-          <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100">
+          <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900">
             <SafariBrowserHeaderSkeleton />
             {/* Image Here with priority  */}
           </FadeIn>
-          <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
-            <div className="h-full w-full rounded border-2 border-slate-600">
+          <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full rounded border-2 border-slate-700">
               {/* Image Here with priority */}
             </div>
           </FadeIn>
 
-          <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100 p-2">
-            <div className="h-full w-full rounded border-2 border-slate-600">
+          <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full rounded border-2 border-slate-700">
               {/* Image Here with priority */}
             </div>
           </FadeIn>
-          <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-600 bg-slate-100">
+          <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900">
             <SafariBrowserHeaderSkeleton />
             {/* Image Here with priority */}
           </FadeIn>
@@ -114,14 +108,14 @@ export function DesktopBentoGrid({ className }: { className?: string }) {
   );
 }
 
-export function SafariBrowserHeaderSkeleton() {
+function SafariBrowserHeaderSkeleton() {
   return (
-    <div className="flex h-8 w-full items-center justify-between space-x-6 border-b-2 border-slate-600 px-2 text-slate-600">
+    <div className="flex h-8 w-full items-center justify-between space-x-6 border-b-2 border-slate-700 px-2 text-slate-500">
       <div className="flex space-x-3">
         <div className="flex items-center space-x-1">
-          <div className="h-2 w-2 rounded-full bg-slate-600"></div>
-          <div className="h-2 w-2 rounded-full bg-slate-800"></div>
-          <div className="h-2 w-2 rounded-full bg-slate-900"></div>
+          <div className="h-2 w-2 rounded-full bg-slate-200"></div>
+          <div className="h-2 w-2 rounded-full bg-slate-400"></div>
+          <div className="h-2 w-2 rounded-full bg-slate-700"></div>
         </div>
         <div className="flex items-center">
           <SideBarIcon className="size-4" />
@@ -134,7 +128,7 @@ export function SafariBrowserHeaderSkeleton() {
         </div>
       </div>
       {/* Search Bar */}
-      <div className="h-4 max-w-[60%] flex-1 rounded-lg border-2 border-slate-600"></div>
+      <div className="h-4 max-w-[60%] flex-1 rounded-lg border-2 border-slate-700"></div>
       <div className="flex items-center space-x-1">
         <ShareIcon className="size-4" />
         <PlusIcon className="size-4" />
@@ -145,7 +139,7 @@ export function SafariBrowserHeaderSkeleton() {
   );
 }
 
-export function Chapter({
+function Chapter({
   className,
   children,
 }: {
@@ -156,7 +150,7 @@ export function Chapter({
     <FadeIn>
       <section
         className={cn(
-          'mt-8 space-y-6 text-slate-600 md:mt-10 md:space-y-8 lg:mt-15 lg:space-y-12',
+          'mt-8 space-y-6 md:mt-10 md:space-y-8 lg:mt-15 lg:space-y-12',
           className,
         )}
       >
@@ -166,25 +160,27 @@ export function Chapter({
   );
 }
 
-export function ChapterTitle({ children }: { children: React.ReactNode }) {
+function ChapterTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-6 flex items-center text-2xl font-bold">
+    <h2 className="mb-6 flex items-center text-2xl font-bold text-slate-200">
       <CheckIcon className="mr-2 h-8 w-8" />
       {children}
     </h2>
   );
 }
 
-export function Prose({ children }: { children: React.ReactNode }) {
+function Prose({ children }: { children: React.ReactNode }) {
   return <div className="max-w-prose">{children}</div>;
 }
 
-export function Paragraph({ children }: { children: React.ReactNode }) {
-  return <p className="mb-4 text-lg leading-relaxed">{children}</p>;
+function Paragraph({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mb-4 text-lg leading-relaxed text-slate-400">{children}</p>
+  );
 }
 
 // TODO: Add GrayscaleTransitionImage component to every image
-export function CaseStudyImage({
+function CaseStudyImage({
   src,
   alt,
   sizes,
@@ -208,7 +204,7 @@ export function CaseStudyImage({
   );
 }
 
-export function CaseStudyCarousel({
+function CaseStudyCarousel({
   images,
   className,
 }: {
@@ -229,3 +225,17 @@ export function CaseStudyCarousel({
     </Carousel>
   );
 }
+
+export {
+  CaseStudyCarousel,
+  CaseStudyImage,
+  CaseStudyLayout,
+  Chapter,
+  ChapterTitle,
+  DesktopBentoGrid,
+  MobileOverlappingImages,
+  PageIntro,
+  Paragraph,
+  Prose,
+  SafariBrowserHeaderSkeleton,
+};
