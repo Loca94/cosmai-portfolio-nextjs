@@ -5,11 +5,12 @@ import { cn } from '@/lib/utils';
 
 interface HTMLParagraphElementProp
   extends React.HTMLAttributes<HTMLParagraphElement> {
-  tag?: string;
+  tag?: React.ElementType;
 }
+
 interface HTMLHeadingElementProp
   extends React.HTMLAttributes<HTMLHeadingElement> {
-  tag?: string;
+  tag?: React.ElementType;
 }
 
 const Card = React.forwardRef<

@@ -1,3 +1,14 @@
-export function DynamicElement({ tag = 'div', children, ...props }: { tag?: string, children: React.ReactNode } & any}) {
-  return React.createElement(tag, props, children);
+import * as React from 'react';
+
+interface DynamicElementProps extends React.HTMLAttributes<HTMLElement> {
+  tag?: React.ElementType;
+  children?: React.ReactNode;
+}
+
+export const DynamicElement: React.FC<DynamicElementProps> = ({
+  tag: Tag = 'div',
+  children,
+  ...props
+}) => {
+  return <Tag {...props}>{children}</Tag>;
 };
