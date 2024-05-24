@@ -23,7 +23,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/Carousel';
-import { ImgProp } from '@/lib/types/ImgProp';
+
+export type ImgProp = {
+  src: string | StaticImageData;
+  alt?: string;
+};
 
 function CaseStudyLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -192,7 +196,7 @@ function CaseStudyImage({
   className?: string;
 }) {
   return (
-    <div className="group isolate my-6 overflow-hidden rounded-lg bg-slate-200/70 md:my-8 lg:my-10">
+    <div className="group isolate my-6 overflow-hidden rounded-lg bg-slate-900 md:my-8 lg:my-10">
       <GrayscaleTransitionImage
         className={className}
         src={src}

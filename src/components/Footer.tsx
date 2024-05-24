@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <div className="flex flex-col-reverse md:flex-row md:justify-between">
               <div className="space-y-5 font-light max-md:text-center">
-                <h3 className="text-lg">Sara Cosmai</h3>
+                <h3 className="text-lg text-slate-300">Sara Cosmai</h3>
                 <div className="text-sm">
                   <p>UI-UX Designer based in Aosta, Italy</p>
                   <p>Background in visual design, motion design</p>
@@ -46,7 +46,7 @@ export default function Footer() {
                     <HoverUnderline>Resume</HoverUnderline>
                   </a>
                 </Button>
-                <p className="text-sm font-normal">
+                <p className="text-sm font-normal text-slate-600">
                   &copy; {currentYear} Sara Cosmai
                 </p>
               </div>

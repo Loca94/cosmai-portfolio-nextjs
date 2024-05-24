@@ -5,7 +5,7 @@ import { HoverUnderline } from './animations/HoverUnderline';
 export default function Header() {
   return (
     <header className="relative z-50 bg-slate-950">
-      <Container className="py-6">
+      <Container className="py-4">
         <div className="flex gap-4">
           <div className="flex flex-1">
             <Link href="/" className="p-1.5 text-base font-bold text-slate-200">
