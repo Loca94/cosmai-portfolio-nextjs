@@ -13,10 +13,10 @@ function EditProfileSkeletonCard() {
   return (
     <Card className="rounded border border-slate-700 bg-slate-950">
       <CardHeader>
-        <CardTitle>
+        <CardTitle tag={'div'}>
           <Skeleton className="h-4 w-28" color="primary" />
         </CardTitle>
-        <CardDescription>
+        <CardDescription tag={'div'}>
           <Skeleton className="h-3 w-1/2" />
         </CardDescription>
       </CardHeader>

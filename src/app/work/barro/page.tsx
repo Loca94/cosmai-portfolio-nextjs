@@ -9,11 +9,20 @@ import {
   CaseStudyLayout,
   CaseStudyImage,
   CaseStudyCarousel,
+  UserObjectivesGrid,
+  BoldText,
 } from '@/components/CaseStudyComponents';
 import exampleImage from '@/images/example-image.jpeg';
 import exampleImage2 from '@/images/example-image-2.avif';
 import exampleImage3 from '@/images/example-image-3.avif';
 import exampleImage4 from '@/images/example-image-4.avif';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/Card';
 
 export default function WineryWebsite() {
   const challengeImages = [
@@ -41,24 +50,53 @@ export default function WineryWebsite() {
           <Prose>
             <ChapterTitle>Project</ChapterTitle>
             <Paragraph>
-              Lately I had the chance of working on Di Barrò’s new website as a
-              UI UX designer. This family-owned winery had an outdated webpage
-              that was located under a subdomain of a larger website, focused on
-              promoting local wine products. The client was seeking a
-              transformation in order to establish a new digital identity and
-              achieve autonomy. Throughout the process, I maintained a close
-              collaboration with a Web Developer during the development stage.
+              I had the chance to create a new website for Di Barrò, a family
+              owned winery based in Italy. Their previous website, dating back
+              to 2011, was outdated and did not meet modern web standards.
             </Paragraph>
           </Prose>
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-4 lg:gap-x-6">
-            <CaseStudyImage
-              src={exampleImage}
-              alt="Old website flaws and outdated design"
-            />
-            <CaseStudyImage
-              src={exampleImage2}
-              alt="New website design for Di Barrò's winery"
-            />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3 lg:gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Unresponsive Design</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  The webpage from 2011 wasn't optimised for smaller devices,
+                  like tablets and phones. The design was scaled down to fit the
+                  smaller screens. This led to pinching, zooming and frustration
+                  while interacting with the site.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Obsolete Content</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Through the web page there were informations no longer
+                  helpful, non reusable. <br />
+                  Moreover, the combination of a bad information architecture
+                  and an absent hierarchy in typography turned into a huge
+                  impediment.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Language Limitation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Despite the expected influx of French and English tourists in
+                  the territory, the previous website was only available in
+                  Italian. <br />
+                  This language barrier limited the website reach, engagement
+                  and interactions.
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </Chapter>
 
@@ -66,11 +104,36 @@ export default function WineryWebsite() {
           <Prose>
             <ChapterTitle>Challenge</ChapterTitle>
             <Paragraph>
-              Since 2011, their digital presence was linked to others. The
-              necessity was to properly tell their story, embracing their brand
-              identity through a new website. I felt that it was the perfect
-              opportunity to discover more about their world, and gain
-              experience through new design challenges.
+              The new website had to be responsive, well structured and
+              translated in multiple languages. I implemented some key
+              strategies to ensure a comprehensive improvement over the old
+              website:
+            </Paragraph>
+            <Paragraph>
+              To <BoldText>enhance responsiveness</BoldText>, I designed a clean
+              and adaptive interface that provides a seamless experience for
+              smaller screens and easy access to the content without pinching.
+            </Paragraph>
+            <Paragraph>
+              To <BoldText>update and strengthen the content</BoldText>, I
+              restructured the information architecture and established a clear
+              typography hierarchy. This overhaul included refreshing outdated
+              information and creating a coherent narrative that effectively
+              communicates the winery’s story and brand's identity.
+            </Paragraph>
+            <Paragraph>
+              To provide easy comprehension for French and English tourists, the
+              website had to be <BoldText>multilingual</BoldText>. This addition
+              broadens the reach, improves the engagement by breaking down
+              language barriers and makes it accessible to a wider audience.
+            </Paragraph>
+            <Paragraph>
+              To improve <BoldText>accessibility</BoldText>, I ensured the
+              website followed the best practices, such as incorporating alt
+              text for images and using accessible colors, providing easy
+              navigation for users with disabilities. This inclusive approach
+              ensures that all visitors can access and enjoy the website's
+              content.
             </Paragraph>
           </Prose>
           <CaseStudyCarousel images={challengeImages} />
@@ -80,12 +143,18 @@ export default function WineryWebsite() {
           <Prose>
             <ChapterTitle>Role & Design Process</ChapterTitle>
             <Paragraph>
-              I was responsible for the UX design process, researching,
-              diagramming user flow, diagramming IA, producing exploratory
-              wireframes and finally crafting high definition prototypes. After
-              some meetings with client, I took time to review all the
+              My role was to understand the client’s needs as well as their
+              niche in order to deliver a website with an easy experience for
+              the end user.
+            </Paragraph>
+            <Paragraph>
+              I was responsible for the entire design process, from the initial
+              research phase to the final development of the user interface.
+              After some meetings with the client, I took time to review all the
               information gathered about the brand identity, user target and
-              communicative intents.
+              communicative intents. I felt that it was the perfect opportunity
+              to discover more about their world, and gain experience through
+              new design challenges.
             </Paragraph>
             <Paragraph>
               I conducted a heuristic UX analysis on the old webpage and the
@@ -94,7 +163,7 @@ export default function WineryWebsite() {
             </Paragraph>
           </Prose>
           <CaseStudyImage
-            className="w-full"
+            className="w-full !invert"
             src={exampleImage4}
             alt="New website design for Di Barrò's winery"
           />
@@ -102,10 +171,39 @@ export default function WineryWebsite() {
             <Paragraph>
               Designing wireframes and prototypes was an iterative process that
               evolved with each meeting as I had to consider the client
-              standpoint and concerns. Through the whole process I
-              cross-pollinated with the developer sharing my progresses.
+              standpoint and concerns. During the development process, I
+              collaborated closely with a developer, ensuring that accessibility
+              was our top priority.
             </Paragraph>
           </Prose>
+        </Chapter>
+
+        <Chapter>
+          <Prose>
+            <ChapterTitle>Users</ChapterTitle>
+            <Paragraph>
+              The UX was designed for turists, people interested in visiting the
+              winery and wine enthusiasts. After leading Face To Face surveys
+              with (Oenophiles) some wine connoisseurs. I was able to distill
+              some user objectives.
+            </Paragraph>
+          </Prose>
+          <UserObjectivesGrid
+            objectives={[
+              'View the product',
+              'Contact the winery',
+              'The winemaking process',
+            ]}
+          />
+          <Prose>
+            <Paragraph>
+              Taking into account all the information gathered I fabricated a
+              user persona for the target user, a ”wine enthusiast visiting
+              Valle d’Aosta”, who would be both viewing the products and trying
+              to contact the winery to purchase or visit.
+            </Paragraph>
+          </Prose>
+          {/* UserPersonaComponent */}
         </Chapter>
       </CaseStudyLayout>
     </>

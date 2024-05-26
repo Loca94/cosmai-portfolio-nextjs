@@ -6,6 +6,7 @@ import {
   CopyIcon,
   PackageIcon,
   PlusIcon,
+  ProfileIcon,
   ShareIcon,
   SideBarIcon,
 } from '@/components/Icons';
@@ -23,6 +24,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/Carousel';
+import { Card } from './ui/Card';
 
 export type ImgProp = {
   src: string | StaticImageData;
@@ -41,7 +43,7 @@ function CaseStudyLayout({ children }: { children: React.ReactNode }) {
 function PageIntro({ title, tools }: { title: string; tools: string[] }) {
   return (
     <FadeIn className="flex flex-col max-lg:space-y-6 lg:flex-row lg:justify-between">
-      <h1 className="text-3xl font-bold text-slate-200 md:text-4xl lg:w-3/5">
+      <h1 className="text-3xl font-bold tracking-tight text-slate-200 md:text-4xl lg:w-3/5">
         <Balancer>{title}</Balancer>
       </h1>
       <aside className="flex flex-col items-end justify-center lg:w-2/5">
@@ -166,7 +168,7 @@ function Chapter({
 
 function ChapterTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-6 flex items-center text-2xl font-bold text-slate-200">
+    <h2 className="mb-6 flex items-center text-2xl font-bold tracking-tight text-slate-200">
       <CheckIcon className="mr-2 h-8 w-8" />
       {children}
     </h2>
@@ -181,6 +183,10 @@ function Paragraph({ children }: { children: React.ReactNode }) {
   return (
     <p className="mb-4 text-lg leading-relaxed text-slate-400">{children}</p>
   );
+}
+
+function BoldText({ children }: { children: React.ReactNode }) {
+  return <b className="text-slate-200">{children}</b>;
 }
 
 // TODO: Add GrayscaleTransitionImage component to every image
@@ -230,7 +236,95 @@ function CaseStudyCarousel({
   );
 }
 
+function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
+  const GridItem = ({
+    toHighlight,
+    content,
+  }: {
+    toHighlight: boolean;
+    content?: string;
+  }) => (
+    <Card
+      className={`flex aspect-square items-center justify-center rounded p-4 ${toHighlight ? 'bg-slate-200' : ''}`}
+    >
+      {toHighlight ? (
+        <p className={`text-center font-semibold text-slate-700`}>{content}</p>
+      ) : (
+        <ProfileIcon className={`h-5 w-5 text-slate-400`} />
+      )}
+    </Card>
+  );
+
+  const ResponsiveGrid = ({
+    objectives,
+    indexesToHighlight,
+    numberOfItems,
+  }: {
+    objectives: string[];
+    indexesToHighlight: number[];
+    numberOfItems: number;
+  }) => {
+    let highlightCount = 0;
+
+    return (
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
+        {Array.from({ length: numberOfItems }, (_, index) => {
+          const isHighlight = indexesToHighlight.includes(index);
+          const content = isHighlight
+            ? objectives[highlightCount++]
+            : undefined;
+
+          return (
+            <GridItem key={index} content={content} toHighlight={isHighlight} />
+          );
+        })}
+      </div>
+    );
+  };
+
+  return (
+    <div className="w-full p-4">
+      <div className="block sm:hidden">
+        <ResponsiveGrid
+          objectives={objectives}
+          numberOfItems={6}
+          indexesToHighlight={[0, 2, 5]}
+        />
+      </div>
+      <div className="hidden sm:block md:hidden">
+        <ResponsiveGrid
+          objectives={objectives}
+          numberOfItems={6}
+          indexesToHighlight={[0, 2, 4]}
+        />
+      </div>
+      <div className="hidden md:block lg:hidden">
+        <ResponsiveGrid
+          objectives={objectives}
+          numberOfItems={10}
+          indexesToHighlight={[0, 4, 7]}
+        />
+      </div>
+      <div className="hidden lg:block xl:hidden">
+        <ResponsiveGrid
+          objectives={objectives}
+          numberOfItems={12}
+          indexesToHighlight={[0, 5, 8]}
+        />
+      </div>
+      <div className="hidden xl:block">
+        <ResponsiveGrid
+          objectives={objectives}
+          numberOfItems={16}
+          indexesToHighlight={[0, 6, 11]}
+        />
+      </div>
+    </div>
+  );
+}
+
 export {
+  BoldText,
   CaseStudyCarousel,
   CaseStudyImage,
   CaseStudyLayout,
@@ -242,4 +336,5 @@ export {
   Paragraph,
   Prose,
   SafariBrowserHeaderSkeleton,
+  UserObjectivesGrid,
 };

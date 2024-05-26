@@ -26,6 +26,10 @@ export default function HeroComponents({ className }: { className?: string }) {
           <RichTextEditor />
         </div>
       </div>
+
+      <div className="mt-2 text-right text-sm text-slate-500">
+        Made some Skeleton 💀 Components to try out
+      </div>
     </div>
   );
 }

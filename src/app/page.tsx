@@ -23,15 +23,22 @@ function MobileHeroTitle({ className, ...props }: { className?: string }) {
 
 function DesktopHeroTitle({ className, ...props }: { className?: string }) {
   return (
-    <h1
-      className={cn(
-        'text-[32px] font-bold leading-tight text-slate-200',
-        className,
-      )}
-      {...props}
-    >
-      TODO: Change the title for desktop and tablet view
-    </h1>
+    <div className={className} {...props}>
+      <h1 className="mb-6 text-[32px] font-bold leading-tight text-slate-200">
+        Greater Designs, <br />
+        Greater Experiences
+      </h1>
+
+      <p className="mb-2 max-w-prose text-xl text-slate-400">
+        I believe that exceptional design is about more than just aesthetics —
+        it's about creating seamless, intuitive experiences that delight users.
+        Alongside my clients, I uncover problems and solve them.
+      </p>
+
+      <p className="max-w-prose text-xl text-slate-400">
+        Let's create something extraordinary together.
+      </p>
+    </div>
   );
 }
 
@@ -149,18 +156,15 @@ export default function Home() {
     <>
       <Container className="mt-14">
         <div className="mb-8">
-          <MobileHeroTitle className="block md:hidden" />
-          <DesktopHeroTitle className="hidden md:block" />
-        </div>
-
-        <div className="mb-9">
-          <p className="text-lg text-slate-300">
-            Sara Cosmai{' - '}
-            <span className="font-bold text-slate-200">Designer</span>
-          </p>
           <p className="text-lg font-semibold text-slate-300">
             Product &middot; Visual &middot; Motion
+            <span className="font-bold text-slate-200"> Designer</span>
           </p>
+        </div>
+
+        <div className="mb-8 md:mb-12">
+          <MobileHeroTitle className="block md:hidden" />
+          <DesktopHeroTitle className="hidden md:block" />
         </div>
 
         <HeroComponents className="mb-14" />

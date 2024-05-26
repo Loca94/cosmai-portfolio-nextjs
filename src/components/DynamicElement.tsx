@@ -2,6 +2,7 @@ import * as React from 'react';
 
 interface DynamicElementProps extends React.HTMLAttributes<HTMLElement> {
   tag?: React.ElementType;
+  ref?: React.Ref<HTMLElement>;
   children?: React.ReactNode;
 }
 
