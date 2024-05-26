@@ -283,7 +283,7 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
   };
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full">
       <div className="block sm:hidden">
         <ResponsiveGrid
           objectives={objectives}
