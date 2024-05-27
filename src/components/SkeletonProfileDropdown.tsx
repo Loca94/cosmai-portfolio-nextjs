@@ -17,25 +17,25 @@ export default function ProfileDropdown() {
         <Button
           variant="outline"
           size="icon"
-          className="w-9 min-w-9 overflow-hidden rounded-full"
+          className="group w-9 min-w-9 overflow-hidden rounded-full"
         >
-          <ProfileIcon className="size-5 text-slate-700" />
+          <ProfileIcon className="size-4 text-slate-300 group-hover:text-slate-200" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>
-          <Skeleton className="h-4 w-20" color="primary" />
+          <Skeleton className="w-20" color="primary" />
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Skeleton className="h-4 w-12" />
+          <Skeleton className="w-12" />
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Skeleton className="h-4 w-16" />
+          <Skeleton className="w-16" />
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Skeleton className="h-4 w-24" />
+          <Skeleton className="w-24" />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

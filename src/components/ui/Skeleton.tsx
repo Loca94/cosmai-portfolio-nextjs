@@ -5,15 +5,15 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 function Skeleton({ className, color = 'secondary', ...props }: Props) {
-  console.log('Skeleton color', color);
   const backgroundColor = {
-    primary: 'bg-slate-50/40',
-    secondary: 'bg-slate-50/20',
+    primary: 'bg-slate-200',
+    secondary: 'bg-slate-700',
   };
+
   return (
     <div
       className={cn(
-        'animate-pulse rounded-md',
+        'h-2.5 rounded-md transition-colors',
         className,
         backgroundColor[color],
       )}

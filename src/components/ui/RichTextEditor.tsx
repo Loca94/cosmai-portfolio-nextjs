@@ -136,7 +136,7 @@ const RichTextEditor = () => {
   });
 
   return (
-    <div className="flex max-h-[310px] min-h-[310px] rounded border border-slate-700">
+    <div className="flex max-h-[328px] min-h-[328px] rounded border border-slate-700">
       <div className="flex-1">
         <EditorContent className="h-full" editor={editor} />
       </div>
