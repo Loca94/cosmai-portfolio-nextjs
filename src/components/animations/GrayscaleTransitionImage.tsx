@@ -22,12 +22,15 @@ export function GrayscaleTransitionImage(
     target: ref,
     offset: ['start 65%', 'end 35%'],
   });
-  let grayscale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0, 1]);
-  let filter = useMotionTemplate`grayscale(${grayscale})`;
+  let overlayOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0, 1]);
 
   return (
     <div ref={ref} className="group relative">
-      <MotionImage alt="" style={{ filter } as any} {...props} />
+      <MotionImage alt="" {...props} />
+      <motion.div
+        className="absolute inset-0 bg-slate-500 opacity-50 mix-blend-color"
+        style={{ opacity: overlayOpacity }}
+      />
       <div
         className="pointer-events-none absolute left-0 top-0 w-full rounded-lg opacity-0 transition duration-300 group-hover:opacity-100"
         aria-hidden="true"
