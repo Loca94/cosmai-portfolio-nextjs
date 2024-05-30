@@ -1,3 +1,6 @@
+import { cn } from '@/lib/utils';
+import { StaticImageData } from 'next/image';
+import Balancer from 'react-wrap-balancer';
 import Container from '@/components/Container';
 import {
   CheckIcon,
@@ -10,13 +13,6 @@ import {
   ShareIcon,
   SideBarIcon,
 } from '@/components/Icons';
-import StickyProjectNavigator from '@/components/StickyProjectNavigator';
-import { TagList, TagListItem } from '@/components/TagList';
-import Balancer from 'react-wrap-balancer';
-import { FadeIn, FadeInStagger } from './animations/FadeIn';
-import { cn } from '@/lib/utils';
-import { GrayscaleTransitionImage } from './animations/GrayscaleTransitionImage';
-import { StaticImageData } from 'next/image';
 import {
   Carousel,
   CarouselContent,
@@ -24,7 +20,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/Carousel';
-import { Card } from './ui/Card';
+import StickyProjectNavigator from '@/components/StickyProjectNavigator';
+import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
+import { GrayscaleTransitionImage } from '@/components/animations/GrayscaleTransitionImage';
+import { Card, CardContent, CardDescription } from '@/components/ui/Card';
+import { Badge, BadgeList, BadgeListItem } from '@/components/ui/Badge';
+import { UserPersona } from '@/lib/types';
 
 export type ImgProp = {
   src: string | StaticImageData;
@@ -51,11 +52,11 @@ function PageIntro({ title, tools }: { title: string; tools: string[] }) {
           <PackageIcon className="h-6 w-6" />
           <span className="ml-2 text-lg font-semibold">Toolbox</span>
         </h2>
-        <TagList>
+        <BadgeList>
           {tools.map((tool) => (
-            <TagListItem key={tool}>{tool}</TagListItem>
+            <BadgeListItem key={tool}>{tool}</BadgeListItem>
           ))}
-        </TagList>
+        </BadgeList>
       </aside>
     </FadeIn>
   );
@@ -84,29 +85,63 @@ function MobileOverlappingImages({ className }: { className?: string }) {
   );
 }
 
-function DesktopBentoGrid({ className }: { className?: string }) {
+function DesktopBentoGrid({
+  className,
+  images,
+}: {
+  className?: string;
+  images: ImgProp[];
+}) {
   return (
     <div className={className}>
       <FadeInStagger faster>
         <div className="grid auto-rows-[270px] grid-cols-3 gap-4 lg:auto-rows-[330px]">
-          <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900">
+          <FadeIn className="col-span-2 row-span-1 overflow-hidden rounded-lg border-2 border-slate-700 bg-slate-900">
             <SafariBrowserHeaderSkeleton />
-            {/* Image Here with priority  */}
+            {/* TODO: add priority to image? */}
+            <CaseStudyImage
+              className="object-cover md:h-[238px] lg:h-[295px]"
+              src={images[0].src}
+              alt={images[0].alt}
+              margins={false}
+              rounded={false}
+            />
           </FadeIn>
           <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full rounded border-2 border-slate-700">
-              {/* Image Here with priority */}
+            <div className="h-full w-full overflow-hidden rounded border-2 border-slate-700">
+              {/* TODO: add priority to image? */}
+              <CaseStudyImage
+                className="object-cover md:h-[250px] lg:h-[310px]"
+                src={images[1].src}
+                alt={images[1].alt}
+                margins={false}
+                rounded={false}
+              />
             </div>
           </FadeIn>
 
           <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full rounded border-2 border-slate-700">
+            <div className="h-full w-full overflow-hidden rounded border-2 border-slate-700">
               {/* Image Here with priority */}
+              <CaseStudyImage
+                className="object-cover md:h-[250px] lg:h-[310px]"
+                src={images[2].src}
+                alt={images[2].alt}
+                margins={false}
+                rounded={false}
+              />
             </div>
           </FadeIn>
-          <FadeIn className="col-span-2 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900">
+          <FadeIn className="col-span-2 row-span-1 overflow-hidden rounded-lg border-2 border-slate-700 bg-slate-900">
             <SafariBrowserHeaderSkeleton />
             {/* Image Here with priority */}
+            <CaseStudyImage
+              className="object-cover md:h-[238px] lg:h-[295px]"
+              src={images[3].src}
+              alt={images[3].alt}
+              margins={false}
+              rounded={false}
+            />
           </FadeIn>
         </div>
       </FadeInStagger>
@@ -186,7 +221,7 @@ function Paragraph({ children }: { children: React.ReactNode }) {
 }
 
 function BoldText({ children }: { children: React.ReactNode }) {
-  return <b className="text-slate-200">{children}</b>;
+  return <strong className="font-medium text-slate-200">{children}</strong>;
 }
 
 // TODO: Add GrayscaleTransitionImage component to every image
@@ -194,22 +229,40 @@ function CaseStudyImage({
   src,
   alt,
   sizes,
+  margins = true,
+  rounded = true,
+  captionContent,
   className,
 }: {
   src: string | StaticImageData;
   alt?: string;
   sizes?: string;
+  margins?: boolean;
+  rounded?: boolean;
+  captionContent?: string;
   className?: string;
 }) {
   return (
-    <div className="group isolate my-6 overflow-hidden rounded-lg bg-slate-900 md:my-8 lg:my-10">
-      <GrayscaleTransitionImage
-        className={className}
-        src={src}
-        alt={alt}
-        quality={90}
-        sizes={sizes}
-      />
+    <div className={margins ? 'my-6 md:my-8 lg:my-10' : 'm-0'}>
+      <div
+        className={cn(
+          'group isolate overflow-hidden bg-slate-900',
+          rounded ? 'rounded-lg' : 'rounded-none',
+        )}
+      >
+        <GrayscaleTransitionImage
+          className={className}
+          src={src}
+          alt={alt}
+          quality={90}
+          sizes={sizes}
+        />
+      </div>
+      {captionContent && (
+        <div className="mt-4 block text-right text-sm text-slate-500">
+          {captionContent}
+        </div>
+      )}
     </div>
   );
 }
@@ -250,7 +303,7 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
       {toHighlight ? (
         <p className={`text-center font-semibold text-slate-700`}>{content}</p>
       ) : (
-        <ProfileIcon className={`h-5 w-5 text-slate-400`} />
+        <ProfileIcon className={`h-6 w-6 text-slate-400`} />
       )}
     </Card>
   );
@@ -275,7 +328,11 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
             : undefined;
 
           return (
-            <GridItem key={index} content={content} toHighlight={isHighlight} />
+            <GridItem
+              key={`${content}-${index}`}
+              content={content}
+              toHighlight={isHighlight}
+            />
           );
         })}
       </div>
@@ -323,6 +380,84 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
   );
 }
 
+function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
+  return (
+    <div className="grid gap-4 md:grid-cols-2">
+      <Card className="h-full">
+        <CardContent className="flex h-full items-center pt-4">
+          <div className="flex flex-col justify-center space-y-4">
+            {/* User Persona */}
+            <div className="flex">
+              <CaseStudyImage
+                src={userPersona.avatarSrc}
+                alt="User Persona Matteo"
+                className="h-32 w-32"
+                margins={false}
+              />
+              <div className="flex flex-col items-center justify-center p-4">
+                <h3 className="mb-2 text-2xl font-bold">User Persona</h3>
+                <div className="flex items-center space-x-2">
+                  <Badge variant="darker" className="text-slate-400">
+                    Name
+                  </Badge>
+                  <CardDescription>{userPersona.fullName}</CardDescription>
+                </div>
+              </div>
+            </div>
+
+            {/* User Persona Background */}
+            <div className="flex h-full">
+              <div className="space-y-4">
+                <Badge variant="darker" className="text-slate-400">
+                  Background
+                </Badge>
+                <CardDescription>{userPersona.background}</CardDescription>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+      <div className="flex flex-col space-y-4">
+        {/* User Persona Goals */}
+        <Card>
+          <CardContent className="pt-4 text-slate-400">
+            <div className="flex flex-col space-y-4">
+              <Badge variant="darker" className="w-fit text-slate-400">
+                Goals
+              </Badge>
+              <ul className="list-disc space-y-2 [&>*]:ml-4">
+                {userPersona.goals.map((item) => (
+                  <li key={item}>
+                    <CardDescription>{item}</CardDescription>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* User Persona Frustrations */}
+        <Card>
+          <CardContent className="pt-4 text-slate-400">
+            <div className="flex flex-col space-y-4">
+              <Badge variant="darker" className="w-fit text-slate-400">
+                Frustrations
+              </Badge>
+              <ul className="list-disc space-y-2 [&>*]:ml-4">
+                {userPersona.frustrations.map((item) => (
+                  <li key={item}>
+                    <CardDescription>{item}</CardDescription>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
+
 export {
   BoldText,
   CaseStudyCarousel,
@@ -337,4 +472,5 @@ export {
   Prose,
   SafariBrowserHeaderSkeleton,
   UserObjectivesGrid,
+  UserPersonaCard,
 };

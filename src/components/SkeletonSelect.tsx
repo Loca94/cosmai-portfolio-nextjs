@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import {
   Select,
   SelectContent,
@@ -18,7 +17,7 @@ export function SkeletonSelect({ optionsWidth }: { optionsWidth: string[] }) {
       <SelectContent>
         <SelectGroup>
           {optionsWidth.map((width, index) => (
-            <SelectItem key={index} value={width}>
+            <SelectItem key={`${width}-${index}`} value={width}>
               <Skeleton className={width} />
             </SelectItem>
           ))}

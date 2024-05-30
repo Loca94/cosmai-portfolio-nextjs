@@ -11,7 +11,15 @@ import {
   CaseStudyCarousel,
   UserObjectivesGrid,
   BoldText,
+  UserPersonaCard,
 } from '@/components/CaseStudyComponents';
+import heroImage1 from '@/images/dibarro-casestudy-hero-1.png';
+import heroImage2 from '@/images/dibarro-casestudy-hero-2.png';
+import heroImage3 from '@/images/dibarro-casestudy-hero-3.png';
+import heroImage4 from '@/images/dibarro-casestudy-hero-4.png';
+import uxProcessImg from '@/images/dibarro-ux-process.png';
+import uxProcessMobileImg from '@/images/dibarro-ux-process-mobile.png';
+import userPersonaMatteo from '@/images/dibarro-avatar-matteo.png';
 import exampleImage from '@/images/example-image.jpeg';
 import exampleImage2 from '@/images/example-image-2.avif';
 import exampleImage3 from '@/images/example-image-3.avif';
@@ -23,6 +31,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card';
+import { UserPersona } from '@/lib/types';
 
 export default function WineryWebsite() {
   const challengeImages = [
@@ -36,6 +45,21 @@ export default function WineryWebsite() {
     },
   ];
 
+  const userPersona: UserPersona = {
+    fullName: 'Matteo Rossi',
+    avatarSrc: userPersonaMatteo,
+    background:
+      'Matteo is wine enthusiast and a restaurant chef in Milan. He usually plans menus, ensuring that the high-quality food is well paired with a wine.',
+    goals: [
+      'Discover new and exceptional wines to feature in his restaurant and pair with his menus.',
+      'Build relationships with reputable winemakers and vineyard owners.',
+    ],
+    frustrations: [
+      'Difficulty finding unique, high-quality wines that stand out from the competition.',
+      'Limited time to research and taste new wines due to demanding work schedule.',
+    ],
+  };
+
   return (
     <>
       <CaseStudyLayout>
@@ -44,7 +68,15 @@ export default function WineryWebsite() {
           tools={['Figma', 'Photoshop']}
         />
         <MobileOverlappingImages className="mt-9 md:hidden" />
-        <DesktopBentoGrid className="mt-12 hidden md:block" />
+        <DesktopBentoGrid
+          className="mt-12 hidden md:block"
+          images={[
+            { src: heroImage1, alt: 'Hero section of About page' },
+            { src: heroImage2, alt: 'Philosophy section from mobile device' },
+            { src: heroImage3, alt: 'Zoom in on the map in the Contact page' },
+            { src: heroImage4, alt: 'Select wines page' },
+          ]}
+        />
 
         <Chapter className="mt-15">
           <Prose>
@@ -61,7 +93,7 @@ export default function WineryWebsite() {
                 <CardTitle>Unresponsive Design</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
+                <CardDescription className="text-base md:text-sm">
                   The webpage from 2011 wasn't optimised for smaller devices,
                   like tablets and phones. The design was scaled down to fit the
                   smaller screens. This led to pinching, zooming and frustration
@@ -74,7 +106,7 @@ export default function WineryWebsite() {
                 <CardTitle>Obsolete Content</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
+                <CardDescription className="text-base md:text-sm">
                   Through the web page there were informations no longer
                   helpful, non reusable. <br />
                   Moreover, the combination of a bad information architecture
@@ -88,7 +120,7 @@ export default function WineryWebsite() {
                 <CardTitle>Language Limitation</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
+                <CardDescription className="text-base md:text-sm">
                   Despite the expected influx of French and English tourists in
                   the territory, the previous website was only available in
                   Italian. <br />
@@ -162,11 +194,22 @@ export default function WineryWebsite() {
               issues thinking of solutions accordingly.
             </Paragraph>
           </Prose>
-          <CaseStudyImage
-            className="w-full !invert"
-            src={exampleImage4}
-            alt="New website design for Di Barrò's winery"
-          />
+          <div className="md:hidden">
+            <CaseStudyImage
+              className="w-full md:hidden"
+              src={uxProcessMobileImg}
+              alt="New website design for Di Barrò's winery"
+              captionContent="UX Design Process"
+            />
+          </div>
+          <div className="hidden md:block">
+            <CaseStudyImage
+              className="w-full"
+              src={uxProcessImg}
+              alt="New website design for Di Barrò's winery"
+              captionContent="UX Design Process"
+            />
+          </div>
           <Prose>
             <Paragraph>
               Designing wireframes and prototypes was an iterative process that
@@ -198,12 +241,52 @@ export default function WineryWebsite() {
           <Prose>
             <Paragraph>
               Taking into account all the information gathered I fabricated a
-              user persona for the target user, a ”wine enthusiast visiting
-              Valle d’Aosta”, who would be both viewing the products and trying
-              to contact the winery to purchase or visit.
+              user persona for the target user, a ”wine lover visiting Valle
+              d’Aosta”, who would be both viewing the products and trying to
+              contact the winery to purchase or visit.
             </Paragraph>
           </Prose>
-          {/* UserPersonaComponent */}
+          <UserPersonaCard userPersona={userPersona} />
+        </Chapter>
+
+        <Chapter>
+          <Prose>
+            <ChapterTitle>Information Architecture & User Flow</ChapterTitle>
+            <Paragraph>
+              The information architecture was designed to be intuitive and easy
+              to navigate. I created a clear hierarchy that guides the user
+              through the website, ensuring that they can easily find the
+              information they need.
+            </Paragraph>
+          </Prose>
+          <CaseStudyImage
+            className="w-full !invert"
+            src={exampleImage}
+            alt="Information architecture for Di Barrò's winery"
+          />
+        </Chapter>
+
+        <Chapter>
+          <Prose>
+            <ChapterTitle>User Interface & Visual Design</ChapterTitle>
+            <Paragraph>
+              In order to create a seamless experience for users the paragraphs
+              required to stand out and be easy to read. With the brand
+              guidelines in mind, I chose a serif font for headings and a sans
+              font for paragraphs to join a monochromatic design where colors
+              stuck out from photos.
+            </Paragraph>
+          </Prose>
+          <CaseStudyImage
+            className="w-full"
+            src={exampleImage}
+            alt="TODO: Add alt description"
+          />
+          <CaseStudyImage
+            className="w-full"
+            src={exampleImage2}
+            alt="TODO: Add alt description"
+          />
         </Chapter>
       </CaseStudyLayout>
     </>

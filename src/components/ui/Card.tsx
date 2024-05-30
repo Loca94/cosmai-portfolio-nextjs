@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { DynamicElement } from '@/components/DynamicElement';
-
 import { cn } from '@/lib/utils';
+import { Slot } from '@radix-ui/react-slot';
 
 interface HTMLParagraphElementProp
   extends React.HTMLAttributes<HTMLParagraphElement> {
-  tag?: React.ElementType;
+  asChild?: boolean;
 }
 
 interface HTMLHeadingElementProp
   extends React.HTMLAttributes<HTMLHeadingElement> {
-  tag?: React.ElementType;
+  asChild?: boolean;
 }
 
 const Card = React.forwardRef<
@@ -40,30 +40,36 @@ CardHeader.displayName = 'CardHeader';
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   HTMLHeadingElementProp
->(({ className, tag = 'h3', ...props }, ref) => (
-  <DynamicElement
-    tag={tag}
-    ref={ref}
-    className={cn(
-      'text-lg font-semibold leading-snug tracking-tight',
-      className,
-    )}
-    {...props}
-  />
-));
+>(({ className, asChild = false, ...props }, ref) => {
+  const Comp = asChild ? Slot : 'h3';
+
+  return (
+    <Comp
+      ref={ref}
+      className={cn(
+        'text-lg font-semibold leading-snug tracking-tight',
+        className,
+      )}
+      {...props}
+    />
+  );
+});
 CardTitle.displayName = 'CardTitle';
 
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   HTMLParagraphElementProp
->(({ className, tag = 'p', ...props }, ref) => (
-  <DynamicElement
-    tag={tag}
-    ref={ref}
-    className={cn('text-sm text-slate-400', className)}
-    {...props}
-  />
-));
+>(({ className, asChild = false, ...props }, ref) => {
+  const Comp = asChild ? Slot : 'p';
+
+  return (
+    <Comp
+      ref={ref}
+      className={cn('text-sm text-slate-400', className)}
+      {...props}
+    />
+  );
+});
 CardDescription.displayName = 'CardDescription';
 
 const CardContent = React.forwardRef<

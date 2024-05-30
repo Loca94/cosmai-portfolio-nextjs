@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className={`${onest.className} bg-slate-950`}>
+      <body
+        className={`${onest.className} bg-slate-950 selection:bg-slate-100 selection:text-slate-900`}
+      >
         <Layout>{children}</Layout>
       </body>
     </html>

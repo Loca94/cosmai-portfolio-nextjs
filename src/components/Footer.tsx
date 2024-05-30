@@ -13,11 +13,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/Tooltip';
-import { Button } from './ui/Button';
+import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { HoverUnderline } from './animations/HoverUnderline';
-import { FadeIn } from './animations/FadeIn';
+import { HoverUnderline } from '@/components/animations/HoverUnderline';
+import { FadeIn } from '@/components/animations/FadeIn';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

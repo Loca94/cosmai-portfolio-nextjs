@@ -1,6 +1,6 @@
-import Container from '@/components/Container';
 import Link from 'next/link';
-import { HoverUnderline } from './animations/HoverUnderline';
+import Container from '@/components/Container';
+import { HoverUnderline } from '@/components/animations/HoverUnderline';
 
 export default function Header() {
   return (

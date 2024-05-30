@@ -8,17 +8,17 @@ import {
 import { Skeleton } from '@/components/ui/Skeleton';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/Tabs';
 import SkeletonButton from '@/components/SkeletonButton';
-import { ProfileIcon, SearchIcon } from './Icons';
+import { ProfileIcon, SearchIcon } from '@/components/Icons';
 import { SkeletonSelect } from '@/components/SkeletonSelect';
 
 function EditProfileSkeletonCard() {
   return (
     <Card className="rounded border border-slate-200 bg-slate-950">
       <CardHeader>
-        <CardTitle tag={'div'}>
+        <CardTitle asChild>
           <Skeleton className="w-28" color="primary" />
         </CardTitle>
-        <CardDescription tag={'div'}>
+        <CardDescription asChild>
           <Skeleton className="h-3 w-1/2" />
         </CardDescription>
       </CardHeader>
@@ -52,10 +52,10 @@ function EditTeamSkeletonCard() {
   return (
     <Card className="rounded border border-slate-200 bg-slate-950">
       <CardHeader>
-        <CardTitle tag={'div'}>
+        <CardTitle asChild>
           <Skeleton className="w-36" color="primary" />
         </CardTitle>
-        <CardDescription tag={'div'}>
+        <CardDescription asChild>
           <Skeleton className="h-3 w-3/4" />
         </CardDescription>
       </CardHeader>
@@ -63,7 +63,7 @@ function EditTeamSkeletonCard() {
         <div className="grid gap-6">
           {Array.from({ length: 3 }, (_, index) => (
             <div
-              key={index}
+              key={`SkeletonTeamMembersOption-${index}`}
               className="flex items-center justify-between space-x-4"
             >
               <div className="flex items-center space-x-4">
