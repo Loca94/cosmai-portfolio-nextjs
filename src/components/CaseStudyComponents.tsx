@@ -191,7 +191,7 @@ function Chapter({
     <FadeIn>
       <section
         className={cn(
-          'mt-8 space-y-6 md:mt-10 md:space-y-8 lg:mt-15 lg:space-y-12',
+          'mt-10 space-y-6 md:space-y-8 lg:mt-15 lg:space-y-12',
           className,
         )}
       >

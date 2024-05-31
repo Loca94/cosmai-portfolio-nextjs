@@ -1,5 +1,6 @@
 import Container from '@/components/Container';
 import HeroComponents from '@/components/HeroComponents';
+import WordsTimeline from '@/components/animations/WordsTimeline';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -14,9 +15,11 @@ function MobileHeroTitle({ className, ...props }: { className?: string }) {
       )}
       {...props}
     >
-      <div>Sympathize</div>
-      <div>Craft stories</div>
-      <div>Engage</div>
+      <Balancer>
+        I transform ideas into <i className="font-bold">tailored</i>,{' '}
+        <i className="font-bold">appealing</i> and{' '}
+        <i className="font-bold">accessible</i> digital experiences.
+      </Balancer>
     </h1>
   );
 }
@@ -24,20 +27,13 @@ function MobileHeroTitle({ className, ...props }: { className?: string }) {
 function DesktopHeroTitle({ className, ...props }: { className?: string }) {
   return (
     <div className={className} {...props}>
-      <h1 className="mb-6 text-[32px] font-bold leading-tight text-slate-200">
-        Greater Designs, <br />
-        Greater Experiences
+      <h1 className="mb-6 max-w-2xl text-[32px] font-medium leading-tight text-slate-200">
+        <Balancer>
+          I transform ideas into <i className="font-bold">tailored</i>,{' '}
+          <i className="font-bold">appealing</i> and{' '}
+          <i className="font-bold">accessible</i> digital experiences.
+        </Balancer>
       </h1>
-
-      <p className="mb-2 max-w-prose text-xl text-slate-400">
-        I believe that exceptional design is about more than just aesthetics —
-        it's about creating seamless, intuitive experiences that delight users.
-        Alongside my clients, I uncover problems and solve them.
-      </p>
-
-      <p className="max-w-prose text-xl text-slate-400">
-        Let's create something extraordinary together.
-      </p>
     </div>
   );
 }
@@ -155,17 +151,20 @@ export default function Home() {
   return (
     <>
       <Container className="mt-14">
-        <div className="mb-8">
-          <p className="text-lg font-semibold text-slate-300">
-            Product &middot; Visual &middot; Motion
-            <span className="font-bold text-slate-200"> Designer</span>
-          </p>
-        </div>
-
         <div className="mb-8 md:mb-12">
           <MobileHeroTitle className="block md:hidden" />
           <DesktopHeroTitle className="hidden md:block" />
         </div>
+
+        <div className="ms:mb-12 mb-8 text-slate-200">
+          <p className="text-xl font-bold">Designer based in Italy</p>
+          <p className="text-base font-semibold">
+            Product &middot; Visual &middot; Motion
+          </p>
+        </div>
+
+        {/* HeroTimeline */}
+        <WordsTimeline words={['Connect', 'Craft', 'Polish', 'Deliver']} />
 
         <HeroComponents className="mb-14" />
 
