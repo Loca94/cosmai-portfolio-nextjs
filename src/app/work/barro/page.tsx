@@ -13,13 +13,15 @@ import {
   BoldText,
   UserPersonaCard,
 } from '@/components/CaseStudyComponents';
-import heroImage1 from '@/images/dibarro-casestudy-hero-1.png';
-import heroImage2 from '@/images/dibarro-casestudy-hero-2.png';
-import heroImage3 from '@/images/dibarro-casestudy-hero-3.png';
-import heroImage4 from '@/images/dibarro-casestudy-hero-4.png';
-import uxProcessImg from '@/images/dibarro-ux-process.png';
-import uxProcessMobileImg from '@/images/dibarro-ux-process-mobile.png';
-import userPersonaMatteo from '@/images/dibarro-avatar-matteo.png';
+import heroImg1 from '@/images/case-study/barro/dibarro-casestudy-hero-1.png';
+import heroImg2 from '@/images/case-study/barro/dibarro-casestudy-hero-2.png';
+import heroImg3 from '@/images/case-study/barro/dibarro-casestudy-hero-3.png';
+import heroImg4 from '@/images/case-study/barro/dibarro-casestudy-hero-4.png';
+import heroImgMobile1 from '@/images/case-study/barro/dibarro-casestudy-hero-mobile-1.png';
+import heroImgMobile2 from '@/images/case-study/barro/dibarro-casestudy-hero-mobile-2.png';
+import uxProcessImg from '@/images/case-study/barro/dibarro-ux-process.png';
+import uxProcessMobileImg from '@/images/case-study/barro/dibarro-ux-process-mobile.png';
+import userPersonaMatteo from '@/images/case-study/barro/dibarro-avatar-matteo.png';
 import exampleImage from '@/images/example-image.jpeg';
 import exampleImage2 from '@/images/example-image-2.avif';
 import exampleImage3 from '@/images/example-image-3.avif';
@@ -32,7 +34,6 @@ import {
   CardTitle,
 } from '@/components/ui/Card';
 import { UserPersona } from '@/lib/types';
-import { BadgeList, BadgeListItem } from '@/components/ui/Badge';
 import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
 
 export default function WineryWebsite() {
@@ -69,14 +70,20 @@ export default function WineryWebsite() {
           title={`Designing a Storybrand Website for a family-owned winery`}
           tools={['Figma', 'Photoshop']}
         />
-        <MobileOverlappingImages className="mt-9 md:hidden" />
+        <MobileOverlappingImages
+          className="mt-9 md:hidden"
+          images={[
+            { src: heroImgMobile1, alt: 'About page hero section' },
+            { src: heroImgMobile2, alt: 'Slice of a wine bottle' },
+          ]}
+        />
         <DesktopBentoGrid
           className="mt-12 hidden md:block"
           images={[
-            { src: heroImage1, alt: 'Hero section of About page' },
-            { src: heroImage2, alt: 'Philosophy section from mobile device' },
-            { src: heroImage3, alt: 'Zoom in on the map in the Contact page' },
-            { src: heroImage4, alt: 'Select wines page' },
+            { src: heroImg1, alt: 'Hero section of About page' },
+            { src: heroImg2, alt: 'Philosophy section from mobile device' },
+            { src: heroImg3, alt: 'Zoom in on the map in the Contact page' },
+            { src: heroImg4, alt: 'Select wines page' },
           ]}
         />
 
@@ -98,7 +105,7 @@ export default function WineryWebsite() {
             <ChapterTitle>Connect</ChapterTitle>
           </Prose>
           <AnimatedBadgeList
-            content={[
+            badges={[
               'Meetings with client',
               'Brand identity analysis',
               'Outdated webpage analysis',
@@ -231,9 +238,9 @@ export default function WineryWebsite() {
           </Prose>
           <UserObjectivesGrid
             objectives={[
-              'View the product',
-              'Contact the winery',
-              'The winemaking process',
+              'Discover the products available',
+              'Contact and locate the winery',
+              'Uncover the winemaking process',
             ]}
           />
           <Prose>
@@ -249,119 +256,31 @@ export default function WineryWebsite() {
 
         <Chapter>
           <Prose>
-            <ChapterTitle>Role & Design Process</ChapterTitle>
-            <Paragraph>
-              My role was to understand the client’s needs as well as their
-              niche in order to deliver a website with an easy experience for
-              the end user.
-            </Paragraph>
-            <Paragraph>
-              I was responsible for the entire design process, from the initial
-              research phase to the final development of the user interface.
-              After some meetings with the client, I took time to review all the
-              information gathered about the brand identity, user target and
-              communicative intents. I felt that it was the perfect opportunity
-              to discover more about their world, and gain experience through
-              new design challenges.
-            </Paragraph>
-            <Paragraph>
-              I conducted a heuristic UX analysis on the old webpage and the
-              competitors’ websites identifying usability and accessibility
-              issues thinking of solutions accordingly.
-            </Paragraph>
+            <ChapterTitle>Craft</ChapterTitle>
           </Prose>
-          <div className="md:hidden">
-            <CaseStudyImage
-              className="w-full md:hidden"
-              src={uxProcessMobileImg}
-              alt="New website design for Di Barrò's winery"
-              captionContent="UX Design Process"
-            />
-          </div>
-          <div className="hidden md:block">
-            <CaseStudyImage
-              className="w-full"
-              src={uxProcessImg}
-              alt="New website design for Di Barrò's winery"
-              captionContent="UX Design Process"
-            />
-          </div>
-          <Prose>
-            <Paragraph>
-              Designing wireframes and prototypes was an iterative process that
-              evolved with each meeting as I had to consider the client
-              standpoint and concerns. During the development process, I
-              collaborated closely with a developer, ensuring that accessibility
-              was our top priority.
-            </Paragraph>
-          </Prose>
-        </Chapter>
-
-        <Chapter>
-          <Prose>
-            <ChapterTitle>Users</ChapterTitle>
-            <Paragraph>
-              The UX was designed for turists, people interested in visiting the
-              winery and wine enthusiasts. After leading Face To Face surveys
-              with (Oenophiles) some wine connoisseurs. I was able to distill
-              some user objectives.
-            </Paragraph>
-          </Prose>
-          <UserObjectivesGrid
-            objectives={[
-              'View the product',
-              'Contact the winery',
-              'The winemaking process',
+          <AnimatedBadgeList
+            badges={[
+              'Information Architecture',
+              'User flows',
+              'Typography',
+              'Iconography',
+              'Color Theory',
+              'Wireframes',
             ]}
           />
           <Prose>
             <Paragraph>
-              Taking into account all the information gathered I fabricated a
-              user persona for the target user, a ”wine lover visiting Valle
-              d’Aosta”, who would be both viewing the products and trying to
-              contact the winery to purchase or visit.
-            </Paragraph>
-          </Prose>
-          <UserPersonaCard userPersona={userPersona} />
-        </Chapter>
-
-        <Chapter>
-          <Prose>
-            <ChapterTitle>Information Architecture & User Flow</ChapterTitle>
-            <Paragraph>
-              The information architecture was designed to be intuitive and easy
-              to navigate. I created a clear hierarchy that guides the user
-              through the website, ensuring that they can easily find the
-              information they need.
+              The information architecture and user flow were designed to be
+              intuitive and easy to navigate. A clear hierarchy had to guide the
+              user through the website, ensuring that he could easily find the
+              information needed.
             </Paragraph>
           </Prose>
           <CaseStudyImage
-            className="w-full !invert"
-            src={exampleImage}
-            alt="Information architecture for Di Barrò's winery"
-          />
-        </Chapter>
-
-        <Chapter>
-          <Prose>
-            <ChapterTitle>User Interface & Visual Design</ChapterTitle>
-            <Paragraph>
-              In order to create a seamless experience for users the paragraphs
-              required to stand out and be easy to read. With the brand
-              guidelines in mind, I chose a serif font for headings and a sans
-              font for paragraphs to join a monochromatic design where colors
-              stuck out from photos.
-            </Paragraph>
-          </Prose>
-          <CaseStudyImage
-            className="w-full"
-            src={exampleImage}
-            alt="TODO: Add alt description"
-          />
-          <CaseStudyImage
-            className="w-full"
-            src={exampleImage2}
-            alt="TODO: Add alt description"
+            className="w-full md:hidden"
+            src={uxProcessMobileImg}
+            alt="New website design for Di Barrò's winery"
+            captionContent="UX Design Process"
           />
         </Chapter>
       </CaseStudyLayout>

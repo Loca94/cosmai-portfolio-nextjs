@@ -62,21 +62,39 @@ function PageIntro({ title, tools }: { title: string; tools: string[] }) {
   );
 }
 
-function MobileOverlappingImages({ className }: { className?: string }) {
+function MobileOverlappingImages({
+  className,
+  images,
+}: {
+  className?: string;
+  images: ImgProp[];
+}) {
   return (
     <FadeInStagger>
       <div className={cn('flex flex-col items-center', className)}>
-        <FadeIn className="w-full">
-          <div className="h-52 w-full max-w-sm rotate-[4deg] rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full rounded border-2 border-slate-700">
-              {/* Image Here with priority */}
+        <FadeIn className="z-10 w-full">
+          <div className="h-52 w-full max-w-sm rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full overflow-hidden rounded border-2 border-slate-700">
+              <CaseStudyImage
+                className="h-48 w-full object-cover"
+                src={images[0].src}
+                alt={images[0].alt}
+                margins={false}
+                rounded={false}
+              />
             </div>
           </div>
         </FadeIn>
-        <FadeIn className="w-full">
-          <div className="-mt-20 h-52 w-full max-w-sm -rotate-[4deg] rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full rounded border-2 border-slate-700">
-              {/* Image Here with priority */}
+        <FadeIn className="z-20 w-full">
+          <div className="-mt-20 h-52 w-full max-w-sm rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full overflow-hidden rounded border-2 border-slate-700">
+              <CaseStudyImage
+                className="h-48 w-full object-cover"
+                src={images[1].src}
+                alt={images[1].alt}
+                margins={false}
+                rounded={false}
+              />
             </div>
           </div>
         </FadeIn>
@@ -216,7 +234,7 @@ function Prose({ children }: { children: React.ReactNode }) {
 
 function Paragraph({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-4 text-lg leading-relaxed text-slate-400">{children}</p>
+    <p className="mb-4 text-base leading-relaxed text-slate-400">{children}</p>
   );
 }
 
@@ -301,7 +319,9 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
       className={`flex aspect-square items-center justify-center rounded p-4 ${toHighlight ? 'bg-slate-200' : ''}`}
     >
       {toHighlight ? (
-        <p className={`text-center font-semibold text-slate-700`}>{content}</p>
+        <p className={`text-center font-semibold leading-tight text-slate-700`}>
+          {content}
+        </p>
       ) : (
         <ProfileIcon className={`h-6 w-6 text-slate-400`} />
       )}
