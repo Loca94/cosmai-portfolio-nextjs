@@ -2,41 +2,8 @@ import Container from '@/components/Container';
 import HeroComponents from '@/components/HeroComponents';
 import WordsTimeline from '@/components/animations/WordsTimeline';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import Balancer from 'react-wrap-balancer';
-
-function MobileHeroTitle({ className, ...props }: { className?: string }) {
-  return (
-    <h1
-      className={cn(
-        'text-[32px] font-bold leading-tight text-slate-200',
-        className,
-      )}
-      {...props}
-    >
-      <Balancer>
-        I transform ideas into <i className="font-bold">tailored</i>,{' '}
-        <i className="font-bold">appealing</i> and{' '}
-        <i className="font-bold">accessible</i> digital experiences.
-      </Balancer>
-    </h1>
-  );
-}
-
-function DesktopHeroTitle({ className, ...props }: { className?: string }) {
-  return (
-    <div className={className} {...props}>
-      <h1 className="mb-6 max-w-2xl text-[32px] font-medium leading-tight text-slate-200">
-        <Balancer>
-          I transform ideas into <i className="font-bold">tailored</i>,{' '}
-          <i className="font-bold">appealing</i> and{' '}
-          <i className="font-bold">accessible</i> digital experiences.
-        </Balancer>
-      </h1>
-    </div>
-  );
-}
 
 function SelectedProjects({ className, ...props }: { className?: string }) {
   let projects = [
@@ -152,8 +119,14 @@ export default function Home() {
     <>
       <Container className="mt-14">
         <div className="mb-8 md:mb-12">
-          <MobileHeroTitle className="block md:hidden" />
-          <DesktopHeroTitle className="hidden md:block" />
+          <h1 className="mb-6 max-w-2xl text-[32px] font-medium leading-tight text-slate-200">
+            <Balancer>
+              I transform ideas into <i className="font-bold">tailored</i>,{' '}
+              <span className="font-bold italic">appealing</span> and{' '}
+              <span className="font-bold italic">accessible</span> digital
+              experiences.
+            </Balancer>
+          </h1>
         </div>
 
         <div className="ms:mb-12 mb-8 text-slate-200">
