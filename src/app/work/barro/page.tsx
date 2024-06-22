@@ -36,36 +36,40 @@ import {
 import { UserPersona } from '@/lib/types';
 import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
 
+const challengeImages = [
+  {
+    src: exampleImage3,
+    alt: 'Old website flaws and outdated design',
+  },
+  {
+    src: exampleImage4,
+    alt: 'New website design for Di Barròs winery',
+  },
+];
+
+const userPersona: UserPersona = {
+  fullName: 'Matteo Rossi',
+  avatarSrc: userPersonaMatteo,
+  background:
+    'Matteo is wine enthusiast and a restaurant chef in Milan. He usually plans menus, ensuring that the high-quality food is well paired with a wine.',
+  goals: [
+    'Discover new and exceptional wines to feature in his restaurant and pair with his menus.',
+    'Build relationships with reputable winemakers and vineyard owners.',
+  ],
+  frustrations: [
+    'Difficulty finding unique, high-quality wines that stand out from the competition.',
+    'Limited time to research and taste new wines due to demanding work schedule.',
+  ],
+};
+
 export default function WineryWebsite() {
-  const challengeImages = [
-    {
-      src: exampleImage3,
-      alt: 'Old website flaws and outdated design',
-    },
-    {
-      src: exampleImage4,
-      alt: 'New website design for Di Barròs winery',
-    },
-  ];
-
-  const userPersona: UserPersona = {
-    fullName: 'Matteo Rossi',
-    avatarSrc: userPersonaMatteo,
-    background:
-      'Matteo is wine enthusiast and a restaurant chef in Milan. He usually plans menus, ensuring that the high-quality food is well paired with a wine.',
-    goals: [
-      'Discover new and exceptional wines to feature in his restaurant and pair with his menus.',
-      'Build relationships with reputable winemakers and vineyard owners.',
-    ],
-    frustrations: [
-      'Difficulty finding unique, high-quality wines that stand out from the competition.',
-      'Limited time to research and taste new wines due to demanding work schedule.',
-    ],
-  };
-
   return (
     <>
-      <CaseStudyLayout>
+      <CaseStudyLayout
+        projectUrl="https://www.dibarro.com"
+        prevUrl="/work/vierin"
+        nextUrl="/work/vierin"
+      >
         <PageIntro
           title={`Designing a Storybrand Website for a family-owned winery`}
           tools={['Figma', 'Photoshop']}
@@ -101,19 +105,21 @@ export default function WineryWebsite() {
         </Chapter>
 
         <Chapter>
-          <Prose>
-            <ChapterTitle>Connect</ChapterTitle>
-          </Prose>
-          <AnimatedBadgeList
-            badges={[
-              'Meetings with client',
-              'Brand identity analysis',
-              'Outdated webpage analysis',
-              'Competitors’ analysis',
-              'Face To Face survey',
-              'User persona',
-            ]}
-          />
+          <div>
+            <Prose>
+              <ChapterTitle>Connect</ChapterTitle>
+            </Prose>
+            <AnimatedBadgeList
+              badges={[
+                'Meetings with client',
+                'Brand identity analysis',
+                'Outdated webpage analysis',
+                'Competitors’ analysis',
+                'Face To Face survey',
+                'User persona',
+              ]}
+            />
+          </div>
           <Prose>
             <Paragraph>
               After some meetings with the client, I took time to review all the
@@ -133,7 +139,7 @@ export default function WineryWebsite() {
                 <CardTitle>Unresponsive Design</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base md:text-sm">
+                <CardDescription>
                   The webpage from 2011 wasn't optimised for smaller devices,
                   like tablets and phones. The design was scaled down to fit the
                   smaller screens. This led to pinching, zooming and frustration
@@ -146,7 +152,7 @@ export default function WineryWebsite() {
                 <CardTitle>Obsolete Content</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base md:text-sm">
+                <CardDescription>
                   Through the web page there were informations no longer
                   helpful, non reusable. <br />
                   Moreover, the combination of a bad information architecture
@@ -160,7 +166,7 @@ export default function WineryWebsite() {
                 <CardTitle>Language Limitation</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base md:text-sm">
+                <CardDescription>
                   Despite the expected influx of French and English tourists in
                   the territory, the previous website was only available in
                   Italian. <br />
@@ -184,7 +190,7 @@ export default function WineryWebsite() {
                 <CardTitle>Responsive Design</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base md:text-sm">
+                <CardDescription>
                   To enhance responsiveness, I designed a clean and adaptive
                   interface that provides a seamless experience for smaller
                   screens and easy access to the content without pinching.
@@ -196,7 +202,7 @@ export default function WineryWebsite() {
                 <CardTitle>Updated Content</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base md:text-sm">
+                <CardDescription>
                   By collaborating with the client, we created a coherent
                   narrative that effectively communicated the winery’s identity.
                   As a consequence, the information architecture has been
@@ -209,7 +215,7 @@ export default function WineryWebsite() {
                 <CardTitle>Language Inclusion</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base md:text-sm">
+                <CardDescription>
                   To provide easy comprehension for French and English tourists,
                   the website had to be multilingual. This addition broadens the
                   reach, improves the engagement by breaking down language

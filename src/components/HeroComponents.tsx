@@ -15,7 +15,7 @@ export default function HeroComponents({ className }: { className?: string }) {
       <div className="grid grid-rows-[auto_auto_auto] gap-4 md:grid-cols-2 md:grid-rows-[auto_auto]">
         <div className="row flex w-full space-x-2">
           <SkeletonButton asInput>
-            <SearchIcon className="h-4 w-4 text-slate-300 transition group-hover:text-slate-200" />
+            <SearchIcon className="h-4 w-4 text-slate-200 transition group-hover:text-slate-200" />
             <Skeleton className="w-1/4" />
           </SkeletonButton>
           <SkeletonProfileDropdown />

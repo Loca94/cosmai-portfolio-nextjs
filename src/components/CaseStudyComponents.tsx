@@ -25,6 +25,7 @@ import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import { GrayscaleTransitionImage } from '@/components/animations/GrayscaleTransitionImage';
 import { Card, CardContent, CardDescription } from '@/components/ui/Card';
 import { Badge, BadgeList, BadgeListItem } from '@/components/ui/Badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import { UserPersona } from '@/lib/types';
 
 export type ImgProp = {
@@ -32,10 +33,24 @@ export type ImgProp = {
   alt?: string;
 };
 
-function CaseStudyLayout({ children }: { children: React.ReactNode }) {
+function CaseStudyLayout({
+  projectUrl,
+  prevUrl,
+  nextUrl,
+  children,
+}: {
+  projectUrl: string;
+  prevUrl: string;
+  nextUrl: string;
+  children: React.ReactNode;
+}) {
   return (
     <>
-      <StickyProjectNavigator />
+      <StickyProjectNavigator
+        projectUrl={projectUrl}
+        prevUrl={prevUrl}
+        nextUrl={nextUrl}
+      />
       <Container className="py-12 sm:py-24 lg:py-28">{children}</Container>
     </>
   );
@@ -44,13 +59,13 @@ function CaseStudyLayout({ children }: { children: React.ReactNode }) {
 function PageIntro({ title, tools }: { title: string; tools: string[] }) {
   return (
     <FadeIn className="flex flex-col max-lg:space-y-6 lg:flex-row lg:justify-between">
-      <h1 className="text-3xl font-bold tracking-tight text-slate-200 md:text-4xl lg:w-3/5">
+      <h1 className="text-3xl font-medium tracking-tight text-slate-200 md:text-4xl lg:w-3/5">
         <Balancer>{title}</Balancer>
       </h1>
       <aside className="flex flex-col items-end justify-center lg:w-2/5">
         <h2 className="mb-2 flex items-center text-xl font-semibold text-slate-200">
           <PackageIcon className="h-6 w-6" />
-          <span className="ml-2 text-lg font-semibold">Toolbox</span>
+          <span className="ml-2 text-lg font-medium">Toolbox</span>
         </h2>
         <BadgeList>
           {tools.map((tool) => (
@@ -73,10 +88,10 @@ function MobileOverlappingImages({
     <FadeInStagger>
       <div className={cn('flex flex-col items-center', className)}>
         <FadeIn className="z-10 w-full">
-          <div className="h-52 w-full max-w-sm rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full overflow-hidden rounded border-2 border-slate-700">
+          <div className="h-52 w-full max-w-sm rounded-lg border border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full overflow-hidden rounded border border-slate-700">
               <CaseStudyImage
-                className="h-48 w-full object-cover"
+                className="h-48 w-full object-cover object-top"
                 src={images[0].src}
                 alt={images[0].alt}
                 margins={false}
@@ -86,8 +101,8 @@ function MobileOverlappingImages({
           </div>
         </FadeIn>
         <FadeIn className="z-20 w-full">
-          <div className="-mt-20 h-52 w-full max-w-sm rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full overflow-hidden rounded border-2 border-slate-700">
+          <div className="-mt-8 h-52 w-full max-w-sm rounded-lg border border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full overflow-hidden rounded border border-slate-700">
               <CaseStudyImage
                 className="h-48 w-full object-cover"
                 src={images[1].src}
@@ -114,7 +129,7 @@ function DesktopBentoGrid({
     <div className={className}>
       <FadeInStagger faster>
         <div className="grid auto-rows-[270px] grid-cols-3 gap-4 lg:auto-rows-[330px]">
-          <FadeIn className="col-span-2 row-span-1 overflow-hidden rounded-lg border-2 border-slate-700 bg-slate-900">
+          <FadeIn className="col-span-2 row-span-1 overflow-hidden rounded-lg border border-slate-700 bg-slate-900">
             <SafariBrowserHeaderSkeleton />
             {/* TODO: add priority to image? */}
             <CaseStudyImage
@@ -125,8 +140,8 @@ function DesktopBentoGrid({
               rounded={false}
             />
           </FadeIn>
-          <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full overflow-hidden rounded border-2 border-slate-700">
+          <FadeIn className="col-span-1 row-span-1 rounded-lg border border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full overflow-hidden rounded border border-slate-700">
               {/* TODO: add priority to image? */}
               <CaseStudyImage
                 className="object-cover md:h-[250px] lg:h-[310px]"
@@ -138,8 +153,8 @@ function DesktopBentoGrid({
             </div>
           </FadeIn>
 
-          <FadeIn className="col-span-1 row-span-1 rounded-lg border-2 border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full overflow-hidden rounded border-2 border-slate-700">
+          <FadeIn className="col-span-1 row-span-1 rounded-lg border border-slate-700 bg-slate-900 p-2">
+            <div className="h-full w-full overflow-hidden rounded border border-slate-700">
               {/* Image Here with priority */}
               <CaseStudyImage
                 className="object-cover md:h-[250px] lg:h-[310px]"
@@ -150,7 +165,7 @@ function DesktopBentoGrid({
               />
             </div>
           </FadeIn>
-          <FadeIn className="col-span-2 row-span-1 overflow-hidden rounded-lg border-2 border-slate-700 bg-slate-900">
+          <FadeIn className="col-span-2 row-span-1 overflow-hidden rounded-lg border border-slate-700 bg-slate-900">
             <SafariBrowserHeaderSkeleton />
             {/* Image Here with priority */}
             <CaseStudyImage
@@ -187,7 +202,7 @@ function SafariBrowserHeaderSkeleton() {
         </div>
       </div>
       {/* Search Bar */}
-      <div className="h-4 max-w-[60%] flex-1 rounded-lg border-2 border-slate-700"></div>
+      <div className="h-4 max-w-[60%] flex-1 rounded-lg border border-slate-700"></div>
       <div className="flex items-center space-x-1">
         <ShareIcon className="size-4" />
         <PlusIcon className="size-4" />
@@ -221,7 +236,7 @@ function Chapter({
 
 function ChapterTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-6 flex items-center text-2xl font-bold tracking-tight text-slate-200">
+    <h2 className="mb-6 flex items-center text-2xl font-medium tracking-tight text-slate-200">
       <CheckIcon className="mr-2 h-8 w-8" />
       {children}
     </h2>
@@ -240,6 +255,25 @@ function Paragraph({ children }: { children: React.ReactNode }) {
 
 function BoldText({ children }: { children: React.ReactNode }) {
   return <strong className="font-medium text-slate-200">{children}</strong>;
+}
+
+function CaseStudyLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-orange-400 hover:underline"
+    >
+      {children}
+    </a>
+  );
 }
 
 // TODO: Add GrayscaleTransitionImage component to every image
@@ -277,8 +311,9 @@ function CaseStudyImage({
         />
       </div>
       {captionContent && (
-        <div className="mt-4 block text-right text-sm text-slate-500">
-          {captionContent}
+        <div className="mt-4 flex items-center justify-end space-x-4 text-sm text-slate-500">
+          <span>{captionContent}</span>
+          <Badge>Img</Badge>
         </div>
       )}
     </div>
@@ -402,79 +437,87 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
 
 function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      <Card className="h-full">
-        <CardContent className="flex h-full items-center pt-4">
-          <div className="flex flex-col justify-center space-y-4">
-            {/* User Persona */}
-            <div className="flex">
-              <CaseStudyImage
-                src={userPersona.avatarSrc}
-                alt="User Persona Matteo"
-                className="h-32 w-32"
-                margins={false}
-              />
-              <div className="flex flex-col items-center justify-center p-4">
-                <h3 className="mb-2 text-2xl font-bold">User Persona</h3>
-                <div className="flex items-center space-x-2">
-                  <Badge variant="darker" className="text-slate-400">
-                    Name
-                  </Badge>
-                  <CardDescription>{userPersona.fullName}</CardDescription>
+    <FadeInStagger faster>
+      <div className="grid gap-4 md:grid-cols-2">
+        <FadeIn>
+          <Card className="h-full">
+            <CardContent className="flex h-full items-center pt-4">
+              <div className="flex flex-col justify-center space-y-4">
+                {/* User Persona */}
+                <div className="flex">
+                  <CaseStudyImage
+                    src={userPersona.avatarSrc}
+                    alt="User Persona Matteo"
+                    className="h-32 w-32"
+                    margins={false}
+                  />
+                  <div className="flex flex-col items-center justify-center p-4">
+                    <h3 className="mb-2 text-2xl font-bold">User Persona</h3>
+                    <div className="flex items-center space-x-2">
+                      <Badge variant="darker" className="text-slate-400">
+                        Name
+                      </Badge>
+                      <CardDescription>{userPersona.fullName}</CardDescription>
+                    </div>
+                  </div>
+                </div>
+
+                {/* User Persona Background */}
+                <div className="flex h-full">
+                  <div className="space-y-4">
+                    <Badge variant="darker" className="text-slate-400">
+                      Background
+                    </Badge>
+                    <CardDescription>{userPersona.background}</CardDescription>
+                  </div>
                 </div>
               </div>
-            </div>
+            </CardContent>
+          </Card>
+        </FadeIn>
+        <div className="flex flex-col space-y-4">
+          {/* User Persona Goals */}
+          <FadeIn>
+            <Card>
+              <CardContent className="pt-4 text-slate-400">
+                <div className="flex flex-col space-y-4">
+                  <Badge variant="darker" className="w-fit text-slate-400">
+                    Goals
+                  </Badge>
+                  <ul className="list-disc space-y-2 [&>*]:ml-4">
+                    {userPersona.goals.map((item) => (
+                      <li key={item}>
+                        <CardDescription>{item}</CardDescription>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          </FadeIn>
 
-            {/* User Persona Background */}
-            <div className="flex h-full">
-              <div className="space-y-4">
-                <Badge variant="darker" className="text-slate-400">
-                  Background
-                </Badge>
-                <CardDescription>{userPersona.background}</CardDescription>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-      <div className="flex flex-col space-y-4">
-        {/* User Persona Goals */}
-        <Card>
-          <CardContent className="pt-4 text-slate-400">
-            <div className="flex flex-col space-y-4">
-              <Badge variant="darker" className="w-fit text-slate-400">
-                Goals
-              </Badge>
-              <ul className="list-disc space-y-2 [&>*]:ml-4">
-                {userPersona.goals.map((item) => (
-                  <li key={item}>
-                    <CardDescription>{item}</CardDescription>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* User Persona Frustrations */}
-        <Card>
-          <CardContent className="pt-4 text-slate-400">
-            <div className="flex flex-col space-y-4">
-              <Badge variant="darker" className="w-fit text-slate-400">
-                Frustrations
-              </Badge>
-              <ul className="list-disc space-y-2 [&>*]:ml-4">
-                {userPersona.frustrations.map((item) => (
-                  <li key={item}>
-                    <CardDescription>{item}</CardDescription>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
+          {/* User Persona Frustrations */}
+          <FadeIn>
+            <Card>
+              <CardContent className="pt-4 text-slate-400">
+                <div className="flex flex-col space-y-4">
+                  <Badge variant="darker" className="w-fit text-slate-400">
+                    Frustrations
+                  </Badge>
+                  <ul className="list-disc space-y-2 [&>*]:ml-4">
+                    {userPersona.frustrations.map((item) => (
+                      <li key={item}>
+                        <CardDescription>{item}</CardDescription>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          </FadeIn>
+        </div>
       </div>
-    </div>
+    </FadeInStagger>
   );
 }
 
@@ -483,6 +526,7 @@ export {
   CaseStudyCarousel,
   CaseStudyImage,
   CaseStudyLayout,
+  CaseStudyLink,
   Chapter,
   ChapterTitle,
   DesktopBentoGrid,

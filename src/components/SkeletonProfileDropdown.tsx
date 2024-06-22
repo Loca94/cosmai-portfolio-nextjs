@@ -19,7 +19,7 @@ export default function ProfileDropdown() {
           size="icon"
           className="group w-9 min-w-9 overflow-hidden rounded-full"
         >
-          <ProfileIcon className="size-4 text-slate-300 group-hover:text-slate-200" />
+          <ProfileIcon className="size-4 text-slate-200 group-hover:text-slate-200" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -4,7 +4,7 @@ import { cva } from 'class-variance-authority';
 type BadgeVariants = 'default' | 'active' | 'disabled' | 'darker';
 
 const badgeVariants = cva(
-  'inline-flex items-center rounded-full px-2.5 py-1 text-base font-medium transition-colors ease-in-out duration-500',
+  'inline-flex w-fit items-center rounded-full px-2.5 py-1 text-base font-medium transition-colors ease-in-out duration-500',
   {
     variants: {
       variant: {

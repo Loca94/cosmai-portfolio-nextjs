@@ -4,32 +4,40 @@ import {
   ExternalLinkIcon,
 } from '@/components/Icons';
 
-export default function StickyProjectNavigator() {
+export default function StickyProjectNavigator({
+  projectUrl,
+  prevUrl,
+  nextUrl,
+}: {
+  projectUrl: string;
+  prevUrl: string;
+  nextUrl: string;
+}) {
   return (
     <div className="sticky top-0 z-50 sm:top-4 sm:-mb-[4.5rem] sm:mt-4">
       <div className="flex w-full justify-center">
-        <div className="relative w-full border-2 border-slate-700 bg-slate-950 sm:w-fit sm:rounded">
-          <div className="flex justify-center divide-x-2 divide-slate-700 text-slate-400">
+        <div className="relative w-full border-b-2 border-slate-900 bg-slate-950 sm:w-fit sm:rounded sm:border-2">
+          <div className="flex justify-center text-sm text-slate-400">
             <a
-              href="/dentist-vierin"
-              className="flex items-center px-4 py-3 font-bold transition-colors hover:bg-slate-900 focus:bg-slate-900"
+              href={prevUrl}
+              className="flex items-center px-4 py-3 font-semibold transition-colors hover:bg-slate-900 focus:bg-slate-900"
             >
-              <ChevronLeftIcon className="mr-1 h-5 w-5" />
+              <ChevronLeftIcon className="mr-1.5 h-4 w-4" />
               Prev
             </a>
             <a
-              href="https://www.dibarro.com"
-              className="flex items-center justify-center px-4 py-3 font-bold transition-colors hover:bg-slate-900 focus:bg-slate-900"
+              href={projectUrl}
+              className="flex items-center justify-center px-4 py-3 font-semibold transition-colors hover:bg-slate-900 focus:bg-slate-900"
             >
-              <ExternalLinkIcon className="mr-1.5 h-5 w-5" />
+              <ExternalLinkIcon className="mr-1.5 h-4 w-4" />
               View website
             </a>
             <a
-              href="/dentist-vierin"
-              className="flex items-center px-4 py-3 font-bold transition-colors hover:bg-slate-900 focus:bg-slate-900"
+              href={nextUrl}
+              className="flex items-center px-4 py-3 font-semibold transition-colors hover:bg-slate-900 focus:bg-slate-900"
             >
               Next
-              <ChevronRightIcon className="ml-1 h-5 w-5" />
+              <ChevronRightIcon className="ml-1.5 h-4 w-4" />
             </a>
           </div>
         </div>

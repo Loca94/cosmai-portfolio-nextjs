@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Balancer from 'react-wrap-balancer';
 
 function SelectedProjects({ className, ...props }: { className?: string }) {
-  let projects = [
+  const projects = [
     {
       projectName: 'DiBarro',
       href: 'barro',
@@ -84,10 +84,10 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
         <Link
           key={project.projectName}
           href={`/work/${project.href}`}
-          className="group md:transition-transform md:hover:-translate-y-2"
+          className="group md:transition-transform md:duration-200 md:ease-out md:hover:-translate-y-2"
           passHref
         >
-          <Card className="border border-transparent pt-3 md:group-hover:border-slate-400/30">
+          <Card className="border border-transparent pt-3 md:transition-colors md:duration-200 md:ease-out md:group-hover:border-slate-400/30">
             <CardHeader>
               <CardTitle className="mb-2">
                 <Balancer>{project.title}</Balancer>

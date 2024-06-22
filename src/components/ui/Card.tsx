@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { DynamicElement } from '@/components/DynamicElement';
 import { cn } from '@/lib/utils';
 import { Slot } from '@radix-ui/react-slot';
 
@@ -15,11 +14,17 @@ interface HTMLHeadingElementProp
 
 const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+  React.HTMLAttributes<HTMLDivElement> & { inverted?: boolean }
+>(({ inverted = false, className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('rounded-xl bg-slate-900 text-slate-200 shadow', className)}
+    className={cn(
+      'rounded-xl border text-slate-200 shadow',
+      inverted
+        ? 'border-slate-400 bg-slate-950'
+        : 'border-transparent bg-slate-900',
+      className,
+    )}
     {...props}
   />
 ));
