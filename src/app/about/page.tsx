@@ -125,7 +125,7 @@ function MissionSection() {
 function ToolboxSection() {
   const tools = [
     {
-      name: 'Figma',
+      name: 'Figma | Sketch',
       description: 'Used to build high fidelity prototypes',
       categories: ['Wireframes', 'Prototyping', 'Components'],
       startDate: 2019,
