@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        'orange-accent': '#DC7931',
+      },
       margin: {
         15: '3.75rem',
       },
