@@ -13,19 +13,6 @@ import {
   BoldText,
   UserPersonaCard,
 } from '@/components/CaseStudyComponents';
-import heroImg1 from '@/images/case-study/barro/dibarro-casestudy-hero-1.png';
-import heroImg2 from '@/images/case-study/barro/dibarro-casestudy-hero-2.png';
-import heroImg3 from '@/images/case-study/barro/dibarro-casestudy-hero-3.png';
-import heroImg4 from '@/images/case-study/barro/dibarro-casestudy-hero-4.png';
-import heroImgMobile1 from '@/images/case-study/barro/dibarro-casestudy-hero-mobile-1.png';
-import heroImgMobile2 from '@/images/case-study/barro/dibarro-casestudy-hero-mobile-2.png';
-import uxProcessImg from '@/images/case-study/barro/dibarro-ux-process.png';
-import uxProcessMobileImg from '@/images/case-study/barro/dibarro-ux-process-mobile.png';
-import userPersonaMatteo from '@/images/case-study/barro/dibarro-avatar-matteo.png';
-import exampleImage from '@/images/example-image.jpeg';
-import exampleImage2 from '@/images/example-image-2.avif';
-import exampleImage3 from '@/images/example-image-3.avif';
-import exampleImage4 from '@/images/example-image-4.avif';
 import {
   Card,
   CardContent,
@@ -35,21 +22,31 @@ import {
 } from '@/components/ui/Card';
 import { UserPersona } from '@/lib/types';
 import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
+import heroImg1 from '@/images/case-study/barro/hero-1.webp';
+import heroImg2 from '@/images/case-study/barro/hero-2.webp';
+import heroImg3 from '@/images/case-study/barro/hero-3.webp';
+import heroImg4 from '@/images/case-study/barro/hero-4.webp';
+import heroMobileImg1 from '@/images/case-study/barro/hero-mobile-1.webp';
+import heroMobileImg2 from '@/images/case-study/barro/hero-mobile-2.webp';
+import oldWebsiteIssuesImg from '@/images/case-study/barro/old-website-issues.webp';
+import newWebsiteImprovementsImg from '@/images/case-study/barro/new-website-improvements.webp';
+import matteoImg from '@/images/case-study/barro/matteo.webp';
+import informationArchitectureImg from '@/images/case-study/barro/information-architecture-flow.webp';
 
-const challengeImages = [
-  {
-    src: exampleImage3,
-    alt: 'Old website flaws and outdated design',
-  },
-  {
-    src: exampleImage4,
-    alt: 'New website design for Di Barròs winery',
-  },
-];
+// const challengeImages = [
+//   {
+//     src: exampleImage3,
+//     alt: 'Old website flaws and outdated design',
+//   },
+//   {
+//     src: exampleImage4,
+//     alt: 'New website design for Di Barròs winery',
+//   },
+// ];
 
 const userPersona: UserPersona = {
   fullName: 'Matteo Rossi',
-  avatarSrc: userPersonaMatteo,
+  avatarSrc: matteoImg,
   background:
     'Matteo is wine enthusiast and a restaurant chef in Milan. He usually plans menus, ensuring that the high-quality food is well paired with a wine.',
   goals: [
@@ -77,8 +74,8 @@ export default function WineryWebsite() {
         <MobileOverlappingImages
           className="mt-9 md:hidden"
           images={[
-            { src: heroImgMobile1, alt: 'About page hero section' },
-            { src: heroImgMobile2, alt: 'Slice of a wine bottle' },
+            { src: heroMobileImg1, alt: 'About page hero section' },
+            { src: heroMobileImg2, alt: 'Slice of a wine bottle' },
           ]}
         />
         <DesktopBentoGrid
@@ -95,11 +92,25 @@ export default function WineryWebsite() {
           <Prose>
             <ChapterTitle>Overview</ChapterTitle>
             <Paragraph>
-              I had the chance to create a new website for Di Barrò, a family
-              owned winery based in Italy. I needed to understand the client’s
-              needs as well as their niche and deliver a website with an easy
-              experience for the end user. Their previous website, dating back
-              to 2011, was outdated and did not meet modern web standards.
+              The <BoldText>Cantina Di Barrò</BoldText> is a family owned winery
+              based in the Western Alps, Italy. This local producer offers high
+              quality wines and annually stores around 20,000 bottles, all
+              sourced from the grape variety growing in their 4 hectares
+              vineyards. Their delicious wines can be enjoyed during gastronomic
+              events, by visiting their cellars and vineyards, in local
+              restaurants, or alternatively purchased, though there’s a limited
+              amount.
+            </Paragraph>
+            <Paragraph>
+              Their previous webpage, dating back to 2011, was outdated and did
+              not meet modern web standards. They needed a new website and
+              sought to communicate their presence and the story behind this
+              family tradition.
+            </Paragraph>
+            <Paragraph>
+              I was the sole designer in this project and I was responsible for
+              the whole design process, from learning about the client’s goals
+              to helping them get there with the developer’s help.
             </Paragraph>
           </Prose>
         </Chapter>
@@ -112,14 +123,13 @@ export default function WineryWebsite() {
             <AnimatedBadgeList
               badges={[
                 'Meetings with client',
-                'Brand identity analysis',
-                'Outdated webpage analysis',
-                'Competitors’ analysis',
+                'Old webpage analysis',
                 'Face To Face survey',
                 'User persona',
               ]}
             />
           </div>
+
           <Prose>
             <Paragraph>
               After some meetings with the client, I took time to review all the
@@ -127,12 +137,16 @@ export default function WineryWebsite() {
               communicative intents.
             </Paragraph>
             <Paragraph>
-              I conducted a <BoldText>heuristic UX analysis</BoldText> on the
-              competitors’ websites and the old webpage identifying usability
-              and accessibility issues such as unresponsive Design, obsolete
-              content and language limitation.
+              I conducted a heuristic UX analysis on the competitors’ websites
+              and the old webpage identifying usability and accessibility issues
+              such as{' '}
+              <BoldText>
+                unresponsive design, obsolete content and language limitation
+              </BoldText>
+              .
             </Paragraph>
           </Prose>
+
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3 lg:gap-6">
             <Card>
               <CardHeader>
@@ -176,6 +190,7 @@ export default function WineryWebsite() {
               </CardContent>
             </Card>
           </div>
+
           <Prose>
             <Paragraph>
               The new website had to be responsive, well structured and
@@ -184,20 +199,22 @@ export default function WineryWebsite() {
               website:
             </Paragraph>
           </Prose>
+
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3 lg:gap-6">
-            <Card className="border border-slate-700 bg-slate-950">
+            <Card inverted>
               <CardHeader>
                 <CardTitle>Responsive Design</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  To enhance responsiveness, I designed a clean and adaptive
-                  interface that provides a seamless experience for smaller
-                  screens and easy access to the content without pinching.
+                  To enhance responsiveness, I chose 4 breakpoints to control
+                  and adapt the layout on different devices, providing a
+                  seamless experience for smaller screens and easy access to the
+                  content without pinching.
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="border border-slate-700 bg-slate-950">
+            <Card inverted>
               <CardHeader>
                 <CardTitle>Updated Content</CardTitle>
               </CardHeader>
@@ -210,30 +227,32 @@ export default function WineryWebsite() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="border border-slate-700 bg-slate-950">
+            <Card inverted>
               <CardHeader>
                 <CardTitle>Language Inclusion</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  To provide easy comprehension for French and English tourists,
-                  the website had to be multilingual. This addition broadens the
-                  reach, improves the engagement by breaking down language
-                  barriers and makes it accessible to a wider audience.
+                  To provide easy comprehension for tourists, the website had to
+                  be multilingual. This addition broadens the reach, improves
+                  the engagement by breaking down language barriers and makes it
+                  accessible to a wider audience.
                 </CardDescription>
               </CardContent>
             </Card>
           </div>
-          <Prose>
-            <Paragraph>
-              I ensured the website followed the best practices, such as
-              incorporating alt text for images and using accessible colors,
-              providing easy navigation for users with disabilities. This
-              inclusive approach ensures that all visitors can access and enjoy
-              the website's content.
-            </Paragraph>
-          </Prose>
-          <CaseStudyCarousel images={challengeImages} />
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <CaseStudyImage
+              src={oldWebsiteIssuesImg}
+              alt="Old website issues"
+            />
+            <CaseStudyImage
+              src={newWebsiteImprovementsImg}
+              alt="New website improvements"
+            />
+          </div>
+
           <Prose>
             <Paragraph>
               The website would be used by tourists, people interested in the
@@ -242,6 +261,7 @@ export default function WineryWebsite() {
               distill some user objectives.
             </Paragraph>
           </Prose>
+
           <UserObjectivesGrid
             objectives={[
               'Discover the products available',
@@ -249,6 +269,7 @@ export default function WineryWebsite() {
               'Uncover the winemaking process',
             ]}
           />
+
           <Prose>
             <Paragraph>
               Taking into account all the information gathered I fabricated a
@@ -266,14 +287,14 @@ export default function WineryWebsite() {
           </Prose>
           <AnimatedBadgeList
             badges={[
-              'Information Architecture',
+              'Information architecture',
               'User flows',
               'Typography',
-              'Iconography',
-              'Color Theory',
+              'Visual design',
               'Wireframes',
             ]}
           />
+
           <Prose>
             <Paragraph>
               The information architecture and user flow were designed to be
@@ -284,10 +305,16 @@ export default function WineryWebsite() {
           </Prose>
           <CaseStudyImage
             className="w-full md:hidden"
-            src={uxProcessMobileImg}
-            alt="New website design for Di Barrò's winery"
+            src={informationArchitectureImg}
+            alt="Information architecture of the website"
             captionContent="UX Design Process"
           />
+          <Paragraph>
+            The most challenging page was the Wine Detail page; I needed to
+            balance all the informations. Tasting sensations, product aesthetics
+            and winemaking curiosities had to be displayed within the viewport
+            or be reachable with a minimal scrolling.
+          </Paragraph>
         </Chapter>
       </CaseStudyLayout>
     </>

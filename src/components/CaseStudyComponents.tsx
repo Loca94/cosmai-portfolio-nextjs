@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Balancer from 'react-wrap-balancer';
 import Container from '@/components/Container';
 import {
@@ -25,7 +25,6 @@ import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import { GrayscaleTransitionImage } from '@/components/animations/GrayscaleTransitionImage';
 import { Card, CardContent, CardDescription } from '@/components/ui/Card';
 import { Badge, BadgeList, BadgeListItem } from '@/components/ui/Badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import { UserPersona } from '@/lib/types';
 
 export type ImgProp = {
@@ -249,7 +248,9 @@ function Prose({ children }: { children: React.ReactNode }) {
 
 function Paragraph({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-4 text-base leading-relaxed text-slate-400">{children}</p>
+    <p className="mb-4 text-sm leading-relaxed text-slate-400 sm:text-base">
+      {children}
+    </p>
   );
 }
 
@@ -284,6 +285,7 @@ function CaseStudyImage({
   margins = true,
   rounded = true,
   captionContent,
+  imgNumber,
   className,
 }: {
   src: string | StaticImageData;
@@ -292,6 +294,7 @@ function CaseStudyImage({
   margins?: boolean;
   rounded?: boolean;
   captionContent?: string;
+  imgNumber?: string;
   className?: string;
 }) {
   return (
@@ -311,9 +314,9 @@ function CaseStudyImage({
         />
       </div>
       {captionContent && (
-        <div className="mt-4 flex items-center justify-end space-x-4 text-sm text-slate-500">
+        <div className="mt-4 flex items-center justify-end space-x-2 text-sm text-slate-500">
           <span>{captionContent}</span>
-          <Badge>Img</Badge>
+          <Badge className="text-xs">img {imgNumber}</Badge>
         </div>
       )}
     </div>
@@ -351,10 +354,12 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
     content?: string;
   }) => (
     <Card
-      className={`flex aspect-square items-center justify-center rounded p-4 ${toHighlight ? 'bg-slate-200' : ''}`}
+      className={`flex aspect-square items-center justify-center rounded p-6 sm:p-4 ${toHighlight ? 'bg-slate-200' : ''}`}
     >
       {toHighlight ? (
-        <p className={`text-center font-semibold leading-tight text-slate-700`}>
+        <p
+          className={`text-center text-sm font-bold leading-tight text-slate-700`}
+        >
           {content}
         </p>
       ) : (
@@ -375,7 +380,7 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
     let highlightCount = 0;
 
     return (
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
+      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
         {Array.from({ length: numberOfItems }, (_, index) => {
           const isHighlight = indexesToHighlight.includes(index);
           const content = isHighlight
@@ -437,19 +442,18 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
 
 function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
   return (
-    <FadeInStagger faster>
+    <FadeInStagger>
       <div className="grid gap-4 md:grid-cols-2">
-        <FadeIn>
+        <FadeIn className="h-full">
           <Card className="h-full">
             <CardContent className="flex h-full items-center pt-4">
               <div className="flex flex-col justify-center space-y-4">
                 {/* User Persona */}
                 <div className="flex">
-                  <CaseStudyImage
+                  <Image
                     src={userPersona.avatarSrc}
                     alt="User Persona Matteo"
                     className="h-32 w-32"
-                    margins={false}
                   />
                   <div className="flex flex-col items-center justify-center p-4">
                     <h3 className="mb-2 text-2xl font-bold">User Persona</h3>
@@ -477,8 +481,8 @@ function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
         </FadeIn>
         <div className="flex flex-col space-y-4">
           {/* User Persona Goals */}
-          <FadeIn>
-            <Card>
+          <FadeIn className="h-full">
+            <Card className="h-full">
               <CardContent className="pt-4 text-slate-400">
                 <div className="flex flex-col space-y-4">
                   <Badge variant="darker" className="w-fit text-slate-400">
@@ -497,8 +501,8 @@ function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
           </FadeIn>
 
           {/* User Persona Frustrations */}
-          <FadeIn>
-            <Card>
+          <FadeIn className="h-full">
+            <Card className="h-full">
               <CardContent className="pt-4 text-slate-400">
                 <div className="flex flex-col space-y-4">
                   <Badge variant="darker" className="w-fit text-slate-400">

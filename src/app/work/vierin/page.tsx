@@ -10,18 +10,27 @@ import {
   CaseStudyImage,
   UserObjectivesGrid,
   CaseStudyLink,
+  BoldText,
 } from '@/components/CaseStudyComponents';
-import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
 } from '@/components/ui/Card';
-import heroImage1 from '@/images/case-study/vierin/hero-1.webp';
-import heroImage2 from '@/images/case-study/vierin/hero-2.webp';
-import heroImage3 from '@/images/case-study/vierin/hero-3.webp';
-import heroImage4 from '@/images/case-study/vierin/hero-4.webp';
+import { UserPersona } from '@/lib/types';
+import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
+import UserPersonaTabs from '@/components/UserPersonaTabs';
+import { Badge } from '@/components/ui/Badge';
+import heroImg1 from '@/images/case-study/vierin/hero-1.webp';
+import heroImg2 from '@/images/case-study/vierin/hero-2.webp';
+import heroImg3 from '@/images/case-study/vierin/hero-3.webp';
+import heroImg4 from '@/images/case-study/vierin/hero-4.webp';
+import heroMobileImg1 from '@/images/case-study/vierin/hero-mobile-1.webp';
+import heroMobileImg2 from '@/images/case-study/vierin/hero-mobile-2.webp';
+import monicaImg from '@/images/case-study/vierin/monica.webp';
+import georgeImg from '@/images/case-study/vierin/george.webp';
+import matildaImg from '@/images/case-study/vierin/matilda.webp';
 import rankingKeywordsImg from '@/images/case-study/vierin/ranking-keywords.webp';
 import userFlowImg from '@/images/case-study/vierin/user-flow.webp';
 import balanceTextVisualImg from '@/images/case-study/vierin/balance-text-visual.webp';
@@ -35,36 +44,47 @@ import fontsUsedImg from '@/images/case-study/vierin/fonts-used.webp';
 import contactImg from '@/images/case-study/vierin/contact.webp';
 import floatingBtnImg from '@/images/case-study/vierin/floating-button.webp';
 import reviewsImg from '@/images/case-study/vierin/fonts-used.webp';
-import exampleImage from '@/images/example-image.jpeg';
-import { UserPersona } from '@/lib/types';
-import userPersonaMatteo from '@/images/case-study/barro/dibarro-avatar-matteo.png';
-import UserPersonaTabs from '@/components/UserPersonaTabs';
-import { Badge } from '@/components/ui/Badge';
 
 const userPersonas: UserPersona[] = [
   {
     fullName: 'Monica Petti',
-    avatarSrc: userPersonaMatteo,
+    avatarSrc: monicaImg,
     background:
       "Monica is a working mum, she is usually really tired, constantly divided among job, household chores and childcare. She is overprotective towards her children therefore she doesn’t trust a service in information's absence or inaccessibility. She needs to quickly understand because she lacks time and energies. Her son has a tooth decay.",
-    goals: ['goal 1', 'goal 2', 'goal 3'],
-    frustrations: ['frustration 1', 'frustration 2', 'frustration 3'],
+    goals: [
+      'Quickly find dental services available',
+      'Schedule an appointment for her son',
+      'Directly communicate with the dentist',
+    ],
+    frustrations: [
+      'Navigate through multiple pages',
+      'Too much text is overwhelming',
+      'Time consuming activities',
+    ],
   },
   {
-    fullName: 'Giorgio',
-    avatarSrc: userPersonaMatteo,
+    fullName: 'Giorgio Meier',
+    avatarSrc: georgeImg,
     background:
-      "Monica is a working mum, she is usually really tired, constantly divided among job, household chores and childcare. She is overprotective towards her children therefore she doesn’t trust a service in information's absence or inaccessibility. She needs to quickly understand because she lacks time and energies. Her son has a tooth decay.",
-    goals: ['goal 1', 'goal 2', 'goal 3'],
-    frustrations: ['frustration 1', 'frustration 2', 'frustration 3'],
+      'George is a Swiss architect. He’s often travelling among Italy, France and Germany. He has a second home in Valle d’Aosta. He loves eating crunchy foods and mountain-biking. He has an irrational fear of blood. During his holidays he accidentally broke one of his front tooth. He needs urgent treatment/care.',
+    goals: [
+      'Quickly make an appointment ',
+      'Send tooth’s photo via WhatsApp',
+      'Get prompt advices',
+    ],
+    frustrations: ['Anxious about dental procedures', 'Get delayed responses'],
   },
   {
-    fullName: 'Lorenzo',
-    avatarSrc: userPersonaMatteo,
+    fullName: 'Matilda Lorenzi',
+    avatarSrc: matildaImg,
     background:
-      "Monica is a working mum, she is usually really tired, constantly divided among job, household chores and childcare. She is overprotective towards her children therefore she doesn’t trust a service in information's absence or inaccessibility. She needs to quickly understand because she lacks time and energies. Her son has a tooth decay.",
-    goals: ['goal 1', 'goal 2', 'goal 3'],
-    frustrations: ['frustration 1', 'frustration 2', 'frustration 3'],
+      'Matilda is a university student. She is young, self-absorbed and social network addicted. She spends most of her time doing self-care or studying. She thinks that her lips are too thin. She recently discovered about the lip filler treatment and she wants to try it. She needs to find a place where this service is provided.',
+    goals: [
+      'Ensure there is a qualified team',
+      'Book appointments via WhatsApp',
+      'Lip filler effect duration info',
+    ],
+    frustrations: ['Not finding reviews', 'Book appointments by phone call'],
   },
 ];
 
@@ -83,17 +103,17 @@ export default function DentalWebsite() {
         <MobileOverlappingImages
           className="mt-9 md:hidden"
           images={[
-            { src: heroImage2, alt: 'Hero section of the website' },
-            { src: heroImage3, alt: 'Conservative Dental treatment card' },
+            { src: heroMobileImg1, alt: 'Hero section of the website' },
+            { src: heroMobileImg2, alt: 'Conservative Dental treatment card' },
           ]}
         />
         <DesktopBentoGrid
           className="mt-12 hidden md:block"
           images={[
-            { src: heroImage1, alt: 'Hero section of Vierin website' },
-            { src: heroImage2, alt: "Happy customer's reviews" },
-            { src: heroImage3, alt: 'Esay contact section' },
-            { src: heroImage4, alt: 'Dental office treatments sections' },
+            { src: heroImg1, alt: 'Hero section of Vierin website' },
+            { src: heroImg2, alt: "Happy customer's reviews" },
+            { src: heroImg3, alt: 'Esay contact section' },
+            { src: heroImg4, alt: 'Dental office treatments sections' },
           ]}
         />
 
@@ -135,28 +155,32 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              Meeting with the client to gather all technical information was
-              crucial in defining the target audience and visual elements. The
-              client wanted to have an original approach, evincing the style he
-              was looking for.
+              <BoldText>
+                Meeting with the client to gather all technical information
+              </BoldText>{' '}
+              was crucial in defining the target audience and visual elements.
+              The client wanted to have an original approach, evincing the style
+              he was looking for.
             </Paragraph>
             <Paragraph>
-              After conducting a competitor’s analysis, I discovered some common
-              traits among their websites. All of them shared a large number of
-              pages and an old forum-like layout, with a lot of explanatory text
-              surrounded by stock photos. This type of website usually draws the
-              self-diagnosed users but not necessarily costumers.
+              After conducting a competitor’s analysis, I discovered some{' '}
+              <BoldText>common traits among their websites</BoldText>. All of
+              them shared a large number of pages and an old forum-like layout,
+              with a lot of explanatory text surrounded by stock photos. This
+              type of website usually draws the self-diagnosed users but not
+              necessarily costumers.
             </Paragraph>
             <Paragraph>
-              The website was designed for patients seeking oral hygiene,
+              The website had to be designed for patients seeking oral hygiene,
               individuals in urgent need of dental procedures, parents bringing
               their children, and those interested in cosmetic treatments like
-              lip fillers. All of them aim for quick answers and effortless
-              solutions, due either to a great pain or a lack of time.
+              lip fillers. All of them aim for{' '}
+              <BoldText>quick answers and effortless solutions</BoldText>, due
+              either to a great pain or a lack of time.
             </Paragraph>
             <Paragraph>
               Utilising the personal interview survey method I was able to
-              gather in-depth information by exploring the detailed responses of
+              gather in-depth information by exploring all the responses of
               these diverse user involved.
             </Paragraph>
           </Prose>
@@ -180,33 +204,36 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              Running the heuristic research, I thought through possible
-              usability choices accordingly. The way people perceive a
-              website is influenced by strategic text’s usage, the terminology,
-              its visual style and the amount of visuals elements. To achieve a
-              reassuring website, I needed to carefully balance the text and the
-              visuals, providing context, narration, demonstration and emotions.
+              Running the heuristic research, I thought through{' '}
+              <BoldText>possible usability choices accordingly</BoldText>. The
+              way people perceive a website is influenced by strategic text’s
+              usage, the terminology, its visual style and the amount of visuals
+              elements. To achieve a reassuring website, I needed to{' '}
+              <BoldText>carefully balance the text and the visuals</BoldText>,
+              providing context, narration, demonstration and emotions.
             </Paragraph>
             <Paragraph>
               Deciding the narration’s tone, I considered to use whether
-              detailed descriptions or concise explanations, evaluating their
-              pros and cons.
+              detailed descriptions or concise explanations,{' '}
+              <BoldText>evaluating their pros and cons</BoldText>.
             </Paragraph>
           </Prose>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4">
             {/* Detailed descriptions */}
             <div className="space-y-4">
-              <h3 className="text-sm text-slate-400">Detailed descriptions</h3>
+              <h3 className="text-orange-accent text-sm">
+                Detailed descriptions
+              </h3>
               <Card inverted>
                 <CardHeader>
                   <Badge>Pros</Badge>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
-                    The texts become precise and in-depth descriptions of the
-                    treatment process
+                    The texts become precise and in-depth descriptions
+                    <br className="hidden lg:block" /> of the treatment process
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -225,7 +252,9 @@ export default function DentalWebsite() {
             </div>
             {/* Concise explanations */}
             <div className="space-y-4">
-              <h3 className="text-sm text-slate-400">Concise explanations</h3>
+              <h3 className="text-orange-accent text-sm">
+                Concise explanations
+              </h3>
               <Card inverted>
                 <CardHeader>
                   <Badge>Pros</Badge>
@@ -233,6 +262,7 @@ export default function DentalWebsite() {
                 <CardContent>
                   <CardDescription>
                     The texts define the treatments in few completely
+                    <br className="hidden lg:block" />
                     understandable paragraphs
                   </CardDescription>
                 </CardContent>
@@ -244,7 +274,8 @@ export default function DentalWebsite() {
                 <CardContent>
                   <CardDescription>
                     Patients aren’t aware of each decision or action the
-                    healthcare professional takes
+                    <br className="hidden lg:block" /> healthcare professional
+                    takes
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -254,7 +285,10 @@ export default function DentalWebsite() {
           <Prose>
             <Paragraph>
               Contemplating the advantages and disadvantages with a regard for
-              intelligibility, concise explanations were the most viable option
+              intelligibility,{' '}
+              <BoldText>
+                concise explanations were the most viable option
+              </BoldText>{' '}
               for the treatment section.
             </Paragraph>
             <Paragraph>
@@ -266,16 +300,21 @@ export default function DentalWebsite() {
             </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={rankingKeywordsImg} />
+          <CaseStudyImage
+            src={rankingKeywordsImg}
+            alt="Step by step process to find the website using Google"
+            captionContent="Keyboard's implementation benefits"
+            imgNumber={'1.0'}
+          />
 
           <Prose>
             <Paragraph>
-              After reviewing the client’s and target user’ aim, realistic
-              photos couldn’t possibly be used as visuals; dental surgery's
-              photos are harsh, in many cases blood can be visible and some
-              people find it disturbing. Customised illustrations could
-              pleasantly represent each treatment through expressive characters
-              and simple actions.
+              After reviewing the client’s and target users’ aim, I had to
+              discard realistic photos as visuals' option in favour of animated
+              sequenes; dental surgery's photos are harsh, in many cases blood
+              can be visible and some people find it disturbing. On the other
+              hand, customised illustrations could pleasantly represent each
+              treatment through expressive characters and simple actions.
             </Paragraph>
           </Prose>
         </Chapter>
@@ -290,37 +329,29 @@ export default function DentalWebsite() {
                 'Information architecture',
                 'User flows',
                 'Typography',
-                'Iconography',
-                'Color Theory',
+                'Visual design',
                 'Wireframes',
               ]}
             />
           </div>
 
           <Prose>
-            <Paragraph>
-              I needed to understand the clinic’s target audience and their
-              needs. I conducted a competitive analysis to identify the
-              strengths and weaknesses of other dental clinics. This helped me
-              to understand the market and the expectations of potential
-              patients.
-            </Paragraph>
-            <Paragraph>
-              The image below illustrates the Information Architecture and User
-              Flow diagrams developed for the project:
-            </Paragraph>
+            <Paragraph>PARAGRAFO DA RIVEDERE</Paragraph>
+            <Paragraph>PARAGRAFO DA RIVEDERE</Paragraph>
           </Prose>
 
           <CaseStudyImage
             src={userFlowImg}
             alt="User Flow of the website"
             captionContent="User Flow"
+            imgNumber="2.0"
           />
 
           <CaseStudyImage
             src={balanceTextVisualImg}
-            alt="Skeleton prototype of the homepage where is presented the balance between text and visual"
-            captionContent="Balance between text and visual"
+            alt="Skeleton prototype of the homepage where is presented the balance between text and visuals"
+            captionContent="Balancing text and visuals"
+            imgNumber="2.1"
           />
 
           <Prose>
@@ -334,36 +365,27 @@ export default function DentalWebsite() {
           <CaseStudyImage
             src={heroVisualImg}
             alt="Hero image with it's color palette"
+            captionContent="Hero visual"
+            imgNumber="2.2"
           />
 
           <Prose>
             <Paragraph>
               To enable users to build familiarity with who will assist them,
               the Dental Office introduces its team, providing each practitioner
-              with a profile card.
+              with a profile card, comprehensive of role, name and photo.
             </Paragraph>
             <Paragraph>
-              <span className="text-indigo-400">
-                Given my expertise with the Adobe suite, I edited the photos
-                using Adobe Photoshop.
-                <br />
-                <br />
-                What I did
-                <br />
-                - Color correction of each profile photo.
-                <br />
-                - Ensure uniform lighting across all images.
-                <br />
-                - Retouch minor imperfections to maintain a professional
-                appearance.
-                <br />
-              </span>
+              I edited the photos in Adobe Photoshop, enhancing them through
+              colour correction and ensuring uniform lighting.
             </Paragraph>
           </Prose>
 
           <CaseStudyImage
             src={photoshopColorCorrectionImg}
             alt="Photoshop application while doing color correction"
+            captionContent="Team profile cards photos' colour correction"
+            imgNumber="2.3"
           />
 
           <Prose>
