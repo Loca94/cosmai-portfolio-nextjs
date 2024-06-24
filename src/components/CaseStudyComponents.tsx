@@ -270,7 +270,7 @@ function CaseStudyLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-orange-400 hover:underline"
+      className="text-orange-accent hover:underline"
     >
       {children}
     </a>

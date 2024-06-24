@@ -223,7 +223,7 @@ export default function DentalWebsite() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4">
             {/* Detailed descriptions */}
             <div className="space-y-4">
-              <h3 className="text-orange-accent text-sm">
+              <h3 className="text-sm text-orange-accent">
                 Detailed descriptions
               </h3>
               <Card inverted>
@@ -252,7 +252,7 @@ export default function DentalWebsite() {
             </div>
             {/* Concise explanations */}
             <div className="space-y-4">
-              <h3 className="text-orange-accent text-sm">
+              <h3 className="text-sm text-orange-accent">
                 Concise explanations
               </h3>
               <Card inverted>
@@ -336,8 +336,14 @@ export default function DentalWebsite() {
           </div>
 
           <Prose>
-            <Paragraph>PARAGRAFO DA RIVEDERE</Paragraph>
-            <Paragraph>PARAGRAFO DA RIVEDERE</Paragraph>
+            <Paragraph>
+              Once the connection was set and decisions taken, it was time to{' '}
+              <BoldText>
+                meet the client’s and potential patients’ expectations
+              </BoldText>
+              , designing the informations’ structure and the experience for the
+              user.
+            </Paragraph>
           </Prose>
 
           <CaseStudyImage
@@ -376,8 +382,10 @@ export default function DentalWebsite() {
               with a profile card, comprehensive of role, name and photo.
             </Paragraph>
             <Paragraph>
-              I edited the photos in Adobe Photoshop, enhancing them through
-              colour correction and ensuring uniform lighting.
+              Aiming for the best achievable outcome, I edited the profile
+              photos in Adobe Photoshop, retouching minor imperfections,
+              enhancing them through colour correction and ensuring uniform
+              lighting.
             </Paragraph>
           </Prose>
 
@@ -396,7 +404,12 @@ export default function DentalWebsite() {
             </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={treatmentCardsImg} />
+          <CaseStudyImage
+            src={treatmentCardsImg}
+            alt="UI of the treatment cards"
+            captionContent="Treatment card UI"
+            imgNumber="2.4"
+          />
 
           <Prose>
             <Paragraph>
@@ -408,58 +421,82 @@ export default function DentalWebsite() {
             </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={animationStepsImg} />
+          <CaseStudyImage
+            src={animationStepsImg}
+            alt="Four phases of an animations"
+            captionContent="Animation 4 states process"
+            imgNumber="2.5"
+          />
 
           <Prose>
             <Paragraph>
-              <span className="text-indigo-400">
-                The icons were designed in Illustrator and their animations were
-                developed in After Effects. To minimize file size, I used{' '}
-                <CaseStudyLink href="https://exchange.adobe.com/apps/cc/12557/bodymovin">
-                  Bodymovin
-                </CaseStudyLink>
-                , a Lottie plugin, to export each animation individually as a
-                lightweight JSON file, ensuring efficient animations on the
-                webpage.
-              </span>
+              The icons were designed in Illustrator and their animations were
+              developed in After Effects. In order to minimize the file size, I
+              used the Lottie plugin{' '}
+              <CaseStudyLink href="https://exchange.adobe.com/apps/cc/12557/bodymovin">
+                Bodymovin
+              </CaseStudyLink>{' '}
+              to export each sequence individually as a lightweight JSON file.
             </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={afterEffectsPluginImg} />
+          <CaseStudyImage
+            src={afterEffectsPluginImg}
+            alt="Layout fo the Bodymovin plugin"
+            captionContent="Bodymovin plugin for After Effects"
+            imgNumber="2.6"
+          />
 
           <Prose>
             <Paragraph>
               Unfortunately the plugin doesn’t support many After Effects’
               features yet. It clearly limited my range of action but it
               challenged me to animate all the elements using the path shape
-              modifier and the transform features.
+              modifier and the transform features. All the light weighted
+              animations piled up, each reaching a better optimisation’s level
+              for the webpage in the deliver stage.
             </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={afterEffectsFeaturesImg} />
+          <CaseStudyImage
+            src={afterEffectsFeaturesImg}
+            alt="After Effects' features used"
+            captionContent="After Effects' features used"
+            imgNumber="2.7"
+          />
 
           <Prose>
             <Paragraph>
-              <span className="text-orange-400">
-                By incorporating a rounded sans-serif font, a color palette
-                consisting of blue-gray with hints of light teal, and employing
-                a small border radius, I was able to achieve a design that
-                closely aligned with my vision.
-              </span>
+              When choosing typefaces, I considered possible emotive responses
+              to their letterforms and if they included legible details,
+              multiple weights and styles. I selected two fonts that improved
+              and aligned with the overall style; a rounded sans-serif font
+              meant for display typography and its non-rounded terminal version.
             </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={fontsUsedImg} />
+          <CaseStudyImage
+            src={fontsUsedImg}
+            alt="Fonts' usage in home screen"
+            captionContent="Fonts' usage in home screen"
+            imgNumber="2.8"
+          />
 
           <Prose>
             <Paragraph>
-              To facilitate user interactions, quick action links such as
-              contact the Dental Office are conveniently placed on the top nav
-              bar.
+              To facilitate user access to informations, I placed on the top nav
+              bar quick action links, such as contact. These links on user’s
+              click scroll to the relative section, saving user’s time in the
+              information’s research.
             </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={contactImg} />
+          <CaseStudyImage
+            src={contactImg}
+            alt="Nav bar quick action links"
+            captionContent="Nav bar quick action links"
+            imgNumber="2.9"
+          />
 
           <Prose>
             <Paragraph>
@@ -470,7 +507,12 @@ export default function DentalWebsite() {
             </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={floatingBtnImg} />
+          <CaseStudyImage
+            src={floatingBtnImg}
+            alt="After Effects’ animations flow"
+            captionContent="After Effects’ animations flow"
+            imgNumber="2.10"
+          />
         </Chapter>
 
         <Chapter>
@@ -488,10 +530,55 @@ export default function DentalWebsite() {
           </div>
 
           <Prose>
-            <Paragraph>QUI VA AGGIUNTO IL PARAGRAFO</Paragraph>
+            <Paragraph>
+              After testing the prototypes I examined the user’s aim one more
+              time. By visiting the website, the user had to gain reassurance
+              and feel confident about the dental clinic’s ability to meet their
+              needs. Thus building trust was essential.
+            </Paragraph>
+            <Paragraph>
+              Luckily the Dental clinic had always encouraged patients to leave
+              reviews, reaching a rating of 4.9 on Google Maps. Carefully
+              selecting some positive reviews, I featured a testimonial section
+              with different patients’ standpoints about the clinic. To this
+              extent I depicted different situations, fulfilling the user’s
+              sense of belonging and demonstrating the dental office's prestige.
+            </Paragraph>
           </Prose>
 
-          <CaseStudyImage src={reviewsImg} />
+          <CaseStudyImage
+            src={reviewsImg}
+            alt="Prototype of the testimonial section"
+            captionContent="Testimonial section"
+            imgNumber="3.0"
+          />
+        </Chapter>
+
+        <Chapter>
+          <div>
+            <Prose>
+              <ChapterTitle>Deliver</ChapterTitle>
+            </Prose>
+            <AnimatedBadgeList
+              badges={['Testing Demo', 'Website deployment']}
+            />
+          </div>
+
+          <Prose>
+            <Paragraph>
+              I collaborated closely with the developer, visioned the final
+              figma file, gave support in development and discussed various
+              optimisations in order to have faster load times and to rank
+              higher in search engine results.
+            </Paragraph>
+            <Paragraph>
+              The website was successfully deployed on the following{' '}
+              <CaseStudyLink href="https://www.dentista-aosta.com/">
+                link
+              </CaseStudyLink>
+              .
+            </Paragraph>
+          </Prose>
         </Chapter>
       </CaseStudyLayout>
     </>
