@@ -307,7 +307,7 @@ function CaseStudyImage({
         />
       </div>
       {captionContent && (
-        <div className="mt-4 flex items-center justify-end space-x-2 text-xs text-slate-500 sm:text-sm">
+        <div className="mt-2 flex items-center justify-end space-x-2 text-xs text-slate-500 sm:mt-4 sm:text-sm">
           <span>{captionContent}</span>
           <Badge className="text-xs">img {imgNumber}</Badge>
         </div>
