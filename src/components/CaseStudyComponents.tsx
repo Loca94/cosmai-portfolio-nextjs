@@ -13,13 +13,6 @@ import {
   ShareIcon,
   SideBarIcon,
 } from '@/components/Icons';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/Carousel';
 import StickyProjectNavigator from '@/components/StickyProjectNavigator';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import { GrayscaleTransitionImage } from '@/components/animations/GrayscaleTransitionImage';
@@ -314,34 +307,12 @@ function CaseStudyImage({
         />
       </div>
       {captionContent && (
-        <div className="mt-4 flex items-center justify-end space-x-2 text-sm text-slate-500">
+        <div className="mt-4 flex items-center justify-end space-x-2 text-xs text-slate-500 sm:text-sm">
           <span>{captionContent}</span>
           <Badge className="text-xs">img {imgNumber}</Badge>
         </div>
       )}
     </div>
-  );
-}
-
-function CaseStudyCarousel({
-  images,
-  className,
-}: {
-  images: ImgProp[];
-  className?: string;
-}) {
-  return (
-    <Carousel className={cn('w-full', className)}>
-      <CarouselPrevious />
-      <CarouselContent>
-        {images.map((image) => (
-          <CarouselItem>
-            <CaseStudyImage src={image.src} alt={image.alt} />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselNext />
-    </Carousel>
   );
 }
 
@@ -527,7 +498,6 @@ function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
 
 export {
   BoldText,
-  CaseStudyCarousel,
   CaseStudyImage,
   CaseStudyLayout,
   CaseStudyLink,

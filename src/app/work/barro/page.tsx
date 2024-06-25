@@ -8,10 +8,10 @@ import {
   Prose,
   CaseStudyLayout,
   CaseStudyImage,
-  CaseStudyCarousel,
   UserObjectivesGrid,
   BoldText,
   UserPersonaCard,
+  CaseStudyLink,
 } from '@/components/CaseStudyComponents';
 import {
   Card,
@@ -21,6 +21,7 @@ import {
   CardTitle,
 } from '@/components/ui/Card';
 import { UserPersona } from '@/lib/types';
+import { Badge } from '@/components/ui/Badge';
 import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
 import heroImg1 from '@/images/case-study/barro/hero-1.webp';
 import heroImg2 from '@/images/case-study/barro/hero-2.webp';
@@ -32,17 +33,11 @@ import oldWebsiteIssuesImg from '@/images/case-study/barro/old-website-issues.we
 import newWebsiteImprovementsImg from '@/images/case-study/barro/new-website-improvements.webp';
 import matteoImg from '@/images/case-study/barro/matteo.webp';
 import informationArchitectureImg from '@/images/case-study/barro/information-architecture-flow.webp';
-
-// const challengeImages = [
-//   {
-//     src: exampleImage3,
-//     alt: 'Old website flaws and outdated design',
-//   },
-//   {
-//     src: exampleImage4,
-//     alt: 'New website design for Di Barròs winery',
-//   },
-// ];
+import wineDetailPageImg from '@/images/case-study/barro/wine-detail-page.webp';
+import fontsImg from '@/images/case-study/barro/fonts.webp';
+import homepageContactsIterationImg from '@/images/case-study/barro/homepage-contacts-iteration.webp';
+import mapImg from '@/images/case-study/barro/map.webp';
+import accessibilityAndPerformanceImg from '@/images/case-study/barro/accessibility-and-performance.webp';
 
 const userPersona: UserPersona = {
   fullName: 'Matteo Rossi',
@@ -50,12 +45,12 @@ const userPersona: UserPersona = {
   background:
     'Matteo is wine enthusiast and a restaurant chef in Milan. He usually plans menus, ensuring that the high-quality food is well paired with a wine.',
   goals: [
-    'Discover new and exceptional wines to feature in his restaurant and pair with his menus.',
-    'Build relationships with reputable winemakers and vineyard owners.',
+    'Discover new and exceptional wines to feature in his restaurant and pair with his menus',
+    'Build relationships with reputable winemakers and vineyard owners',
   ],
   frustrations: [
-    'Difficulty finding unique, high-quality wines that stand out from the competition.',
-    'Limited time to research and taste new wines due to demanding work schedule.',
+    'Difficulty finding unique, high-quality wines that stand out from the competition',
+    'Limited time to research and taste new wines due to demanding work schedule',
   ],
 };
 
@@ -104,7 +99,7 @@ export default function WineryWebsite() {
             <Paragraph>
               Their previous webpage, dating back to 2011, was outdated and did
               not meet modern web standards. They needed a new website and
-              sought to communicate their presence and the story behind this
+              sought to communicate their products and the story behind this
               family tradition.
             </Paragraph>
             <Paragraph>
@@ -167,8 +162,8 @@ export default function WineryWebsite() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Through the web page there were informations no longer
-                  helpful, non reusable. <br />
+                  Through the web page there were informations no longer helpful
+                  or non-reusable. <br />
                   Moreover, the combination of a bad information architecture
                   and an absent hierarchy in typography turned into a huge
                   impediment.
@@ -242,14 +237,18 @@ export default function WineryWebsite() {
             </Card>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <CaseStudyImage
               src={oldWebsiteIssuesImg}
               alt="Old website issues"
+              margins={false}
             />
             <CaseStudyImage
               src={newWebsiteImprovementsImg}
               alt="New website improvements"
+              margins={false}
+              captionContent="Usability and accessibility issues adressed"
+              imgNumber="1.0"
             />
           </div>
 
@@ -297,24 +296,226 @@ export default function WineryWebsite() {
 
           <Prose>
             <Paragraph>
-              The information architecture and user flow were designed to be
-              intuitive and easy to navigate. A clear hierarchy had to guide the
-              user through the website, ensuring that he could easily find the
-              information needed.
+              <span className="text-orange-accent">
+                The information architecture and user flow were designed to be
+                intuitive and easy to navigate. A clear hierarchy had to guide
+                the user through the website, ensuring that he could easily find
+                the information needed.
+              </span>
             </Paragraph>
           </Prose>
           <CaseStudyImage
-            className="w-full md:hidden"
             src={informationArchitectureImg}
-            alt="Information architecture of the website"
-            captionContent="UX Design Process"
+            alt="General-IA flow of the website"
+            captionContent="General-IA flow"
+            imgNumber="2.0"
           />
-          <Paragraph>
-            The most challenging page was the Wine Detail page; I needed to
-            balance all the informations. Tasting sensations, product aesthetics
-            and winemaking curiosities had to be displayed within the viewport
-            or be reachable with a minimal scrolling.
-          </Paragraph>
+          <Prose>
+            <Paragraph>
+              The most challenging page was the Wine Detail page; I needed to
+              balance all the informations. Tasting sensations, product
+              aesthetics and winemaking curiosities had to be displayed within
+              the viewport or be reachable with a minimal scrolling.
+            </Paragraph>
+          </Prose>
+
+          <Prose>
+            <div className="flex flex-col space-y-2">
+              <Badge variant="orange">Solution</Badge>
+              <div className="rounded border border-dashed border-orange-accent px-6 py-2 text-sm sm:px-8 sm:py-4">
+                <ol
+                  role="list"
+                  className="divide-y divide-dashed divide-orange-accent"
+                >
+                  <li className="flex items-start py-4">
+                    <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                      1
+                    </span>
+                    <span className="ml-4 text-slate-400">
+                      <BoldText>Present the product</BoldText> with concise
+                      tasting notes, well depicting each wine flavours and
+                      aromas and attracting interested customers
+                    </span>
+                  </li>
+                  <li className="flex items-start py-4">
+                    <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                      2
+                    </span>
+                    <span className="ml-4 text-slate-400">
+                      <BoldText>Show the product</BoldText> and highlight it
+                      with a subtle animated stroke beneath the bottle in order
+                      to make the label rememberable
+                    </span>
+                  </li>
+                  <li className="flex items-start py-4">
+                    <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                      3
+                    </span>
+                    <span className="ml-4 text-slate-400">
+                      <BoldText>Allow the user to learn more</BoldText> through
+                      collapsible sections, expandable as needed
+                    </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </Prose>
+
+          <Prose>
+            <Paragraph>
+              This way I ensured an efficient use of space and a clear
+              information navigation.
+            </Paragraph>
+          </Prose>
+
+          <CaseStudyImage
+            src={wineDetailPageImg}
+            alt="Wine detail page"
+            captionContent="Nav bar quick action links"
+            imgNumber="2.1"
+          />
+
+          <Prose>
+            <Paragraph>
+              Taking into account the fonts used on the wine bottle labels, I
+              looked for display fonts that suited their style. I used a Serif
+              for headings and a Sans for paragraphs to create a good balance.
+              In order to create a seamless experience for users the paragraphs
+              required to stand out: a{' '}
+              <BoldText>grayscale colour palette</BoldText> and{' '}
+              <BoldText>above-average text dimensions</BoldText> ensured a
+              comfortable and smooth reading; ample spacing between each block
+              made each section appear shorter and approachable.
+            </Paragraph>
+            <Paragraph>
+              In a mainly monochromatic design, colours stuck out from
+              supporting photos.
+            </Paragraph>
+          </Prose>
+
+          <div className="flex flex-col space-y-2">
+            <Badge>Palette</Badge>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+              <div className="flex h-16 w-full items-center justify-center rounded bg-white text-slate-600">
+                #FFFFF
+              </div>
+              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-100 text-slate-600">
+                #F4F4F5
+              </div>
+              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-300 text-slate-600">
+                #D4D4D8
+              </div>
+              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-400 text-white">
+                #A1A1AA
+              </div>
+              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-600 text-white">
+                #52525B
+              </div>
+              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-700 text-white">
+                #3F3F46
+              </div>
+              <div className="flex h-16 w-full items-center justify-center rounded bg-[#1C1C20] text-white">
+                #1C1C20
+              </div>
+              <div className="flex h-16 w-full items-center justify-center rounded bg-[#0A0A0C] text-white">
+                #0A0A0C
+              </div>
+            </div>
+          </div>
+
+          <CaseStudyImage
+            src={fontsImg}
+            alt="Typography"
+            captionContent="Typography"
+            imgNumber="2.2"
+          />
+        </Chapter>
+
+        <Chapter>
+          <div>
+            <Prose>
+              <ChapterTitle>Polish</ChapterTitle>
+            </Prose>
+            <AnimatedBadgeList
+              badges={[
+                'Prototyping',
+                'Testing prototypes',
+                'Face To Face survey',
+                'User persona',
+              ]}
+            />
+          </div>
+
+          <Prose>
+            <Paragraph>
+              Designing prototypes was an iterative process that evolved with
+              each meeting as I had to consider the user standpoint and the
+              client concerns. Below a few examples on how the Homepage and the
+              Contact page changed over time.
+            </Paragraph>
+          </Prose>
+
+          <CaseStudyImage
+            src={homepageContactsIterationImg}
+            alt="Homepage and contacts prototypes’ iteration"
+            captionContent="Homepage and contacts prototypes’ iteration"
+            imgNumber="3.0"
+          />
+
+          <Prose>
+            <Paragraph>
+              During the test phase and after other confrontations with the
+              client, a recurring issue emerged;{' '}
+              <BoldText>
+                the winery location wasn’t easy to reach, causing many visitors
+                to get lost
+              </BoldText>
+              . To address this, I implemented both written directions and a map
+              with the correct route highlighted in the contact page.
+            </Paragraph>
+          </Prose>
+
+          <CaseStudyImage
+            src={mapImg}
+            alt="Map custom illustration"
+            captionContent="Creating the map"
+            imgNumber="3.1"
+          />
+        </Chapter>
+
+        <Chapter>
+          <div>
+            <Prose>
+              <ChapterTitle>Deliver</ChapterTitle>
+            </Prose>
+            <AnimatedBadgeList
+              badges={['Testing Demo', 'Website deployment']}
+            />
+          </div>
+
+          <Prose>
+            <Paragraph>
+              When the prototypes were finalised, I shared the Figma project
+              with the frontend developer. We worked closely throughout the
+              development process with accessibility as top priority. We ensured
+              the website followed the best practices, such as incorporating alt
+              text for images and testing the colours’ contrast with
+              accessibility checkers. We aimed to pass the WCAG contrast
+              criteria providing an easy navigation for users with disabilities.
+            </Paragraph>
+            <Paragraph>
+              The website has been deployed at the following{' '}
+              <CaseStudyLink href="https://www.dibarro.com">link</CaseStudyLink>
+              .
+            </Paragraph>
+          </Prose>
+
+          <CaseStudyImage
+            src={accessibilityAndPerformanceImg}
+            alt="Accessibility and performance metrics by Google Lighthouse"
+            captionContent="Testing contrasts with accessibility checkers"
+            imgNumber="4.0"
+          />
         </Chapter>
       </CaseStudyLayout>
     </>

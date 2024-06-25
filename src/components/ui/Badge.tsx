@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { cva } from 'class-variance-authority';
 
-type BadgeVariants = 'default' | 'active' | 'disabled' | 'darker';
+type BadgeVariants = 'default' | 'active' | 'disabled' | 'darker' | 'orange';
 
 const badgeVariants = cva(
   'inline-flex w-fit items-center rounded-full px-2.5 py-1 text-base font-medium transition-colors ease-in-out duration-500',
@@ -12,6 +12,7 @@ const badgeVariants = cva(
         active: 'bg-slate-900 text-slate-200',
         disabled: 'bg-slate-900 text-slate-700',
         darker: 'bg-slate-950 text-slate-200',
+        orange: 'bg-orange-accent text-slate-950',
       },
     },
     defaultVariants: {
