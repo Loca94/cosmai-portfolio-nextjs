@@ -19,7 +19,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'rounded-xl border text-slate-200 shadow',
+      'rounded-lg border text-slate-200 shadow',
       inverted
         ? 'border-slate-400 bg-slate-950'
         : 'border-transparent bg-slate-900',

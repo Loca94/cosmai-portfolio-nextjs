@@ -9,9 +9,9 @@ import {
   CopyIcon,
   PackageIcon,
   PlusIcon,
-  ProfileIcon,
   ShareIcon,
   SideBarIcon,
+  UserThoughtsIcon,
 } from '@/components/Icons';
 import StickyProjectNavigator from '@/components/StickyProjectNavigator';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
@@ -334,7 +334,7 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
           {content}
         </p>
       ) : (
-        <ProfileIcon className={`h-6 w-6 text-slate-400`} />
+        <UserThoughtsIcon className={`h-6 w-6 text-slate-400`} />
       )}
     </Card>
   );

@@ -1,3 +1,29 @@
+function ArrowBendUpLeftIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M236,200a12,12,0,0,1-24,0,84.09,84.09,0,0,0-84-84H61l27.52,27.51a12,12,0,0,1-17,17l-48-48a12,12,0,0,1,0-17l48-48a12,12,0,0,1,17,17L61,92h67A108.12,108.12,0,0,1,236,200Z"></path>
+    </svg>
+  );
+}
+
+function ArrowBendUpRightIcon(props: React.ComponentPropsWithRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M232.49,112.49l-48,48a12,12,0,0,1-17-17L195,116H128a84.09,84.09,0,0,0-84,84,12,12,0,0,1-24,0A108.12,108.12,0,0,1,128,92h67L167.51,64.48a12,12,0,0,1,17-17l48,48A12,12,0,0,1,232.49,112.49Z"></path>
+    </svg>
+  );
+}
+
 function BGIcon(props: React.ComponentPropsWithoutRef<'svg'>): JSX.Element {
   return (
     <svg viewBox="0 0 24 24" {...props}>
@@ -343,28 +369,33 @@ function TextAlignCenterIcon(props: React.ComponentPropsWithRef<'svg'>) {
   );
 }
 
-function ArrowBendUpLeftIcon(props: React.ComponentPropsWithRef<'svg'>) {
+function UserThoughtsIcon(props: React.ComponentPropsWithRef<'svg'>) {
   return (
     <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 256 256"
       {...props}
     >
-      <path d="M236,200a12,12,0,0,1-24,0,84.09,84.09,0,0,0-84-84H61l27.52,27.51a12,12,0,0,1-17,17l-48-48a12,12,0,0,1,0-17l48-48a12,12,0,0,1,17,17L61,92h67A108.12,108.12,0,0,1,236,200Z"></path>
-    </svg>
-  );
-}
-
-function ArrowBendUpRightIcon(props: React.ComponentPropsWithRef<'svg'>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 256 256"
-      {...props}
-    >
-      <path d="M232.49,112.49l-48,48a12,12,0,0,1-17-17L195,116H128a84.09,84.09,0,0,0-84,84,12,12,0,0,1-24,0A108.12,108.12,0,0,1,128,92h67L167.51,64.48a12,12,0,0,1,17-17l48,48A12,12,0,0,1,232.49,112.49Z"></path>
+      <path
+        d="M9.95328 20.25L12.0002 23.1413L14.047 20.25H20.2502V3.75H3.75015V20.25H9.95328Z"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.0002 13.5C13.657 13.5 15.0002 12.1569 15.0002 10.5C15.0002 8.84315 13.657 7.5 12.0002 7.5C10.3433 7.5 9.00015 8.84315 9.00015 10.5C9.00015 12.1569 10.3433 13.5 12.0002 13.5Z"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.50015 15.75C8.0241 15.0514 8.70351 14.4844 9.48458 14.0938C10.2656 13.7033 11.1269 13.5 12.0002 13.5C12.8734 13.5 13.7347 13.7033 14.5157 14.0938C15.2968 14.4844 15.9762 15.0514 16.5002 15.75"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -394,4 +425,5 @@ export {
   TextAlignLeftIcon,
   TextAlignRightIcon,
   UnderlineIcon,
+  UserThoughtsIcon,
 };

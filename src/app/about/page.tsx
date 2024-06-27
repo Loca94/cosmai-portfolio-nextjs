@@ -64,38 +64,38 @@ function MissionSection() {
                 </picture>{' '}
               </CardHeader>
               <CardContent>
-                <Tabs defaultValue="background">
+                <Tabs defaultValue="profile">
                   <TabsList className="grid h-11 w-fit grid-cols-3 [&>*]:h-10">
                     <TabsTrigger
-                      value="background"
+                      value="profile"
                       className="rounded-l border-r border-slate-700"
                     >
-                      <span className="sr-only">Background</span>
-                      <BGIcon className="h-6 w-6" />
+                      <span className="sr-only">Profile</span>
+                      <ProfileCircleIcon className="h-6 w-6" />
                     </TabsTrigger>
                     <TabsTrigger value="interests">
                       <span className="sr-only">Interests</span>
                       <HeartIcon className="h-6 w-6" />
                     </TabsTrigger>
                     <TabsTrigger
-                      value="profile"
+                      value="background"
                       className="rounded-r border-l border-slate-700"
                     >
-                      <span className="sr-only">Profile</span>
-                      <ProfileCircleIcon className="h-6 w-6" />
+                      <span className="sr-only">Background</span>
+                      <BGIcon className="h-6 w-6" />
                     </TabsTrigger>
                   </TabsList>
-                  <TabsContent value="background">
-                    <p className="text-base text-slate-400">
-                      I’m a design enthusiast, an optimistic visionary who
-                      thrives on challenges and sees opportunities in
-                      problem-solving. I’m curious, an avid learner and a
-                      tireless worker searching for a good company environment
-                      to help me turn good ideas into reality.
+                  <TabsContent value="profile">
+                    <p className="text-slate-400">
+                      Since my bachelor's degree in Communication Design from
+                      IAAD University in Turin, my design journey brought me to
+                      fall in love with After Effects, to deeply enjoy Visual
+                      design and last but not least to discover Figma ♥️ which
+                      carried me to UI-UX.
                     </p>
                   </TabsContent>
                   <TabsContent value="interests">
-                    <p className="text-base text-slate-400">
+                    <p className="text-slate-400">
                       Music fuels my creativity and fosters a productive
                       atmosphere. Japanese culture captivates me, I even embrace
                       their culinary tradition of eating with chopsticks.
@@ -103,13 +103,13 @@ function MissionSection() {
                       enhances my powers of observation and inspires me.
                     </p>
                   </TabsContent>
-                  <TabsContent value="profile">
-                    <p className="text-base text-slate-400">
-                      Since my bachelor's degree in Communication Design from
-                      IAAD University in Turin, my design journey brought me to
-                      fall in love with After Effects, to deeply enjoy Visual
-                      design and last but not least to discover Figma ♥️ which
-                      carried me to UI-UX.
+                  <TabsContent value="background">
+                    <p className="text-slate-400">
+                      I’m a design enthusiast, an optimistic visionary who
+                      thrives on challenges and sees opportunities in
+                      problem-solving. I’m curious, an avid learner and a
+                      tireless worker searching for a good company environment
+                      to help me turn good ideas into reality.
                     </p>
                   </TabsContent>
                 </Tabs>

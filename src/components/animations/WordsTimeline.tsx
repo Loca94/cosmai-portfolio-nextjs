@@ -27,7 +27,7 @@ function WordsTimeline({ words }: { words: string[] }) {
             variants={{
               hidden: { color: '#334155' /* slate-700 */ },
               visible: {
-                color: '#e2e8f0' /* slate-200 */,
+                color: '#94a3b8' /* slate-400 */,
                 transition: { delay: 0.2, duration: wordAnimationDuration },
               },
             }}
@@ -41,7 +41,7 @@ function WordsTimeline({ words }: { words: string[] }) {
             <div className="relative h-[1px] w-full overflow-hidden bg-slate-700">
               {currentStep >= index * 2 + 1 && (
                 <motion.div
-                  className="absolute left-0 top-0 h-0.5 bg-slate-200"
+                  className="absolute left-0 top-0 h-0.5 bg-slate-400"
                   initial={{ width: '0%' }}
                   animate={{ width: '100%' }}
                   onAnimationComplete={

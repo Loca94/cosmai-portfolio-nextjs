@@ -119,17 +119,21 @@ export default function Home() {
     <>
       <Container className="mt-14">
         <div className="mb-8 md:mb-12">
-          <h1 className="mb-6 max-w-2xl text-[32px] font-medium leading-tight text-slate-200">
+          <h1 className="mb-6 max-w-2xl text-[32px] font-medium leading-tight text-slate-400">
             <Balancer>
-              I transform ideas into <i className="font-bold">tailored</i>,{' '}
-              <span className="font-bold italic">appealing</span> and{' '}
-              <span className="font-bold italic">accessible</span> digital
-              experiences.
+              I transform ideas into{' '}
+              <span className="font-bold italic text-slate-200">tailored</span>,{' '}
+              <span className="font-bold italic text-slate-200">appealing</span>{' '}
+              and{' '}
+              <span className="font-bold italic text-slate-200">
+                accessible
+              </span>{' '}
+              digital experiences.
             </Balancer>
           </h1>
         </div>
 
-        <div className="ms:mb-12 mb-8 text-slate-200">
+        <div className="ms:mb-12 mb-8 text-slate-400">
           <p className="text-xl font-bold">Designer based in Italy</p>
           <p className="text-base font-semibold">
             Product &middot; Visual &middot; Motion

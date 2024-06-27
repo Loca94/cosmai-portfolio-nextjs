@@ -31,7 +31,7 @@ export default function Footer() {
               <div className="space-y-5 font-light max-md:text-center">
                 <h3 className="text-lg text-slate-200">Sara Cosmai</h3>
                 <div className="text-sm">
-                  <p>UI-UX Designer based in Aosta, Italy</p>
+                  <p>Designer based in Italy</p>
                   <p>Background in visual design, motion design</p>
                 </div>
                 <Button
