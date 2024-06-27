@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Container from '@/components/Container';
 import {
   BGIcon,
@@ -85,17 +86,17 @@ function MissionSection() {
                       <BGIcon className="h-6 w-6" />
                     </TabsTrigger>
                   </TabsList>
-                  <TabsContent value="profile">
-                    <p className="text-slate-400">
-                      Since my bachelor's degree in Communication Design from
-                      IAAD University in Turin, my design journey brought me to
-                      fall in love with After Effects, to deeply enjoy Visual
-                      design and last but not least to discover Figma ♥️ which
-                      carried me to UI-UX.
+                  <TabsContent value="profile" className="mt-4">
+                    <p className="text-sm text-slate-400">
+                      I’m a design enthusiast, an optimistic visionary who
+                      thrives on challenges and sees opportunities in
+                      problem-solving. I’m curious, an avid learner and a
+                      tireless worker searching for a good company environment
+                      to help me turn good ideas into reality.
                     </p>
                   </TabsContent>
-                  <TabsContent value="interests">
-                    <p className="text-slate-400">
+                  <TabsContent value="interests" className="mt-4">
+                    <p className="text-sm text-slate-400">
                       Music fuels my creativity and fosters a productive
                       atmosphere. Japanese culture captivates me, I even embrace
                       their culinary tradition of eating with chopsticks.
@@ -103,13 +104,13 @@ function MissionSection() {
                       enhances my powers of observation and inspires me.
                     </p>
                   </TabsContent>
-                  <TabsContent value="background">
-                    <p className="text-slate-400">
-                      I’m a design enthusiast, an optimistic visionary who
-                      thrives on challenges and sees opportunities in
-                      problem-solving. I’m curious, an avid learner and a
-                      tireless worker searching for a good company environment
-                      to help me turn good ideas into reality.
+                  <TabsContent value="background" className="mt-4">
+                    <p className="text-sm text-slate-400">
+                      Since my bachelor's degree in Communication Design from
+                      IAAD University in Turin, my design journey brought me to
+                      fall in love with After Effects, to deeply enjoy Visual
+                      design and last but not least to discover Figma ♥️ which
+                      carried me to UI-UX.
                     </p>
                   </TabsContent>
                 </Tabs>
@@ -199,12 +200,12 @@ function ToolboxSection() {
                   <CardContent>
                     <div className="flex h-5 items-center space-x-4 text-sm font-medium text-slate-400">
                       {tool.categories.map((category, idx) => (
-                        <>
-                          <div key={category}>{category}</div>
+                        <React.Fragment key={idx}>
+                          <div>{category}</div>
                           {idx < tool.categories.length - 1 && (
                             <Separator orientation="vertical" />
                           )}
-                        </>
+                        </React.Fragment>
                       ))}
                     </div>
                   </CardContent>
