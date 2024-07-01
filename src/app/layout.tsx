@@ -2,6 +2,7 @@ import '@/styles/tailwind.css';
 import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
 import { Layout } from '@/components/Layout';
+import { HotjarSnippet } from '@/components/HotjarSnippet';
 
 const onest = Onest({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         className={`${onest.className} bg-slate-950 selection:bg-slate-100 selection:text-slate-900`}
       >
         <Layout>{children}</Layout>
+        <HotjarSnippet />
       </body>
     </html>
   );
