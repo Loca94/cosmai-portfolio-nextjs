@@ -43,14 +43,14 @@ const userPersona: UserPersona = {
   fullName: 'Matteo Rossi',
   avatarSrc: matteoImg,
   background:
-    'Matteo is wine enthusiast and a restaurant chef in Milan. He usually plans menus, ensuring that the high-quality food is well paired with a wine.',
+    'Matteo is wine enthusiast, a restaurant owner and chef. He usually plans menus, ensuring that the high-quality food is well paired with a wine. He is often searching for new exclusive wines to feature in his restaurant. In order to purchase these products and build relationships with their producers, he usually attends wine fairs and short trips to France and Aosta Valley discovering small local producers.',
   goals: [
-    'Discover new and exceptional wines to feature in his restaurant and pair with his menus',
-    'Build relationships with reputable winemakers and vineyard owners',
+    'Discover unique wines to feature in his restaurant',
+    'Get in touch easily with winemakers and vineyard owners',
   ],
   frustrations: [
-    'Difficulty finding unique, high-quality wines that stand out from the competition',
-    'Limited time to research and taste new wines due to demanding work schedule',
+    'Difficulty finding specific aspects of a wine',
+    'Limited time to research due to a lack of patience and a rigid work schedule',
   ],
 };
 
@@ -98,9 +98,12 @@ export default function WineryWebsite() {
             </Paragraph>
             <Paragraph>
               Their previous webpage, dating back to 2011, was outdated and did
-              not meet modern web standards. They needed a new website and
-              sought to communicate their products and the story behind this
-              family tradition.
+              not meet modern web standards. They needed a new website and{' '}
+              <BoldText>
+                sought to communicate their products and the story behind this
+                family tradition
+              </BoldText>
+              .
             </Paragraph>
             <Paragraph>
               I was the sole designer in this project and I was responsible for
@@ -119,7 +122,7 @@ export default function WineryWebsite() {
               badges={[
                 'Meetings with client',
                 'Old webpage analysis',
-                'Face To Face survey',
+                'Interviews',
                 'User persona',
               ]}
             />
@@ -132,13 +135,15 @@ export default function WineryWebsite() {
               communicative intents.
             </Paragraph>
             <Paragraph>
-              I conducted a heuristic UX analysis on the competitors’ websites
-              and the old webpage identifying usability and accessibility issues
-              such as{' '}
-              <BoldText>
-                unresponsive design, obsolete content and language limitation
-              </BoldText>
-              .
+              I analysed competitor websites to understand their content
+              strategy, strengths, and weaknesses in order to benchmark their
+              old website against competitors and get ideas for the redesign.
+            </Paragraph>
+            <Paragraph>
+              Evaluating the engagement level of the old website I could assess
+              the content didn’t meet user needs and wasn’t up-to-date.
+              Furthermore testing the navigation and reviewing content layout I
+              identified usability and accessibility issues.
             </Paragraph>
           </Prose>
 
@@ -189,9 +194,8 @@ export default function WineryWebsite() {
           <Prose>
             <Paragraph>
               The new website had to be responsive, well structured and
-              translated in multiple languages. I implemented some key
-              strategies to ensure a comprehensive improvement over the old
-              website:
+              translated in multiple languages to ensure a comprehensive
+              improvement over the old website.
             </Paragraph>
           </Prose>
 
@@ -255,9 +259,18 @@ export default function WineryWebsite() {
           <Prose>
             <Paragraph>
               The website would be used by tourists, people interested in the
-              winery and wine enthusiasts. Face to face surveys with some wine
-              connoisseurs led me to consider different needs and helped me
-              distill some user objectives.
+              winery and wine enthusiasts. To identify the best solutions for
+              users I had to learn more about their problems and put myself in
+              the their shoes. Collecting some insights could help me understand
+              their opinions, feelings and motivations and then empathise with
+              their challenges.
+            </Paragraph>
+            <Paragraph>
+              I led some interviews with different costumers paying attention to
+              their behaviours as well as their verbal responses. Identifying
+              aspects such as discomfort or enthusiasm in the wine connoisseurs
+              helped me consider their different needs and distill some user
+              objectives.
             </Paragraph>
           </Prose>
 
@@ -271,37 +284,44 @@ export default function WineryWebsite() {
 
           <Prose>
             <Paragraph>
-              Taking into account all the information gathered I fabricated a
-              user persona for the target user, a ”wine enthusiast visiting
-              Valle d’Aosta”, who would be both viewing the products and trying
-              to contact the winery to purchase or visit.
+              Taking into account all the information gathered, I fabricated an
+              archetype representative of most target users who would be both
+              viewing the products and trying to contact the winery to purchase
+              or visit. Creating this concrete instance was effective, as it
+              constantly reminded me the user’s standpoint value which
+              sometimes, to content the client, can be left behind.
             </Paragraph>
           </Prose>
           <UserPersonaCard userPersona={userPersona} />
         </Chapter>
 
         <Chapter>
-          <Prose>
-            <ChapterTitle>Craft</ChapterTitle>
-          </Prose>
-          <AnimatedBadgeList
-            badges={[
-              'Information architecture',
-              'User flows',
-              'Typography',
-              'Visual design',
-              'Wireframes',
-            ]}
-          />
+          <div>
+            <Prose>
+              <ChapterTitle>Craft</ChapterTitle>
+            </Prose>
+            <AnimatedBadgeList
+              badges={[
+                'Informations flow',
+                'Typography',
+                'Visual design',
+                'Wireframes',
+              ]}
+            />
+          </div>
 
           <Prose>
             <Paragraph>
-              <span className="text-orange-accent">
-                The information architecture and user flow were designed to be
-                intuitive and easy to navigate. A clear hierarchy had to guide
-                the user through the website, ensuring that he could easily find
-                the information needed.
-              </span>
+              The persona targeted was clearly detail-oriented but valued speed
+              too. These aspects helped me taking decisions easier while
+              designing the Contacts, Wines and Detail wine page content.
+            </Paragraph>
+            <Paragraph>
+              Focusing on the defined set of target users, I needed to create an
+              enjoyable interface with an efficient and streamlined design. A
+              clear hierarchy and architecture had to guide the user through the
+              website, ensuring that he could easily find the information
+              needed.
             </Paragraph>
           </Prose>
           <CaseStudyImage
@@ -312,59 +332,65 @@ export default function WineryWebsite() {
           />
           <Prose>
             <Paragraph>
-              The most challenging page was the Wine Detail page; I needed to
-              balance all the informations. Tasting sensations, product
-              aesthetics and winemaking curiosities had to be displayed within
-              the viewport or be reachable with a minimal scrolling.
+              Product pages had to contain all the informations useful for the
+              customer but with a fast and easy access due to the short amount
+              of time to spark his interest. A good balance and hierarchy helped
+              with that, but it was challenging to achieve.
+            </Paragraph>
+            <Paragraph>
+              Once clicked on a wine link, users were directed on the Detail
+              wine page, where they could find tasting sensations, product
+              aesthetics and winemaking curiosities within the viewport, or else
+              reachable with a minimal scrolling. The wine had to resonate with
+              the customer, be remembered and perceived as high-quality.
             </Paragraph>
           </Prose>
 
           <Prose>
-            <div className="flex flex-col space-y-2">
-              <Badge variant="orange">Solution</Badge>
-              <div className="rounded border border-dashed border-orange-accent px-6 py-2 text-sm sm:px-8 sm:py-4">
-                <ol
-                  role="list"
-                  className="divide-y divide-dashed divide-orange-accent"
-                >
-                  <li className="flex items-start py-4">
-                    <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
-                      1
-                    </span>
-                    <span className="ml-4 text-slate-400">
-                      <BoldText>Present the product</BoldText> with concise
-                      tasting notes, well depicting each wine flavours and
-                      aromas and attracting interested customers
-                    </span>
-                  </li>
-                  <li className="flex items-start py-4">
-                    <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
-                      2
-                    </span>
-                    <span className="ml-4 text-slate-400">
-                      <BoldText>Show the product</BoldText> and highlight it
-                      with a subtle animated stroke beneath the bottle in order
-                      to make the label rememberable
-                    </span>
-                  </li>
-                  <li className="flex items-start py-4">
-                    <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
-                      3
-                    </span>
-                    <span className="ml-4 text-slate-400">
-                      <BoldText>Allow the user to learn more</BoldText> through
-                      collapsible sections, expandable as needed
-                    </span>
-                  </li>
-                </ol>
-              </div>
+            <div className="rounded border border-dashed border-orange-accent px-6 py-2 text-sm sm:px-8 sm:py-4">
+              <ol
+                role="list"
+                className="divide-y divide-dashed divide-orange-accent"
+              >
+                <li className="flex items-start py-4">
+                  <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                    1
+                  </span>
+                  <span className="ml-4 text-slate-400">
+                    <BoldText>Present the product</BoldText> with concise
+                    tasting notes, well depicting each wine flavours and aromas
+                    and attracting interested customers
+                  </span>
+                </li>
+                <li className="flex items-start py-4">
+                  <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                    2
+                  </span>
+                  <span className="ml-4 text-slate-400">
+                    <BoldText>Show the product</BoldText> and highlight it with
+                    a subtle animated stroke beneath the bottle in order to make
+                    the label rememberable
+                  </span>
+                </li>
+                <li className="flex items-start py-4">
+                  <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                    3
+                  </span>
+                  <span className="ml-4 text-slate-400">
+                    <BoldText>Allow the user to learn more</BoldText> through
+                    collapsible sections, expandable as needed
+                  </span>
+                </li>
+              </ol>
             </div>
           </Prose>
 
           <Prose>
             <Paragraph>
-              This way I ensured an efficient use of space and a clear
-              information navigation.
+              Since most people instinctively read the page from left to right,
+              I laid out the readable contents on the left and the product’s
+              image on the right. Through these decisions I ensured an efficient
+              use of space and a clear information navigation.
             </Paragraph>
           </Prose>
 
@@ -385,11 +411,8 @@ export default function WineryWebsite() {
               <BoldText>grayscale colour palette</BoldText> and{' '}
               <BoldText>above-average text dimensions</BoldText> ensured a
               comfortable and smooth reading; ample spacing between each block
-              made each section appear shorter and approachable.
-            </Paragraph>
-            <Paragraph>
-              In a mainly monochromatic design, colours stuck out from
-              supporting photos.
+              made each section appear shorter and approachable. In a mainly
+              monochromatic design, colours stuck out from supporting photos.
             </Paragraph>
           </Prose>
 
@@ -449,9 +472,9 @@ export default function WineryWebsite() {
           <Prose>
             <Paragraph>
               Designing prototypes was an iterative process that evolved with
-              each meeting as I had to consider the user standpoint and the
-              client concerns. Below a few examples on how the Homepage and the
-              Contact page changed over time.
+              each meeting as I had to consider the client concerns. Below a few
+              examples on how the Homepage and the Contact page changed over
+              time.
             </Paragraph>
           </Prose>
 
