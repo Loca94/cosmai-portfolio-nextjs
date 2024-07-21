@@ -528,8 +528,8 @@ export default function WineryWebsite() {
 
           <CaseStudyImage
             src={accessibilityAndPerformanceImg}
-            alt="Accessibility and performance metrics by Google Lighthouse"
-            captionContent="Testing contrasts with accessibility checkers"
+            alt="Performance and accessibility audit with PageSpeed Insights"
+            captionContent="Performance and accessibility audit with PageSpeed Insights"
             imgNumber="4.0"
           />
         </Chapter>
