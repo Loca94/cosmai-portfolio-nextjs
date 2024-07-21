@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={`${onest.className} bg-slate-950 selection:bg-slate-100 selection:text-slate-900`}
+        className={`${onest.className} bg-slate-950 selection:bg-orange-accent selection:text-orange-950`}
       >
         <Layout>{children}</Layout>
         <HotjarSnippet />
