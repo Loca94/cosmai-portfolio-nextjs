@@ -1,4 +1,10 @@
 import {
+  BoldText,
+  BulletList,
+  BulletListItem,
+  CaseStudyLayout,
+  CaseStudyImage,
+  CaseStudyLink,
   Chapter,
   ChapterTitle,
   DesktopBentoGrid,
@@ -6,18 +12,8 @@ import {
   PageIntro,
   Paragraph,
   Prose,
-  CaseStudyLayout,
-  CaseStudyImage,
-  UserObjectivesGrid,
-  CaseStudyLink,
-  BoldText,
 } from '@/components/CaseStudyComponents';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-} from '@/components/ui/Card';
+import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 import { UserPersona } from '@/lib/types';
 import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
 import UserPersonaTabs from '@/components/UserPersonaTabs';
@@ -31,19 +27,21 @@ import heroMobileImg2 from '@/images/case-study/vierin/hero-mobile-2.webp';
 import monicaImg from '@/images/case-study/vierin/monica.webp';
 import georgeImg from '@/images/case-study/vierin/george.webp';
 import matildaImg from '@/images/case-study/vierin/matilda.webp';
-import rankingKeywordsImg from '@/images/case-study/vierin/ranking-keywords.webp';
 import userFlowImg from '@/images/case-study/vierin/user-flow.webp';
 import balanceTextVisualImg from '@/images/case-study/vierin/balance-text-visual.webp';
 import heroVisualImg from '@/images/case-study/vierin/hero-visual.webp';
 import photoshopColorCorrectionImg from '@/images/case-study/vierin/photoshop-color-correction.webp';
 import treatmentCardsImg from '@/images/case-study/vierin/treatment-cards.webp';
+import treatmentIconsImg from '@/images/case-study/vierin/treatment-icons.webp';
 import animationStepsImg from '@/images/case-study/vierin/animation-steps.webp';
 import afterEffectsPluginImg from '@/images/case-study/vierin/after-effects-plugin.webp';
 import afterEffectsFeaturesImg from '@/images/case-study/vierin/after-effects-features.webp';
 import fontsUsedImg from '@/images/case-study/vierin/fonts-used.webp';
 import contactImg from '@/images/case-study/vierin/contact.webp';
 import floatingBtnImg from '@/images/case-study/vierin/floating-button.webp';
-import reviewsImg from '@/images/case-study/vierin/fonts-used.webp';
+import goalsFrustrationsImg from '@/images/case-study/vierin/goals-frustrations-objectives.webp';
+import reviewsImg from '@/images/case-study/vierin/reviews.webp';
+import rankingKeywordsImg from '@/images/case-study/vierin/ranking-keywords.webp';
 
 const userPersonas: UserPersona[] = [
   {
@@ -68,7 +66,7 @@ const userPersonas: UserPersona[] = [
     background:
       'George is a Swiss architect. He’s often travelling among Italy, France and Germany. He has a second home in Valle d’Aosta. He loves eating crunchy foods and mountain-biking. He has an irrational fear of blood. During his holidays he accidentally broke one of his front tooth. He needs urgent treatment/care.',
     goals: [
-      'Quickly make an appointment ',
+      'Quickly make an appointment',
       'Send tooth’s photo via WhatsApp',
       'Get prompt advices',
     ],
@@ -97,7 +95,7 @@ export default function DentalWebsite() {
         nextUrl="/work/barro"
       >
         <PageIntro
-          title={`Ideating a mobile-first website for a Dental Clinic`}
+          title={`Ideating a "mobile-first" website for a Dental Clinic`}
           tools={['Figma', 'After Effects', 'Photoshop', 'Illustrator']}
         />
         <MobileOverlappingImages
@@ -155,48 +153,91 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
+              The website was intended for{' '}
+              <BoldText>reaching and attracting new possible patients</BoldText>
+              , since the dental clinic offers mostly an in-person service, the
+              user needs to be physically there to access the service. Thus we
+              were aiming for Google’s impressions and clicks of a selected
+              target user.
+            </Paragraph>
+            <Paragraph>
+              Meeting with the client to gather all technical information was
+              crucial in{' '}
               <BoldText>
-                Meeting with the client to gather all technical information
-              </BoldText>{' '}
-              was crucial in defining the target audience and visual elements.
-              The client wanted to have an original approach, evincing the style
-              he was looking for.
+                defining the client objectives, target user and visual style
+              </BoldText>
+              . The client wanted to differentiate his website
+              from competitor's, trying an original approach and stand out,
+              evincing the style he was looking for.
             </Paragraph>
             <Paragraph>
-              After conducting a competitor’s analysis, I discovered some{' '}
-              <BoldText>common traits among their websites</BoldText>. All of
-              them shared a large number of pages and an old forum-like layout,
-              with a lot of explanatory text surrounded by stock photos. This
-              type of website usually draws the self-diagnosed users but not
-              necessarily costumers.
-            </Paragraph>
-            <Paragraph>
-              The website had to be designed for patients seeking oral hygiene,
-              individuals in urgent need of dental procedures, parents bringing
-              their children, and those interested in cosmetic treatments like
-              lip fillers. All of them aim for{' '}
-              <BoldText>quick answers and effortless solutions</BoldText>, due
-              either to a great pain or a lack of time.
-            </Paragraph>
-            <Paragraph>
-              Utilising the personal interview survey method I was able to
-              gather in-depth information by exploring all the responses of
-              these diverse user involved.
+              While analysing competitor websites I identified their content
+              strategy and{' '}
+              <BoldText>
+                discovered some common traits among their websites
+              </BoldText>
+              . All of them shared a large number of pages and an old forum-like
+              layout, with a lot of explanatory text surrounded by stock photos.
+              This type of website usually draws users trying to identify their
+              medical conditions reading resources on the Internet but not
+              necessarily searching for a dentist appointment.
             </Paragraph>
           </Prose>
 
-          <UserObjectivesGrid
-            objectives={[
-              'Who will operate me',
-              "Others' experience in clinic",
-              'How te clinic can help me',
-            ]}
-          />
+          {/* Cards */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4">
+            {/* Strengths */}
+            <Card inverted>
+              <CardHeader>
+                <Badge>Strengths</Badge>
+              </CardHeader>
+              <CardContent>
+                <BulletList className="text-sm">
+                  <BulletListItem>
+                    Find precise descriptions of the treatment process
+                  </BulletListItem>
+                  <BulletListItem>
+                    Educates patients about benefits and potential risks of
+                    treatments
+                  </BulletListItem>
+                  <BulletListItem>
+                    Increase the time users spend on the website
+                  </BulletListItem>
+                </BulletList>
+              </CardContent>
+            </Card>
+            {/* Weaknesses */}
+            <Card inverted>
+              <CardHeader>
+                <Badge>Weaknesses</Badge>
+              </CardHeader>
+              <CardContent>
+                <BulletList className="text-sm">
+                  <BulletListItem>
+                    Need medical terms’ knowledge to understand
+                  </BulletListItem>
+                  <BulletListItem>
+                    Risk to skim the content and miss key points
+                  </BulletListItem>
+                  <BulletListItem>
+                    Harder to read, especially on mobile
+                  </BulletListItem>
+                </BulletList>
+              </CardContent>
+            </Card>
+          </div>
 
           <Prose>
             <Paragraph>
-              Using all the information collected, I built 3 user persona for
-              the target user.
+              Narrowing down the target user, our selection was composed of
+              patients seeking oral hygiene, individuals in urgent need of
+              dental procedures, parents bringing their children and those
+              interested in cosmetic treatments like lip fillers. By
+              interviewing and{' '}
+              <BoldText>
+                analysing the responses of the diverse users involved
+              </BoldText>{' '}
+              I was able to build 3 user persona.
             </Paragraph>
           </Prose>
 
@@ -204,117 +245,22 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              Running the heuristic research, I thought through{' '}
-              <BoldText>possible usability choices accordingly</BoldText>. The
-              way people perceive a website is influenced by strategic text’s
-              usage, the terminology, its visual style and the amount of visuals
-              elements. To achieve a reassuring website, I needed to{' '}
-              <BoldText>carefully balance the text and the visuals</BoldText>,
-              providing context, narration, demonstration and emotions.
-            </Paragraph>
-            <Paragraph>
-              Deciding the narration’s tone, I considered to use whether
-              detailed descriptions or concise explanations,{' '}
-              <BoldText>evaluating their pros and cons</BoldText>.
-            </Paragraph>
-          </Prose>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4">
-            {/* Detailed descriptions */}
-            <div className="space-y-4">
-              <h3 className="text-sm text-orange-accent">
-                Detailed descriptions
-              </h3>
-              <Card inverted>
-                <CardHeader>
-                  <Badge>Pros</Badge>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    The texts become precise and in-depth descriptions
-                    <br className="hidden lg:block" /> of the treatment process
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              <Card inverted>
-                <CardHeader>
-                  <Badge>Cons</Badge>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    The patients need to know some medical terms to fully
-                    understand detailed descriptions, thus they could cause
-                    confusion
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </div>
-            {/* Concise explanations */}
-            <div className="space-y-4">
-              <h3 className="text-sm text-orange-accent">
-                Concise explanations
-              </h3>
-              <Card inverted>
-                <CardHeader>
-                  <Badge>Pros</Badge>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    The texts define the treatments in few completely
-                    <br className="hidden lg:block" />
-                    understandable paragraphs
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              <Card inverted>
-                <CardHeader>
-                  <Badge>Cons</Badge>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Patients aren’t aware of each decision or action the
-                    <br className="hidden lg:block" /> healthcare professional
-                    takes
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          <Prose>
-            <Paragraph>
-              Contemplating the advantages and disadvantages with a regard for
-              intelligibility,{' '}
+              I could assess{' '}
               <BoldText>
-                concise explanations were the most viable option
-              </BoldText>{' '}
-              for the treatment section.
-            </Paragraph>
-            <Paragraph>
-              While developing them, I revised all the material gathered, kept
-              the core concepts only and identified the most relevant and
-              frequently searched keywords related to dental services including
-              them in the final content. This ensures the website to be easily
-              discoverable and rank higher in search engine results.
-            </Paragraph>
-          </Prose>
-
-          <CaseStudyImage
-            src={rankingKeywordsImg}
-            alt="Step by step process to find the website using Google"
-            captionContent="Keyboard's implementation benefits"
-            imgNumber={'1.0'}
-          />
-
-          <Prose>
-            <Paragraph>
-              After reviewing the client’s and target users’ aim, I had to
-              discard realistic photos as visuals' option in favour of animated
-              sequenes; dental surgery's photos are harsh, in many cases blood
-              can be visible and some people find it disturbing. On the other
-              hand, customised illustrations could pleasantly represent each
-              treatment through expressive characters and simple actions.
+                most of them aimed for quick answers and effortless solutions
+              </BoldText>
+              , due either to a great pain or a lack of time. Thus I needed to
+              lower cognitive load on users avoiding to compromise their
+              reasoning and decision making. Using a concise jargon-free
+              language and breaking content in short easily digestible
+              paragraphs, I could{' '}
+              <BoldText>
+                prevent users from feeling overwhelmed by improving content’s
+                understanding
+              </BoldText>
+              . Adding consistent and customised illustrations I could provide
+              a visual support to texts, evoke users’ positive emotions and make
+              the user experience memorable.
             </Paragraph>
           </Prose>
         </Chapter>
@@ -326,8 +272,7 @@ export default function DentalWebsite() {
             </Prose>
             <AnimatedBadgeList
               badges={[
-                'Information architecture',
-                'User flows',
+                'Informations flows',
                 'Typography',
                 'Visual design',
                 'Wireframes',
@@ -337,9 +282,10 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              Once the connection was set and decisions taken, it was time to{' '}
+              Once the connection was set and decisions taken, it was time to
+              meet{' '}
               <BoldText>
-                meet the client’s and potential patients’ expectations
+                the client’s and potential patients’ expectations
               </BoldText>
               , designing the informations’ structure and the experience for the
               user.
@@ -353,6 +299,17 @@ export default function DentalWebsite() {
             imgNumber="2.0"
           />
 
+          <Prose>
+            <Paragraph>
+              I carefully balanced strategic text blocks and positive tailored
+              visuals, to{' '}
+              <BoldText>
+                achieve a good content's readability and cohesive visual style
+              </BoldText>
+              .
+            </Paragraph>
+          </Prose>
+
           <CaseStudyImage
             src={balanceTextVisualImg}
             alt="Skeleton prototype of the homepage where is presented the balance between text and visuals"
@@ -362,9 +319,17 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              Upon entering the website the Hero Section warmly greets users
-              through a hero message apposed to an illustration showcasing one
-              of their most common services, oral hygiene.
+              Upon entering the website, the{' '}
+              <BoldText>Hero Section warmly greets the users</BoldText> through
+              a relevant captivating headline, speaking directly to their needs,
+              apposed to an attention-grabbing visual, showcasing one of their
+              most common services. With these decisions, I wanted to prompt the
+              users to linger on the website for treatments and appointment
+              informations and{' '}
+              <BoldText>
+                lead them to envision themselves accessing the service
+              </BoldText>
+              .
             </Paragraph>
           </Prose>
 
@@ -377,8 +342,9 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              To enable users to build familiarity with who will assist them,
-              the Dental Office introduces its team, providing each practitioner
+              To enable users to{' '}
+              <BoldText>build familiarity with who will assist them</BoldText>,
+              the Dental Clinic introduces its team, providing each practitioner
               with a profile card, comprehensive of role, name and photo.
             </Paragraph>
             <Paragraph>
@@ -400,7 +366,11 @@ export default function DentalWebsite() {
             <Paragraph>
               A grid was the cleanest choice to organise each service. All 12
               cards contained a customised animated sequence and a concise
-              explanation of the dental procedure.
+              explanation of the dental procedure. While developing
+              explanations, I revised all the material gathered and kept the
+              core concepts only. Then I identified the most relevant and
+              frequently searched keywords related to dental treatments and
+              included them in the final content.
             </Paragraph>
           </Prose>
 
@@ -413,11 +383,50 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              Trying to balance professionalism and fun, I created flat
-              icon-like illustrations. Simplifying the treatments into icons
-              posed a hitch. I tackled it by identifying and sketching 4 states
-              first, then I developed and looped them in simple movements to
-              represent each specific situation.
+              By searching dental procedures on the internet, many disturbing
+              images can pop out and easily scare a patient already anxious and
+              in pain. I was intent on making users, rushing on this website
+              worried about a sore tooth,{' '}
+              <BoldText>
+                sparkle with positive emotions while exploring the treatments
+                section
+              </BoldText>
+              .
+            </Paragraph>
+            <Paragraph>
+              Hence to support treatments explanations, I provided customised
+              Illustrations graphically conceptualising each scenario and
+              allowing users’ imagination to fuel their understanding. These{' '}
+              <BoldText>
+                images had to be pleasant visual aids to help users grasp
+                informations
+              </BoldText>
+              , present a unique style to be memorable and depict 12 different
+              concepts. I tried different visual’s styles, assessing concept to
+              clarify and available space in cards’ layout. After many
+              considerations and some iterations, I tailored a flat icon-like
+              style, elevated but straightforward, showcasing personality and
+              aligning with the clinic’s brand. Then I created 4 cute characters
+              and a rounded tooth to involve in the scenes as main figures,
+              helping me in the representations.
+            </Paragraph>
+          </Prose>
+
+          <CaseStudyImage
+            src={treatmentIconsImg}
+            alt="Group of frames of the treatment's animations"
+            captionContent="Illustrations' creation"
+            imgNumber="2.5"
+          />
+
+          <Prose>
+            <Paragraph>
+              Transforming all the scenes into animations was definitely
+              challenging, due to layout and time constraints previously set. I
+              chose which movements and changes over time various elements’ had
+              to have,{' '}
+              <BoldText>identifying the anchor points for the actions</BoldText>
+              .
             </Paragraph>
           </Prose>
 
@@ -425,14 +434,15 @@ export default function DentalWebsite() {
             src={animationStepsImg}
             alt="Four phases of an animations"
             captionContent="Animation 4 states process"
-            imgNumber="2.5"
+            imgNumber="2.6"
           />
 
           <Prose>
             <Paragraph>
-              The icons were designed in Illustrator and their animations were
-              developed in After Effects. In order to minimize the file size, I
-              used the Lottie plugin{' '}
+              I created 4 keyframes for each sequence on Illustrator and then
+              developed their animations in After Effects, producing the final
+              loops. In order to minimise the file size, I used the Lottie
+              plugin{' '}
               <CaseStudyLink href="https://exchange.adobe.com/apps/cc/12557/bodymovin">
                 Bodymovin
               </CaseStudyLink>{' '}
@@ -444,17 +454,19 @@ export default function DentalWebsite() {
             src={afterEffectsPluginImg}
             alt="Layout fo the Bodymovin plugin"
             captionContent="Bodymovin plugin for After Effects"
-            imgNumber="2.6"
+            imgNumber="2.7"
           />
 
           <Prose>
             <Paragraph>
               Unfortunately the plugin doesn’t support many After Effects’
-              features yet. It clearly limited my range of action but it
-              challenged me to animate all the elements using the path shape
-              modifier and the transform features. All the light weighted
-              animations piled up, each reaching a better optimisation’s level
-              for the webpage in the deliver stage.
+              features yet. It clearly limited my range of action but it{' '}
+              <BoldText>
+                challenged me to animate all the elements using the path shape
+                modifier and the transform features
+              </BoldText>
+              . All the light weighted animations piled up, each reaching a
+              better optimisation’s level for the webpage in the deliver stage.
             </Paragraph>
           </Prose>
 
@@ -462,16 +474,16 @@ export default function DentalWebsite() {
             src={afterEffectsFeaturesImg}
             alt="After Effects' features used"
             captionContent="After Effects' features used"
-            imgNumber="2.7"
+            imgNumber="2.8"
           />
 
           <Prose>
             <Paragraph>
               When choosing typefaces, I considered possible emotive responses
-              to their letterforms and if they included legible details,
-              multiple weights and styles. I selected two fonts that improved
-              and aligned with the overall style; a rounded sans-serif font
-              meant for display typography and its non-rounded terminal version.
+              to the letterforms and if multiple weights and styles were
+              included. I selected a font that aligned with the brand and
+              improved overall readability; a rounded sans-serif font meant for
+              display typography and its non-rounded terminal version.
             </Paragraph>
           </Prose>
 
@@ -479,15 +491,18 @@ export default function DentalWebsite() {
             src={fontsUsedImg}
             alt="Fonts' usage in home screen"
             captionContent="Fonts' usage in home screen"
-            imgNumber="2.8"
+            imgNumber="2.9"
           />
 
           <Prose>
             <Paragraph>
               To facilitate user access to informations, I placed on the top nav
               bar quick action links, such as contact. These links on user’s
-              click scroll to the relative section, saving user’s time in the
-              information’s research.
+              click scroll to the relative section,{' '}
+              <BoldText>
+                saving user’s time in the information’s research
+              </BoldText>
+              .
             </Paragraph>
           </Prose>
 
@@ -495,15 +510,15 @@ export default function DentalWebsite() {
             src={contactImg}
             alt="Nav bar quick action links"
             captionContent="Nav bar quick action links"
-            imgNumber="2.9"
+            imgNumber="2.10"
           />
 
           <Prose>
             <Paragraph>
               For the mobile version, a floating button is consistently visible
-              in the lower right corner of the screen. This button serves as a
-              direct call trigger to the Dental Office, proving particularly
-              useful in emergency situations.
+              in the lower right corner of the screen. This button serves as a{' '}
+              <BoldText>direct call trigger to the Dental Office</BoldText>,
+              proving particularly useful in emergency situations.
             </Paragraph>
           </Prose>
 
@@ -511,7 +526,7 @@ export default function DentalWebsite() {
             src={floatingBtnImg}
             alt="After Effects’ animations flow"
             captionContent="After Effects’ animations flow"
-            imgNumber="2.10"
+            imgNumber="2.11"
           />
         </Chapter>
 
@@ -531,18 +546,32 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              After testing the prototypes I examined the user’s aim one more
-              time. By visiting the website, the user had to gain reassurance
-              and feel confident about the dental clinic’s ability to meet their
-              needs. Thus building trust was essential.
+              After testing the prototypes, I reviewed all the user’s goals and
+              frustrations one last time,{' '}
+              <BoldText>
+                making sure the user experience fulfilled expected standards
+              </BoldText>
+              .
             </Paragraph>
+          </Prose>
+
+          <CaseStudyImage
+            src={goalsFrustrationsImg}
+            alt="Recap of all the goals and frustrations solved in the project"
+            captionContent="User goals met and frustrations solved"
+            imgNumber="3.0"
+          />
+
+          <Prose>
             <Paragraph>
-              Luckily the Dental clinic had always encouraged patients to leave
-              reviews, reaching a rating of 4.9 on Google Maps. Carefully
-              selecting some positive reviews, I featured a testimonial section
-              with different patients’ standpoints about the clinic. To this
-              extent I depicted different situations, fulfilling the user’s
-              sense of belonging and demonstrating the dental office's prestige.
+              By visiting the website, the user wanted to quickly contact, gain
+              informations and reassurance. The primary objectives were met but
+              the{' '}
+              <BoldText>
+                service’s quality wasn’t properly addressed and disclosed
+              </BoldText>
+              . Featuring a testimonial section could have helped users feel
+              confident about the dental clinic’s ability to meet their needs.
             </Paragraph>
           </Prose>
 
@@ -550,8 +579,23 @@ export default function DentalWebsite() {
             src={reviewsImg}
             alt="Prototype of the testimonial section"
             captionContent="Testimonial section"
-            imgNumber="3.0"
+            imgNumber="3.1"
           />
+
+          <Prose>
+            <Paragraph>
+              Over the years the Dental clinic had encouraged patients to leave
+              reviews, reaching a rating of 4.9 on Google Maps. Carefully
+              selecting some positive reviews, I designed the new section with
+              different patients’ standpoints about the clinic. To this extent I
+              depicted different situations,{' '}
+              <BoldText>
+                fulfilling the user’s sense of belonging and demonstrating the
+                dental office's prestige
+              </BoldText>
+              .
+            </Paragraph>
+          </Prose>
         </Chapter>
 
         <Chapter>
@@ -566,10 +610,14 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              I collaborated closely with the developer, visioned the final
-              figma file, gave support in development and discussed various
-              optimisations in order to have faster load times and to rank
-              higher in search engine results.
+              <BoldText>I collaborated closely with the developer</BoldText>,
+              visioned the final figma file, gave support in development and
+              discussed various optimisations in order to have faster load times
+              and to rank higher in search engine results. To{' '}
+              <BoldText>reduce the visual load on users</BoldText> and speed up
+              the website's loading, we decided to set the treatments' cards
+              animations on play only when the user's cursor is on focus on a
+              card otherwise always on pause.
             </Paragraph>
             <Paragraph>
               The website was successfully deployed on the following{' '}
@@ -579,6 +627,13 @@ export default function DentalWebsite() {
               .
             </Paragraph>
           </Prose>
+
+          <CaseStudyImage
+            src={rankingKeywordsImg}
+            alt="Steps to find the website on Google"
+            captionContent="Keyword's implementation benefits"
+            imgNumber="4.0"
+          />
         </Chapter>
       </CaseStudyLayout>
     </>

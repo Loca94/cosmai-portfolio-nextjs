@@ -22,6 +22,7 @@ export function AnimatedBadgeList({ badges }: { badges: string[] }) {
         <BadgeListItem
           key={index}
           variant={index === activeBadgeIndex ? 'default' : 'disabled'}
+          size="sm"
         >
           {text}
         </BadgeListItem>

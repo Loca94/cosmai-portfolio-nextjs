@@ -251,6 +251,26 @@ function BoldText({ children }: { children: React.ReactNode }) {
   return <strong className="font-medium text-slate-200">{children}</strong>;
 }
 
+function BulletList({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return <ul className={cn('list-inside list-disc', className)}>{children}</ul>;
+}
+
+function BulletListItem({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return <li className={cn('mb-2 text-slate-400', className)}>{children}</li>;
+}
+
 function CaseStudyLink({
   href,
   children,
@@ -316,6 +336,9 @@ function CaseStudyImage({
   );
 }
 
+{
+  /* Currently dismissed. Can be removed in a couple of weeks if not used anymore. */
+}
 function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
   const GridItem = ({
     toHighlight,
@@ -459,13 +482,11 @@ function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
                   <Badge variant="darker" className="w-fit text-slate-400">
                     Goals
                   </Badge>
-                  <ul className="list-disc space-y-2 [&>*]:ml-4">
+                  <BulletList className="text-sm">
                     {userPersona.goals.map((item) => (
-                      <li key={item}>
-                        <CardDescription>{item}</CardDescription>
-                      </li>
+                      <BulletListItem key={item}>{item}</BulletListItem>
                     ))}
-                  </ul>
+                  </BulletList>
                 </div>
               </CardContent>
             </Card>
@@ -498,6 +519,8 @@ function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
 
 export {
   BoldText,
+  BulletList,
+  BulletListItem,
   CaseStudyImage,
   CaseStudyLayout,
   CaseStudyLink,

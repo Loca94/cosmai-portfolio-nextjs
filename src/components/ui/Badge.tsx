@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 import { cva } from 'class-variance-authority';
 
 type BadgeVariants = 'default' | 'active' | 'disabled' | 'darker' | 'orange';
+type SizeVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 const badgeVariants = cva(
   'inline-flex w-fit items-center rounded-full px-2.5 py-1 text-base font-medium transition-colors ease-in-out duration-500',
@@ -14,9 +15,17 @@ const badgeVariants = cva(
         darker: 'bg-slate-950 text-slate-200',
         orange: 'bg-orange-accent text-slate-950',
       },
+      size: {
+        xs: 'text-xs',
+        sm: 'text-sm',
+        md: 'text-base',
+        lg: 'text-lg',
+        xl: 'text-xl',
+      },
     },
     defaultVariants: {
       variant: 'default',
+      size: 'md',
     },
   },
 );
@@ -38,15 +47,17 @@ function BadgeList({
 function BadgeListItem({
   className,
   variant = 'default',
+  size = 'md',
   children,
 }: {
   children: React.ReactNode;
   variant?: BadgeVariants;
+  size?: SizeVariants;
   className?: string;
 }) {
   return (
     <li>
-      <Badge className={className} variant={variant}>
+      <Badge className={className} variant={variant} size={size}>
         {children}
       </Badge>
     </li>
@@ -56,14 +67,16 @@ function BadgeListItem({
 function Badge({
   className,
   variant = 'default',
+  size = 'md',
   children,
 }: {
   className?: string;
   variant?: BadgeVariants;
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   children: React.ReactNode;
 }) {
   return (
-    <span className={cn(badgeVariants({ variant }), className)}>
+    <span className={cn(badgeVariants({ variant, size }), className)}>
       {children}
     </span>
   );
