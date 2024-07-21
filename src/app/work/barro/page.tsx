@@ -56,7 +56,7 @@ export default function WineryWebsite() {
         nextUrl="/work/vierin"
       >
         <PageIntro
-          title={`Designing a Storybrand Website for a family-owned winery`}
+          title={`Redesigning a winery’s website with an effortless detail-oriented experience for users`}
           tools={['Figma', 'Photoshop']}
         />
         <MobileOverlappingImages
@@ -405,36 +405,6 @@ export default function WineryWebsite() {
               <BoldText>colours stuck out from supporting photos</BoldText>.
             </Paragraph>
           </Prose>
-
-          <div className="flex flex-col space-y-2">
-            <Badge>Palette</Badge>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-              <div className="flex h-16 w-full items-center justify-center rounded bg-white text-slate-600">
-                #FFFFF
-              </div>
-              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-100 text-slate-600">
-                #F4F4F5
-              </div>
-              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-300 text-slate-600">
-                #D4D4D8
-              </div>
-              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-400 text-white">
-                #A1A1AA
-              </div>
-              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-600 text-white">
-                #52525B
-              </div>
-              <div className="flex h-16 w-full items-center justify-center rounded bg-zinc-700 text-white">
-                #3F3F46
-              </div>
-              <div className="flex h-16 w-full items-center justify-center rounded bg-[#1C1C20] text-white">
-                #1C1C20
-              </div>
-              <div className="flex h-16 w-full items-center justify-center rounded bg-[#0A0A0C] text-white">
-                #0A0A0C
-              </div>
-            </div>
-          </div>
 
           <CaseStudyImage
             src={fontsImg}

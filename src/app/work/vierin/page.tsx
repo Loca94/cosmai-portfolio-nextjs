@@ -95,7 +95,7 @@ export default function DentalWebsite() {
         nextUrl="/work/barro"
       >
         <PageIntro
-          title={`Ideating a "mobile-first" website for a Dental Clinic`}
+          title={`Ideating a Dentist's website to promptly present the clinic and positively impact users`}
           tools={['Figma', 'After Effects', 'Photoshop', 'Illustrator']}
         />
         <MobileOverlappingImages

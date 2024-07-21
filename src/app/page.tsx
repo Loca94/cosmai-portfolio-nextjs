@@ -10,7 +10,8 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
     {
       projectName: 'DiBarro',
       href: 'barro',
-      title: 'Designing a Storybrand Website for a family-owned winery',
+      title:
+        'Redesigning a winery’s website with an effortless detail-oriented experience for users',
       images: [
         {
           src: 'dibarro-preview-1.png',
@@ -33,7 +34,8 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
     {
       projectName: 'Vierin',
       href: 'vierin',
-      title: 'Ideating a “mobile-first” One Page Website for a Dental Clinic',
+      title:
+        "Ideating a Dentist's website to promptly present the clinic and positively impact users",
       images: [
         {
           src: 'vierin-preview-1.png',
@@ -56,7 +58,8 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
     {
       projectName: 'Alpitude',
       href: 'alpitude',
-      title: 'Creating a Digital Startup’s Design identity and Website',
+      title:
+        'Creating brand identity, design system and user experience for an early-stage Digital Startup',
       images: [
         {
           src: 'alpitude-preview-1.png',
@@ -90,7 +93,7 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
           <Card className="border border-transparent pt-3 md:transition-colors md:duration-200 md:ease-out md:group-hover:border-slate-400/30">
             <CardHeader>
               <CardTitle className="mb-2">
-                <Balancer>{project.title}</Balancer>
+                <Balancer ratio={0.5}>{project.title}</Balancer>
               </CardTitle>
             </CardHeader>
             <CardContent>

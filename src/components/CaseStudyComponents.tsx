@@ -293,7 +293,7 @@ function CustomOrderedListItem({
   return (
     <li
       className={cn(
-        'group flex border-b border-dashed border-slate-700 py-4 text-slate-400 transition duration-200 last:border-b-0 hover:border-orange-accent',
+        'group flex border-b border-dashed border-slate-700 py-4 text-sm text-slate-400 transition duration-200 last:border-b-0 hover:border-orange-accent sm:text-base',
         className,
       )}
     >
