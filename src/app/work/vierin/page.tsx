@@ -524,8 +524,8 @@ export default function DentalWebsite() {
 
           <CaseStudyImage
             src={floatingBtnImg}
-            alt="After Effects’ animations flow"
-            captionContent="After Effects’ animations flow"
+            alt="Mobile floating button style guide"
+            captionContent="Mobile floating button style guide"
             imgNumber="2.11"
           />
         </Chapter>

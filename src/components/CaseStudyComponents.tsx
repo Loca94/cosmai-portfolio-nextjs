@@ -271,6 +271,40 @@ function BulletListItem({
   return <li className={cn('mb-2 text-slate-400', className)}>{children}</li>;
 }
 
+function CustomOrderedList({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return <ol className={cn('list-none', className)}>{children}</ol>;
+}
+
+function CustomOrderedListItem({
+  className,
+  index,
+  children,
+}: {
+  className?: string;
+  index: number;
+  children: React.ReactNode;
+}) {
+  return (
+    <li
+      className={cn(
+        'group flex border-b border-dashed border-slate-700 py-4 text-slate-400 transition duration-200 last:border-b-0 hover:border-orange-accent',
+        className,
+      )}
+    >
+      <span className="mr-2 mt-0.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-slate-700 text-[0.625rem] font-bold text-slate-900 transition-colors duration-200 group-hover:bg-orange-accent">
+        {index}
+      </span>
+      <span>{children}</span>
+    </li>
+  );
+}
+
 function CaseStudyLink({
   href,
   children,
@@ -528,6 +562,8 @@ export {
   ChapterTitle,
   DesktopBentoGrid,
   MobileOverlappingImages,
+  CustomOrderedList,
+  CustomOrderedListItem,
   PageIntro,
   Paragraph,
   Prose,

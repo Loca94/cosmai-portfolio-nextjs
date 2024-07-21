@@ -1,25 +1,19 @@
 import {
+  BoldText,
+  CaseStudyImage,
+  CaseStudyLayout,
+  CaseStudyLink,
   Chapter,
   ChapterTitle,
   DesktopBentoGrid,
   MobileOverlappingImages,
+  CustomOrderedList,
+  CustomOrderedListItem,
   PageIntro,
   Paragraph,
   Prose,
-  CaseStudyLayout,
-  CaseStudyImage,
-  UserObjectivesGrid,
-  BoldText,
   UserPersonaCard,
-  CaseStudyLink,
 } from '@/components/CaseStudyComponents';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/Card';
 import { UserPersona } from '@/lib/types';
 import { Badge } from '@/components/ui/Badge';
 import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
@@ -29,9 +23,8 @@ import heroImg3 from '@/images/case-study/barro/hero-3.webp';
 import heroImg4 from '@/images/case-study/barro/hero-4.webp';
 import heroMobileImg1 from '@/images/case-study/barro/hero-mobile-1.webp';
 import heroMobileImg2 from '@/images/case-study/barro/hero-mobile-2.webp';
-import oldWebsiteIssuesImg from '@/images/case-study/barro/old-website-issues.webp';
-import newWebsiteImprovementsImg from '@/images/case-study/barro/new-website-improvements.webp';
 import matteoImg from '@/images/case-study/barro/matteo.webp';
+import oldWebsiteProblemsImg from '@/images/case-study/barro/old-website-problems.webp';
 import informationArchitectureImg from '@/images/case-study/barro/information-architecture-flow.webp';
 import wineDetailPageImg from '@/images/case-study/barro/wine-detail-page.webp';
 import fontsImg from '@/images/case-study/barro/fonts.webp';
@@ -132,167 +125,133 @@ export default function WineryWebsite() {
             <Paragraph>
               After some meetings with the client, I took time to review all the
               information gathered about the brand identity, user target and
-              communicative intents.
+              communicative intents. Then I analysed competitor websites and
+              benchmarked the client’s old website against them,{' '}
+              <BoldText>getting ideas for the redesign</BoldText>.
             </Paragraph>
             <Paragraph>
-              I analysed competitor websites to understand their content
-              strategy, strengths, and weaknesses in order to benchmark their
-              old website against competitors and get ideas for the redesign.
+              Considering the engagement level of the old webpage, I could
+              assess{' '}
+              <BoldText>
+                the content didn’t meet user needs and wasn’t up-to-date
+              </BoldText>
+              . Furthermore the webpage wasn't optimised for smaller devices.
+              Testing the navigation and reviewing content layout I identified
+              usability and accessibility issues:
             </Paragraph>
+
+            <CustomOrderedList className="mb-4">
+              <CustomOrderedListItem index={1}>
+                All default scroll behaviour of touchpads, mouse wheels and
+                touchscreen were disabled, instead the{' '}
+                <BoldText>
+                  scroll was triggered by hovering two buttons
+                </BoldText>
+              </CustomOrderedListItem>
+              <CustomOrderedListItem index={2}>
+                The two buttons consisted of small icons, a triangle pointing up
+                and the other down. They{' '}
+                <BoldText>lacked minimum target size</BoldText>, hindering the
+                access of users with difficulty in operating small controls or
+                with disabilities
+              </CustomOrderedListItem>
+              <CustomOrderedListItem index={3}>
+                The top of the webpage presented two logos, this was misleading
+                and built{' '}
+                <BoldText>
+                  user’s confusion on the business’ brand identity
+                </BoldText>
+              </CustomOrderedListItem>
+              <CustomOrderedListItem index={4}>
+                The website's layout was centred with fixed width and height. It
+                was a{' '}
+                <BoldText>condensed structure misusing whitespace</BoldText>{' '}
+              </CustomOrderedListItem>
+              <CustomOrderedListItem index={5}>
+                Among the seven navbar links, two directed to a blank page on
+                user's click.{' '}
+                <BoldText>Unused pages should not be reachable</BoldText>
+              </CustomOrderedListItem>
+              <CustomOrderedListItem index={6}>
+                The gallery page depicted a small amount of low resolution
+                images, which resulted decorative and useless,{' '}
+                <BoldText>without context or informational value</BoldText>
+              </CustomOrderedListItem>
+              <CustomOrderedListItem index={7}>
+                The written content was a block of right-aligned text fixed in a
+                column. It was{' '}
+                <BoldText>
+                  illegible due to font sizes smaller than 12px
+                </BoldText>
+              </CustomOrderedListItem>
+              <CustomOrderedListItem index={8}>
+                The webpage was unresponsive. Smaller viewports were not
+                considered and this decision led to a scaled down layout,{' '}
+                <BoldText>
+                  illegible and inapproachable on smaller devices
+                </BoldText>
+              </CustomOrderedListItem>
+            </CustomOrderedList>
+
             <Paragraph>
-              Evaluating the engagement level of the old website I could assess
-              the content didn’t meet user needs and wasn’t up-to-date.
-              Furthermore testing the navigation and reviewing content layout I
-              identified usability and accessibility issues.
+              The creation of a new website required{' '}
+              <BoldText>
+                content revisions and strategic design changes
+              </BoldText>
+              , ensuring a comprehensive improvement over the old website.
             </Paragraph>
           </Prose>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3 lg:gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Unresponsive Design</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  The webpage from 2011 wasn't optimised for smaller devices,
-                  like tablets and phones. The design was scaled down to fit the
-                  smaller screens. This led to pinching, zooming and frustration
-                  while interacting with the site.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Obsolete Content</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Through the web page there were informations no longer helpful
-                  or non-reusable. <br />
-                  Moreover, the combination of a bad information architecture
-                  and an absent hierarchy in typography turned into a huge
-                  impediment.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Language Limitation</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Despite the expected influx of French and English tourists in
-                  the territory, the previous website was only available in
-                  Italian. <br />
-                  This language barrier limited the website reach, engagement
-                  and interactions.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Prose>
-            <Paragraph>
-              The new website had to be responsive, well structured and
-              translated in multiple languages to ensure a comprehensive
-              improvement over the old website.
-            </Paragraph>
-          </Prose>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3 lg:gap-6">
-            <Card inverted>
-              <CardHeader>
-                <CardTitle>Responsive Design</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  To enhance responsiveness, I chose 4 breakpoints to control
-                  and adapt the layout on different devices, providing a
-                  seamless experience for smaller screens and easy access to the
-                  content without pinching.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card inverted>
-              <CardHeader>
-                <CardTitle>Updated Content</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  By collaborating with the client, we created a coherent
-                  narrative that effectively communicated the winery’s identity.
-                  As a consequence, the information architecture has been
-                  restructured for the new content.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card inverted>
-              <CardHeader>
-                <CardTitle>Language Inclusion</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  To provide easy comprehension for tourists, the website had to
-                  be multilingual. This addition broadens the reach, improves
-                  the engagement by breaking down language barriers and makes it
-                  accessible to a wider audience.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <CaseStudyImage
-              src={oldWebsiteIssuesImg}
-              alt="Old website issues"
-              margins={false}
-            />
-            <CaseStudyImage
-              src={newWebsiteImprovementsImg}
-              alt="New website improvements"
-              margins={false}
-              captionContent="Usability and accessibility issues adressed"
-              imgNumber="1.0"
-            />
-          </div>
-
-          <Prose>
-            <Paragraph>
-              The website would be used by tourists, people interested in the
-              winery and wine enthusiasts. To identify the best solutions for
-              users I had to learn more about their problems and put myself in
-              the their shoes. Collecting some insights could help me understand
-              their opinions, feelings and motivations and then empathise with
-              their challenges.
-            </Paragraph>
-            <Paragraph>
-              I led some interviews with different costumers paying attention to
-              their behaviours as well as their verbal responses. Identifying
-              aspects such as discomfort or enthusiasm in the wine connoisseurs
-              helped me consider their different needs and distill some user
-              objectives.
-            </Paragraph>
-          </Prose>
-
-          <UserObjectivesGrid
-            objectives={[
-              'Discover the products available',
-              'Contact and locate the winery',
-              'Uncover the winemaking process',
-            ]}
+          <CaseStudyImage
+            src={oldWebsiteProblemsImg}
+            alt="Old website problems"
+            captionContent="Old website problems"
+            imgNumber="1.0"
           />
 
           <Prose>
             <Paragraph>
-              Taking into account all the information gathered, I fabricated an
-              archetype representative of most target users who would be both
-              viewing the products and trying to contact the winery to purchase
-              or visit. Creating this concrete instance was effective, as it
-              constantly reminded me the user’s standpoint value which
-              sometimes, to content the client, can be left behind.
+              The website would be{' '}
+              <BoldText>
+                used by tourists, people interested in the winery and wine
+                enthusiasts
+              </BoldText>
+              . To identify the best solutions for users I had to learn more
+              about their problems and put myself in the their shoes. Collecting
+              some insights could help me understand their opinions, feelings
+              and motivations and then empathise with their challenges. I led
+              some interviews with different costumers{' '}
+              <BoldText>
+                paying attention to their behaviours as well as their verbal
+                responses
+              </BoldText>
+              . Identifying aspects such as discomfort or enthusiasm in the wine
+              connoisseurs helped me consider their different needs and distill
+              a user persona.
+            </Paragraph>
+            <Paragraph>
+              I fabricated an archetype representative of most target users who
+              would be both{' '}
+              <BoldText>
+                viewing the products and trying to contact the winery to
+                purchase or visit
+              </BoldText>
+              . Creating this concrete instance was effective, as it constantly
+              reminded me the user’s standpoint value which sometimes, to
+              content the client, can be left behind.
             </Paragraph>
           </Prose>
+
           <UserPersonaCard userPersona={userPersona} />
+
+          <Prose>
+            <Paragraph>
+              The persona targeted was clearly{' '}
+              <BoldText>detail-oriented but valued speed too</BoldText>. These
+              aspects helped me taking decisions easier while designing
+              the Contacts, Wines and Detail wine page content.
+            </Paragraph>
+          </Prose>
         </Chapter>
 
         <Chapter>
@@ -312,37 +271,54 @@ export default function WineryWebsite() {
 
           <Prose>
             <Paragraph>
-              The persona targeted was clearly detail-oriented but valued speed
-              too. These aspects helped me taking decisions easier while
-              designing the Contacts, Wines and Detail wine page content.
-            </Paragraph>
-            <Paragraph>
-              Focusing on the defined set of target users, I needed to create an
-              enjoyable interface with an efficient and streamlined design. A
-              clear hierarchy and architecture had to guide the user through the
-              website, ensuring that he could easily find the information
-              needed.
+              I needed to create an enjoyable interface with an efficient and
+              streamlined design, settling the old website problems, meeting
+              target user’s expectations and needs. In order to grant{' '}
+              <BoldText>easy access to the content on smaller screens</BoldText>
+              , I chose 4 breakpoints letting me control and adapt the layout on
+              different devices. Then I{' '}
+              <BoldText>
+                collaborated with the client and created a coherent narrative
+              </BoldText>
+              , effectively communicating the winery’s identity. Finally, to
+              guide the user through the website we established a clear
+              hierarchy and information architecture ensuring a fast research
+              for the information needed.
             </Paragraph>
           </Prose>
+
           <CaseStudyImage
             src={informationArchitectureImg}
             alt="General-IA flow of the website"
             captionContent="General-IA flow"
             imgNumber="2.0"
           />
+
           <Prose>
             <Paragraph>
-              Product pages had to contain all the informations useful for the
-              customer but with a fast and easy access due to the short amount
-              of time to spark his interest. A good balance and hierarchy helped
-              with that, but it was challenging to achieve.
+              Since entering the website{' '}
+              <BoldText>the user is presented with two options</BoldText>; he
+              can choose whether to scroll on and follow the business
+              presentation or to click on the cta wines and contact. When
+              clicking on the button wines, the user can access to the Wines
+              page which provides a list of wines divided in categories, each
+              name if hovered shows its bottle preview else clicked the user is
+              directed on the Detail wine page.
             </Paragraph>
             <Paragraph>
-              Once clicked on a wine link, users were directed on the Detail
-              wine page, where they could find tasting sensations, product
-              aesthetics and winemaking curiosities within the viewport, or else
-              reachable with a minimal scrolling. The wine had to resonate with
-              the customer, be remembered and perceived as high-quality.
+              Detail wine pages had to{' '}
+              <BoldText>
+                contain all the informations useful for the customer
+              </BoldText>
+              , but with a fast and easy access, due to the short amount of time
+              of the user. A good balance and hierarchy helped with that, but it
+              was challenging to achieve. All the content had to be{' '}
+              <BoldText>
+                organised within the viewport, or else reachable with a minimal
+                scrolling
+              </BoldText>
+              . By breaking it into sections, I could assign different
+              positions, layouts and purposes.
             </Paragraph>
           </Prose>
 
@@ -387,10 +363,22 @@ export default function WineryWebsite() {
 
           <Prose>
             <Paragraph>
-              Since most people instinctively read the page from left to right,
-              I laid out the readable contents on the left and the product’s
-              image on the right. Through these decisions I ensured an efficient
-              use of space and a clear information navigation.
+              I laid out the{' '}
+              <BoldText>
+                readable contents on the left and the product’s image on the
+                right
+              </BoldText>
+              , since most people instinctively read the page from left to
+              right. Following the wine-sensory characteristics section which
+              presents the wine, there is a section dedicated to winemaking
+              curiosities composed by collapsible blocks individually
+              expandable. With this layout I ensured an efficient use of space
+              and a clear information navigation for the user, who can{' '}
+              <BoldText>
+                quickly access to the information needed without feeling
+                overwhelmed
+              </BoldText>{' '}
+              by tons of text.
             </Paragraph>
           </Prose>
 
@@ -408,11 +396,13 @@ export default function WineryWebsite() {
               for headings and a Sans for paragraphs to create a good balance.
               In order to create a seamless experience for users the paragraphs
               required to stand out: a{' '}
-              <BoldText>grayscale colour palette</BoldText> and{' '}
-              <BoldText>above-average text dimensions</BoldText> ensured a
-              comfortable and smooth reading; ample spacing between each block
-              made each section appear shorter and approachable. In a mainly
-              monochromatic design, colours stuck out from supporting photos.
+              <BoldText>
+                grayscale colour palette and above-average text dimensions
+                ensured a comfortable and smooth reading
+              </BoldText>
+              ; ample spacing between each block made each section appear
+              shorter and approachable. In a mainly monochromatic design,{' '}
+              <BoldText>colours stuck out from supporting photos</BoldText>.
             </Paragraph>
           </Prose>
 
@@ -449,7 +439,7 @@ export default function WineryWebsite() {
           <CaseStudyImage
             src={fontsImg}
             alt="Typography"
-            captionContent="Typography"
+            captionContent="Fonts’ usage in home section"
             imgNumber="2.2"
           />
         </Chapter>
@@ -520,11 +510,14 @@ export default function WineryWebsite() {
             <Paragraph>
               When the prototypes were finalised, I shared the Figma project
               with the frontend developer. We worked closely throughout the
-              development process with accessibility as top priority. We ensured
-              the website followed the best practices, such as incorporating alt
-              text for images and testing the colours’ contrast with
-              accessibility checkers. We aimed to pass the WCAG contrast
-              criteria providing an easy navigation for users with disabilities.
+              development process with accessibility as top priority.{' '}
+              <BoldText>
+                We ensured the website followed the best practices
+              </BoldText>
+              , such as incorporating alt text for images and testing the
+              colours’ contrast with accessibility checkers. We aimed to pass
+              the WCAG contrast criteria providing an easy navigation for users
+              with disabilities.
             </Paragraph>
             <Paragraph>
               The website has been deployed at the following{' '}

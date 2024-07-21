@@ -76,7 +76,7 @@ function EditTeamSkeletonCard() {
                 </div>
               </div>
               <div className="w-36">
-                <SkeletonSelect optionsWidth={['w-20', 'w-16', 'w-20']} />
+                <SkeletonSelect optionsWidth={['w-20', 'w-16', 'w-24']} />
               </div>
             </div>
           ))}
