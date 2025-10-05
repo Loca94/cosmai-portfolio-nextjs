@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 export function InstagramIcon(
   props: React.ComponentPropsWithoutRef<'svg'>,
 ): JSX.Element {

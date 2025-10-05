@@ -10,7 +10,7 @@ export function AnimatedBadgeList({ badges }: { badges: string[] }) {
     const interval = setInterval(() => {
       // Increment the active badge index
       setActiveBadgeIndex((prevIndex) => (prevIndex + 1) % badges.length);
-    }, 1500); // Change the duration as needed
+    }, 1500);
 
     // Cleanup function to clear the interval
     return () => clearInterval(interval);

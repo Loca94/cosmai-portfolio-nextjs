@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 function ArrowBendUpLeftIcon(props: React.ComponentPropsWithRef<'svg'>) {
   return (
     <svg

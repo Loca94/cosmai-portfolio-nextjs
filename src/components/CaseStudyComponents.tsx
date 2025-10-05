@@ -324,7 +324,6 @@ function CaseStudyLink({
   );
 }
 
-// TODO: Add GrayscaleTransitionImage component to every image
 function CaseStudyImage({
   src,
   alt,
