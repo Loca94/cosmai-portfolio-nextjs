@@ -81,7 +81,7 @@ function MobileOverlappingImages({
       <div className={cn('flex flex-col items-center', className)}>
         <FadeIn className="z-10 w-full">
           <div className="h-52 w-full max-w-sm rounded-lg border border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full overflow-hidden rounded border border-slate-700">
+            <div className="h-full w-full overflow-hidden rounded-sm border border-slate-700">
               <CaseStudyImage
                 className="h-48 w-full object-cover object-top"
                 src={images[0].src}
@@ -94,7 +94,7 @@ function MobileOverlappingImages({
         </FadeIn>
         <FadeIn className="z-20 w-full">
           <div className="-mt-8 h-52 w-full max-w-sm rounded-lg border border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full overflow-hidden rounded border border-slate-700">
+            <div className="h-full w-full overflow-hidden rounded-sm border border-slate-700">
               <CaseStudyImage
                 className="h-48 w-full object-cover"
                 src={images[1].src}
@@ -123,17 +123,17 @@ function DesktopBentoGrid({
         <div className="grid auto-rows-[270px] grid-cols-3 gap-4 lg:auto-rows-[330px]">
           <FadeIn className="col-span-2 row-span-1 overflow-hidden rounded-lg border border-slate-700 bg-slate-900">
             <SafariBrowserHeaderSkeleton />
-            {/* TODO: add priority to image? */}
             <CaseStudyImage
               className="object-cover md:h-[238px] lg:h-[295px]"
               src={images[0].src}
               alt={images[0].alt}
               margins={false}
               rounded={false}
+              priority={true}
             />
           </FadeIn>
           <FadeIn className="col-span-1 row-span-1 rounded-lg border border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full overflow-hidden rounded border border-slate-700">
+            <div className="h-full w-full overflow-hidden rounded-sm border border-slate-700">
               {/* TODO: add priority to image? */}
               <CaseStudyImage
                 className="object-cover md:h-[250px] lg:h-[310px]"
@@ -141,12 +141,13 @@ function DesktopBentoGrid({
                 alt={images[1].alt}
                 margins={false}
                 rounded={false}
+                priority={true}
               />
             </div>
           </FadeIn>
 
           <FadeIn className="col-span-1 row-span-1 rounded-lg border border-slate-700 bg-slate-900 p-2">
-            <div className="h-full w-full overflow-hidden rounded border border-slate-700">
+            <div className="h-full w-full overflow-hidden rounded-sm border border-slate-700">
               {/* Image Here with priority */}
               <CaseStudyImage
                 className="object-cover md:h-[250px] lg:h-[310px]"
@@ -154,6 +155,7 @@ function DesktopBentoGrid({
                 alt={images[2].alt}
                 margins={false}
                 rounded={false}
+                priority={true}
               />
             </div>
           </FadeIn>
@@ -166,6 +168,7 @@ function DesktopBentoGrid({
               alt={images[3].alt}
               margins={false}
               rounded={false}
+              priority={true}
             />
           </FadeIn>
         </div>
@@ -293,11 +296,11 @@ function CustomOrderedListItem({
   return (
     <li
       className={cn(
-        'group flex border-b border-dashed border-slate-700 py-4 text-sm text-slate-400 transition duration-200 last:border-b-0 hover:border-orange-accent sm:text-base',
+        'group hover:border-orange-accent flex border-b border-dashed border-slate-700 py-4 text-sm text-slate-400 transition duration-200 last:border-b-0 sm:text-base',
         className,
       )}
     >
-      <span className="mr-2 mt-0.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-slate-700 text-[0.625rem] font-bold text-slate-900 transition-colors duration-200 group-hover:bg-orange-accent">
+      <span className="group-hover:bg-orange-accent mt-0.5 mr-2 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-slate-700 text-[0.625rem] font-bold text-slate-900 transition-colors duration-200">
         {index}
       </span>
       <span>{children}</span>
@@ -332,6 +335,7 @@ function CaseStudyImage({
   rounded = true,
   captionContent,
   imgNumber,
+  priority = false,
   className,
 }: {
   src: string | StaticImageData;
@@ -341,6 +345,7 @@ function CaseStudyImage({
   rounded?: boolean;
   captionContent?: string;
   imgNumber?: string;
+  priority?: boolean;
   className?: string;
 }) {
   return (
@@ -357,6 +362,7 @@ function CaseStudyImage({
           alt={alt}
           quality={90}
           sizes={sizes}
+          priority={priority}
         />
       </div>
       {captionContent && (
@@ -381,11 +387,11 @@ function UserObjectivesGrid({ objectives }: { objectives: string[] }) {
     content?: string;
   }) => (
     <Card
-      className={`flex aspect-square items-center justify-center rounded p-6 sm:p-4 ${toHighlight ? 'bg-slate-200' : ''}`}
+      className={`flex aspect-square items-center justify-center rounded-sm p-6 sm:p-4 ${toHighlight ? 'bg-slate-200' : ''}`}
     >
       {toHighlight ? (
         <p
-          className={`text-center text-sm font-bold leading-tight text-slate-700`}
+          className={`text-center text-sm leading-tight font-bold text-slate-700`}
         >
           {content}
         </p>
@@ -533,7 +539,7 @@ function UserPersonaCard({ userPersona }: { userPersona: UserPersona }) {
                   <Badge variant="darker" className="w-fit text-slate-400">
                     Frustrations
                   </Badge>
-                  <ul className="list-disc space-y-2 [&>*]:ml-4">
+                  <ul className="list-disc space-y-2 *:ml-4">
                     {userPersona.frustrations.map((item) => (
                       <li key={item}>
                         <CardDescription>{item}</CardDescription>

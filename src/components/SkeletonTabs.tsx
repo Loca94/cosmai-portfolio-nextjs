@@ -13,7 +13,7 @@ import { SkeletonSelect } from '@/components/SkeletonSelect';
 
 function EditProfileSkeletonCard() {
   return (
-    <Card className="rounded border border-slate-200 bg-slate-950">
+    <Card className="rounded-sm border border-slate-200 bg-slate-950">
       <CardHeader>
         <CardTitle asChild>
           <Skeleton className="w-28" color="primary" />
@@ -50,7 +50,7 @@ function EditProfileSkeletonCard() {
 
 function EditTeamSkeletonCard() {
   return (
-    <Card className="rounded border border-slate-200 bg-slate-950">
+    <Card className="rounded-sm border border-slate-200 bg-slate-950">
       <CardHeader>
         <CardTitle asChild>
           <Skeleton className="w-36" color="primary" />
@@ -90,7 +90,7 @@ export function SkeletonTabs() {
   return (
     <div className="max-h-[328px] min-h-[328px]">
       <Tabs className="w-full" defaultValue="edit-profile">
-        <TabsList className="grid h-[50px] w-full grid-cols-2 bg-slate-950 p-0.5 [&>*]:h-11">
+        <TabsList className="grid h-[50px] w-full grid-cols-2 bg-slate-950 p-0.5 *:h-11">
           <TabsTrigger
             value="edit-profile"
             className="rounded-l-sm border-slate-700 bg-slate-950 data-[state=active]:border data-[state=active]:border-slate-300"

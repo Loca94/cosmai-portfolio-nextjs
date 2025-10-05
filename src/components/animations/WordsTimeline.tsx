@@ -38,7 +38,7 @@ function WordsTimeline({ words }: { words: string[] }) {
             {word}
           </motion.div>
           {index < words.length - 1 && (
-            <div className="relative h-[1px] w-full overflow-hidden bg-slate-700">
+            <div className="relative h-px w-full overflow-hidden bg-slate-700">
               {currentStep >= index * 2 + 1 && (
                 <motion.div
                   className="absolute left-0 top-0 h-0.5 bg-slate-400"
@@ -55,7 +55,7 @@ function WordsTimeline({ words }: { words: string[] }) {
                   }}
                 >
                   <motion.div
-                    className="absolute right-0 top-0 h-[1px] w-8 bg-gradient-to-r from-slate-200 to-slate-700"
+                    className="absolute right-0 top-0 h-px w-8 bg-linear-to-r from-slate-200 to-slate-700"
                     initial={{ x: '0%' }}
                     animate={{ x: '100%' }}
                     transition={{

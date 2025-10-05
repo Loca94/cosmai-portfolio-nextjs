@@ -5,23 +5,23 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 focus-visible:ring-slate-300',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 focus-visible:ring-slate-300',
   {
     variants: {
       variant: {
-        default: 'shadow bg-slate-50 text-slate-900 hover:bg-slate-50/90',
-        destructive: 'shadow-sm bg-red-900 text-slate-50 hover:bg-red-900/90',
+        default: 'shadow-sm bg-slate-50 text-slate-900 hover:bg-slate-50/90',
+        destructive: 'shadow-xs bg-red-900 text-slate-50 hover:bg-red-900/90',
         outline:
-          'border shadow-sm border-slate-700 bg-slate-950 hover:bg-slate-800 hover:text-slate-50 hover:border-slate-600',
+          'border shadow-xs border-slate-700 bg-slate-950 hover:bg-slate-800 hover:text-slate-50 hover:border-slate-600',
         outlineInverse:
-          'border shadow-sm border-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-800',
-        secondary: 'shadow-sm bg-slate-800 text-slate-50 hover:bg-slate-800/80',
+          'border shadow-xs border-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-800',
+        secondary: 'shadow-xs bg-slate-800 text-slate-50 hover:bg-slate-800/80',
         ghost: 'hover:bg-slate-800 hover:text-slate-50',
         ghostInverse: 'hover:text-slate-800',
         link: 'text-slate-50',
         empty: 'text-slate-400 hover:text-slate-200',
         richTextEditor:
-          '!rounded-none hover:text-slate-50 hover:bg-slate-800 w-full h-full !p-0',
+          'rounded-none! hover:text-slate-50 hover:bg-slate-800 w-full h-full p-0!',
       },
       size: {
         default: 'h-9 px-4 py-2',

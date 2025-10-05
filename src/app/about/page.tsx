@@ -66,7 +66,7 @@ function MissionSection() {
               </CardHeader>
               <CardContent>
                 <Tabs defaultValue="profile">
-                  <TabsList className="grid h-11 w-fit grid-cols-3 [&>*]:h-10">
+                  <TabsList className="grid h-11 w-fit grid-cols-3 *:h-10">
                     <TabsTrigger
                       value="profile"
                       className="rounded-l border-r border-slate-700"
@@ -185,7 +185,7 @@ function ToolboxSection() {
                           {tool.description}
                         </p>
                       </div>
-                      <div className="group relative flex size-10 flex-col items-center justify-center rounded border border-slate-500 leading-tight text-slate-400 transition-colors hover:border-slate-200">
+                      <div className="group relative flex size-10 flex-col items-center justify-center rounded-sm border border-slate-500 leading-tight text-slate-400 transition-colors hover:border-slate-200">
                         {/* Add star SVG */}
                         <span className="text-base font-medium leading-3 group-hover:text-slate-200">
                           {getYearsOfExperience(tool.startDate)}

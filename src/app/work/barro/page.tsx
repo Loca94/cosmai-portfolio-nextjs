@@ -323,7 +323,7 @@ export default function WineryWebsite() {
           </Prose>
 
           <Prose>
-            <div className="rounded border border-dashed border-orange-accent px-6 py-2 text-sm sm:px-8 sm:py-4">
+            <div className="rounded-sm border border-dashed border-orange-accent px-6 py-2 text-sm sm:px-8 sm:py-4">
               <ol
                 role="list"
                 className="divide-y divide-dashed divide-orange-accent"

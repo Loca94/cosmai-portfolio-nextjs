@@ -15,9 +15,9 @@ export default function StickyProjectNavigator({
   nextUrl: string;
 }) {
   return (
-    <div className="sticky top-0 z-50 sm:top-4 sm:-mb-[4.5rem] sm:mt-4">
+    <div className="sticky top-0 z-50 sm:top-4 sm:-mb-18 sm:mt-4">
       <div className="flex w-full justify-center">
-        <div className="relative w-full border-b-2 border-slate-900 bg-slate-950 sm:w-fit sm:rounded sm:border-2">
+        <div className="relative w-full border-b-2 border-slate-900 bg-slate-950 sm:w-fit sm:rounded-sm sm:border-2">
           <div className="flex justify-center text-sm text-slate-400">
             <Link
               href={prevUrl}

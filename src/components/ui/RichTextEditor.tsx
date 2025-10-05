@@ -117,7 +117,7 @@ const RichTextEditor = () => {
     editorProps: {
       attributes: {
         class:
-          'focus:outline-none w-full h-full overflow-y-auto p-4 text-slate-200',
+          'focus:outline-hidden w-full h-full overflow-y-auto p-4 text-slate-200',
       },
     },
     extensions: [
@@ -136,7 +136,7 @@ const RichTextEditor = () => {
   });
 
   return (
-    <div className="flex max-h-[328px] min-h-[328px] rounded border border-slate-700">
+    <div className="flex max-h-[328px] min-h-[328px] rounded-sm border border-slate-700">
       <div className="flex-1">
         <EditorContent className="h-full" editor={editor} />
       </div>
