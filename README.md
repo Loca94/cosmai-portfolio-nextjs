@@ -47,11 +47,11 @@ Start the development server:
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Scripts
 
-- `dev`: Starts the development server on port 5173.
+- `dev`: Starts the development server on port 3000.
 - `build`: Builds the application for production.
 - `start`: Starts the production server.
 - `lint`: Runs ESLint to check for code quality issues.

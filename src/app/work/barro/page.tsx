@@ -15,7 +15,6 @@ import {
   UserPersonaCard,
 } from '@/components/CaseStudyComponents';
 import { UserPersona } from '@/lib/types';
-import { Badge } from '@/components/ui/Badge';
 import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
 import heroImg1 from '@/images/case-study/barro/hero-1.webp';
 import heroImg2 from '@/images/case-study/barro/hero-2.webp';
@@ -151,7 +150,7 @@ export default function WineryWebsite() {
               <CustomOrderedListItem index={2}>
                 The two buttons consisted of small icons, a triangle pointing up
                 and the other down. They{' '}
-                <BoldText>lacked minimum target size</BoldText>, hindering the
+                <BoldText>lacked minimum target size</BoldText>, hindering the
                 access of users with difficulty in operating small controls or
                 with disabilities
               </CustomOrderedListItem>
@@ -165,7 +164,9 @@ export default function WineryWebsite() {
               <CustomOrderedListItem index={4}>
                 The website's layout was centred with fixed width and height. It
                 was a{' '}
-                <BoldText>condensed structure misusing whitespace</BoldText>{' '}
+                <BoldText>
+                  condensed structure misusing whitespace
+                </BoldText>{' '}
               </CustomOrderedListItem>
               <CustomOrderedListItem index={5}>
                 Among the seven navbar links, two directed to a blank page on
@@ -225,7 +226,7 @@ export default function WineryWebsite() {
                 paying attention to their behaviours as well as their verbal
                 responses
               </BoldText>
-              . Identifying aspects such as discomfort or enthusiasm in the wine
+              . Identifying aspects such as discomfort or enthusiasm in the wine
               connoisseurs helped me consider their different needs and distill
               a user persona.
             </Paragraph>
@@ -248,8 +249,8 @@ export default function WineryWebsite() {
             <Paragraph>
               The persona targeted was clearly{' '}
               <BoldText>detail-oriented but valued speed too</BoldText>. These
-              aspects helped me taking decisions easier while designing
-              the Contacts, Wines and Detail wine page content.
+              aspects helped me taking decisions easier while designing the
+              Contacts, Wines and Detail wine page content.
             </Paragraph>
           </Prose>
         </Chapter>
@@ -323,13 +324,13 @@ export default function WineryWebsite() {
           </Prose>
 
           <Prose>
-            <div className="rounded-sm border border-dashed border-orange-accent px-6 py-2 text-sm sm:px-8 sm:py-4">
+            <div className="border-orange-accent rounded-sm border border-dashed px-6 py-2 text-sm sm:px-8 sm:py-4">
               <ol
                 role="list"
-                className="divide-y divide-dashed divide-orange-accent"
+                className="divide-orange-accent divide-y divide-dashed"
               >
                 <li className="flex items-start py-4">
-                  <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                  <span className="bg-orange-accent mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full text-xs font-bold text-slate-950">
                     1
                   </span>
                   <span className="ml-4 text-slate-400">
@@ -339,7 +340,7 @@ export default function WineryWebsite() {
                   </span>
                 </li>
                 <li className="flex items-start py-4">
-                  <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                  <span className="bg-orange-accent mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full text-xs font-bold text-slate-950">
                     2
                   </span>
                   <span className="ml-4 text-slate-400">
@@ -349,7 +350,7 @@ export default function WineryWebsite() {
                   </span>
                 </li>
                 <li className="flex items-start py-4">
-                  <span className="mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full bg-orange-accent text-xs font-bold text-slate-950">
+                  <span className="bg-orange-accent mt-0.5 flex h-4 w-4 min-w-4 items-center justify-center rounded-full text-xs font-bold text-slate-950">
                     3
                   </span>
                   <span className="ml-4 text-slate-400">
@@ -368,7 +369,7 @@ export default function WineryWebsite() {
                 readable contents on the left and the product’s image on the
                 right
               </BoldText>
-              , since most people instinctively read the page from left to
+              , since most people instinctively read the page from left to
               right. Following the wine-sensory characteristics section which
               presents the wine, there is a section dedicated to winemaking
               curiosities composed by collapsible blocks individually
@@ -400,7 +401,7 @@ export default function WineryWebsite() {
                 grayscale colour palette and above-average text dimensions
                 ensured a comfortable and smooth reading
               </BoldText>
-              ; ample spacing between each block made each section appear
+              ; ample spacing between each block made each section appear
               shorter and approachable. In a mainly monochromatic design,{' '}
               <BoldText>colours stuck out from supporting photos</BoldText>.
             </Paragraph>
@@ -485,7 +486,7 @@ export default function WineryWebsite() {
                 We ensured the website followed the best practices
               </BoldText>
               , such as incorporating alt text for images and testing the
-              colours’ contrast with accessibility checkers. We aimed to pass
+              colours’ contrast with accessibility checkers. We aimed to pass
               the WCAG contrast criteria providing an easy navigation for users
               with disabilities.
             </Paragraph>
