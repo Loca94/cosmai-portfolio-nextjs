@@ -4,10 +4,7 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
   MenubarSeparator,
-  MenubarShortcut,
   MenubarSub,
   MenubarSubContent,
   MenubarSubTrigger,
@@ -15,7 +12,7 @@ import {
 } from '@/components/ui/MenuBar';
 import { Skeleton } from '@/components/ui/Skeleton';
 
-export function SkeletonMenuBar() {
+export function MenuBarSkeleton() {
   return (
     <Menubar>
       <MenubarMenu>

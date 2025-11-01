@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/Button';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { ProfileIcon } from '@/components/Icons';
 
-export default function ProfileDropdown() {
+export default function ProfileDropdownSkeleton() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

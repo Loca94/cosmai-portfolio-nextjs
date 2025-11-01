@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Container from '@/components/Container';
+import Container from '@/components/layout/Container';
 import { HoverUnderline } from '@/components/animations/HoverUnderline';
 
 export default function Header() {
@@ -20,9 +20,10 @@ export default function Header() {
               <HoverUnderline>About</HoverUnderline>
             </Link>
             <a
-              href="https://www.saracosmai.com/cv-sara-cosmai.pdf"
-              target="_blank"
+              href="/Sara_Cosmai_Resume.pdf"
               className="p-1.5 text-sm font-semibold text-slate-400 transition hover:text-slate-200 focus:text-slate-200"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <HoverUnderline>Resume</HoverUnderline>
             </a>

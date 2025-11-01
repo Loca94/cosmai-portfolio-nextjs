@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 
-type UserPersona = {
+export type UserPersona = {
   fullName: string;
   avatarSrc: string | StaticImageData;
   background: string;
@@ -8,4 +8,7 @@ type UserPersona = {
   frustrations: string[];
 };
 
-export type { UserPersona };
+export type ImgProp = {
+  src: string | StaticImageData;
+  alt?: string;
+};

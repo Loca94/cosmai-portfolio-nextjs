@@ -1,9 +1,9 @@
 'use client';
 
-import { UserPersona } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { UserPersonaCard } from './CaseStudyComponents';
 import { useState } from 'react';
+import { UserPersona } from '@/lib/types';
+import UserPersonaCard from '@/components/case-study/UserPersonaCard';
 
 export default function UserPersonaTabs({
   userPersonas,
@@ -24,7 +24,7 @@ export default function UserPersonaTabs({
                 userPersona.fullName === activeIndex
                   ? 'border-slate-300 text-slate-300'
                   : 'border-transparent text-slate-500 hover:border-slate-500 hover:text-slate-100',
-                'whitespace-nowrap border-b-2 px-1 py-4 text-sm sm:text-base',
+                'border-b-2 px-1 py-4 text-sm whitespace-nowrap sm:text-base',
               )}
             >
               User {idx + 1}

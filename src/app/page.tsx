@@ -1,8 +1,8 @@
-import Container from '@/components/Container';
+import Link from 'next/link';
+import Container from '@/components/layout/Container';
 import HeroComponents from '@/components/HeroComponents';
 import WordsTimeline from '@/components/animations/WordsTimeline';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import Link from 'next/link';
 import Balancer from 'react-wrap-balancer';
 
 function SelectedProjects({ className, ...props }: { className?: string }) {
@@ -59,7 +59,7 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
       projectName: 'Alpitude',
       href: 'alpitude',
       title:
-        'Creating brand identity, design system and user experience for an early-stage Digital Startup',
+        'Creating visual identity, design system and user expericence for a Digital Startup',
       images: [
         {
           src: 'alpitude-preview-1.png',
@@ -122,13 +122,13 @@ export default function Home() {
     <>
       <Container className="mt-14">
         <div className="mb-8 md:mb-12">
-          <h1 className="mb-6 max-w-2xl text-[32px] font-medium leading-tight text-slate-400">
+          <h1 className="mb-6 max-w-2xl text-[32px] leading-tight font-medium text-slate-400">
             <Balancer>
               I transform ideas into{' '}
-              <span className="font-bold italic text-slate-200">tailored</span>,{' '}
-              <span className="font-bold italic text-slate-200">appealing</span>{' '}
+              <span className="font-bold text-slate-200 italic">tailored</span>,{' '}
+              <span className="font-bold text-slate-200 italic">appealing</span>{' '}
               and{' '}
-              <span className="font-bold italic text-slate-200">
+              <span className="font-bold text-slate-200 italic">
                 accessible
               </span>{' '}
               digital experiences.

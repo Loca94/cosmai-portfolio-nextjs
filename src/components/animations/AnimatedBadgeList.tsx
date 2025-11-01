@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { BadgeList, BadgeListItem } from '@/components/ui/Badge';
 
-export function AnimatedBadgeList({ badges }: { badges: string[] }) {
+export default function AnimatedBadgeList({ badges }: { badges: string[] }) {
   const [activeBadgeIndex, setActiveBadgeIndex] = useState(0);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export default function SkeletonButton({
+export default function ButtonSkeleton({
   className,
   asInput,
   children,

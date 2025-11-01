@@ -8,7 +8,11 @@ import {
 } from '@/components/ui/Select';
 import { Skeleton } from '@/components/ui/Skeleton';
 
-export function SkeletonSelect({ optionsWidth }: { optionsWidth: string[] }) {
+export default function SelectSkeleton({
+  optionsWidth,
+}: {
+  optionsWidth: string[];
+}) {
   return (
     <Select>
       <SelectTrigger className="w-full text-slate-700">

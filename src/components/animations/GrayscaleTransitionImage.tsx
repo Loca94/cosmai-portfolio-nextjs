@@ -14,10 +14,10 @@ export function GrayscaleTransitionImage(
     alt?: string;
   },
 ) {
-  let ref = useRef<React.ElementRef<'div'>>(null);
+  let ref = useRef<React.ComponentRef<'div'>>(null);
   let { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 65%', 'end 35%'],
+    offset: ['start 75%', 'end 25%'],
   });
   let overlayOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0, 1]);
 
@@ -29,7 +29,7 @@ export function GrayscaleTransitionImage(
         style={{ opacity: overlayOpacity }}
       />
       <div
-        className="pointer-events-none absolute left-0 top-0 w-full rounded-lg opacity-0 transition duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute top-0 left-0 w-full rounded-lg opacity-0 transition duration-300 group-hover:opacity-100"
         aria-hidden="true"
       >
         <Image alt="" {...props} />

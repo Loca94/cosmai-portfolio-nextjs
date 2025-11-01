@@ -7,9 +7,9 @@ import {
 } from '@/components/ui/Card';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/Tabs';
-import SkeletonButton from '@/components/SkeletonButton';
-import { ProfileIcon, SearchIcon } from '@/components/Icons';
-import { SkeletonSelect } from '@/components/SkeletonSelect';
+import { ProfileIcon } from '@/components/Icons';
+import ButtonSkeleton from '@/components/ui/ButtonSkeleton';
+import SelectSkeleton from './SelectSkeleton';
 
 function EditProfileSkeletonCard() {
   return (
@@ -27,21 +27,21 @@ function EditProfileSkeletonCard() {
           <div className="grid gap-2">
             {/* Label */}
             <Skeleton className="w-20" color="primary" />
-            <SkeletonButton asInput>
+            <ButtonSkeleton asInput>
               <Skeleton className="w-1/4" />
-            </SkeletonButton>
+            </ButtonSkeleton>
           </div>
           <div className="grid gap-2">
             {/* Label */}
             <Skeleton className="w-24" color="primary" />
-            <SkeletonButton asInput>
+            <ButtonSkeleton asInput>
               <Skeleton className="w-1/4" />
-            </SkeletonButton>
+            </ButtonSkeleton>
           </div>
           {/* Last Button */}
-          <SkeletonButton className="border-slate-200 hover:border-slate-200 hover:bg-slate-900">
+          <ButtonSkeleton className="border-slate-200 hover:border-slate-200 hover:bg-slate-900">
             <Skeleton className="w-1/4" color="primary" />
-          </SkeletonButton>
+          </ButtonSkeleton>
         </div>
       </CardContent>
     </Card>
@@ -76,7 +76,7 @@ function EditTeamSkeletonCard() {
                 </div>
               </div>
               <div className="w-36">
-                <SkeletonSelect optionsWidth={['w-20', 'w-16', 'w-24']} />
+                <SelectSkeleton optionsWidth={['w-20', 'w-16', 'w-24']} />
               </div>
             </div>
           ))}
@@ -86,7 +86,7 @@ function EditTeamSkeletonCard() {
   );
 }
 
-export function SkeletonTabs() {
+export function TabsSkeleton() {
   return (
     <div className="max-h-[328px] min-h-[328px]">
       <Tabs className="w-full" defaultValue="edit-profile">

@@ -1,23 +1,24 @@
+import { UserPersona } from '@/lib/types';
+import { Badge } from '@/components/ui/Badge';
+import { Card, CardHeader, CardContent } from '@/components/ui/Card';
+import UserPersonaTabs from '@/components/case-study/UserPersonaTabs';
+import CaseStudyLayout from '@/components/case-study/layout/CaseStudyLayout';
+import PageIntro from '@/components/case-study/layout/PageIntro';
+import Chapter from '@/components/case-study/content/Chapter';
+import Prose from '@/components/case-study/content/Prose';
+import BoldText from '@/components/case-study/content/BoldText';
+import CaseStudyLink from '@/components/case-study/content/Link';
+import Paragraph from '@/components/case-study/content/Paragraph';
+import ChapterTitle from '@/components/case-study/content/ChapterTitle';
+import CaseStudyImage from '@/components/case-study/media/CaseStudyImage';
+import AnimatedBadgeList from '@/components/animations/AnimatedBadgeList';
 import {
-  BoldText,
   BulletList,
   BulletListItem,
-  CaseStudyLayout,
-  CaseStudyImage,
-  CaseStudyLink,
-  Chapter,
-  ChapterTitle,
-  DesktopBentoGrid,
-  MobileOverlappingImages,
-  PageIntro,
-  Paragraph,
-  Prose,
-} from '@/components/CaseStudyComponents';
-import { Card, CardContent, CardHeader } from '@/components/ui/Card';
-import { UserPersona } from '@/lib/types';
-import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
-import UserPersonaTabs from '@/components/UserPersonaTabs';
-import { Badge } from '@/components/ui/Badge';
+} from '@/components/case-study/content/BulletList';
+import MobileOverlappingImages from '@/components/case-study/media/MobileOverlappingImages';
+import DesktopBentoGrid from '@/components/case-study/media/DesktopBentoGrid';
+
 import heroImg1 from '@/images/case-study/vierin/hero-1.webp';
 import heroImg2 from '@/images/case-study/vierin/hero-2.webp';
 import heroImg3 from '@/images/case-study/vierin/hero-3.webp';
@@ -91,11 +92,11 @@ export default function DentalWebsite() {
     <>
       <CaseStudyLayout
         projectUrl="https://www.dentista-aosta.com/"
-        prevUrl="/work/barro"
+        prevUrl="/work/alpitude"
         nextUrl="/work/barro"
       >
         <PageIntro
-          title={`Ideating a Dentist's website to promptly present the clinic and positively impact users`}
+          title="Ideating a Dentist's website to promptly present the clinic and positively impact users"
           tools={['Figma', 'After Effects', 'Photoshop', 'Illustrator']}
         />
         <MobileOverlappingImages

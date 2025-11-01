@@ -1,6 +1,11 @@
 'use client';
 
-import Container from '@/components/Container';
+import Link from 'next/link';
+import clsx from 'clsx';
+import Container from '@/components/layout/Container';
+import { FadeIn } from '@/components/animations/FadeIn';
+import { Button } from '@/components/ui/Button';
+import { HoverUnderline } from '@/components/animations/HoverUnderline';
 import {
   DribbbleIcon,
   InstagramIcon,
@@ -13,11 +18,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/Tooltip';
-import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
-import clsx from 'clsx';
-import { HoverUnderline } from '@/components/animations/HoverUnderline';
-import { FadeIn } from '@/components/animations/FadeIn';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -40,8 +40,10 @@ export default function Footer() {
                   className="px-0 text-lg font-medium max-md:mx-auto"
                 >
                   <a
-                    href="https://www.saracosmai.com/resume.pdf"
+                    href="/Sara_Cosmai_Resume.pdf"
                     className="block w-fit"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <HoverUnderline>Resume</HoverUnderline>
                   </a>
@@ -54,7 +56,7 @@ export default function Footer() {
               {/* Social Links */}
               <ul
                 role="list"
-                className="flex flex-row justify-center space-x-6 pb-12 md:flex-col md:space-x-0 md:space-y-4 md:pb-0"
+                className="flex flex-row justify-center space-x-6 pb-12 md:flex-col md:space-y-4 md:space-x-0 md:pb-0"
               >
                 <SocialLink
                   href="https://www.linkedin.com/in/sara-cosmai-designer/"

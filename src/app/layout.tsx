@@ -1,7 +1,7 @@
 import '@/styles/tailwind.css';
 import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
-import { Layout } from '@/components/Layout';
+import { Layout } from '@/components/layout/Layout';
 import { HotjarSnippet } from '@/components/HotjarSnippet';
 
 const onest = Onest({ subsets: ['latin'] });
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={`${onest.className} bg-slate-950 selection:bg-orange-accent selection:text-orange-950`}
+        className={`${onest.className} selection:bg-orange-accent bg-slate-950 selection:text-orange-950`}
       >
         <Layout>{children}</Layout>
         <HotjarSnippet />

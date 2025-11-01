@@ -1,21 +1,22 @@
+import { UserPersona } from '@/lib/types';
+import Prose from '@/components/case-study/content/Prose';
+import Chapter from '@/components/case-study/content/Chapter';
+import CaseStudyLink from '@/components/case-study/content/Link';
+import PageIntro from '@/components/case-study/layout/PageIntro';
+import BoldText from '@/components/case-study/content/BoldText';
+import Paragraph from '@/components/case-study/content/Paragraph';
+import UserPersonaCard from '@/components/case-study/UserPersonaCard';
+import ChapterTitle from '@/components/case-study/content/ChapterTitle';
+import CaseStudyLayout from '@/components/case-study/layout/CaseStudyLayout';
+import AnimatedBadgeList from '@/components/animations/AnimatedBadgeList';
+import CaseStudyImage from '@/components/case-study/media/CaseStudyImage';
+import DesktopBentoGrid from '@/components/case-study/media/DesktopBentoGrid';
+import MobileOverlappingImages from '@/components/case-study/media/MobileOverlappingImages';
 import {
-  BoldText,
-  CaseStudyImage,
-  CaseStudyLayout,
-  CaseStudyLink,
-  Chapter,
-  ChapterTitle,
-  DesktopBentoGrid,
-  MobileOverlappingImages,
   CustomOrderedList,
   CustomOrderedListItem,
-  PageIntro,
-  Paragraph,
-  Prose,
-  UserPersonaCard,
-} from '@/components/CaseStudyComponents';
-import { UserPersona } from '@/lib/types';
-import { AnimatedBadgeList } from '@/components/animations/AnimatedBadgeList';
+} from '@/components/case-study/content/CustomOrderedList';
+
 import heroImg1 from '@/images/case-study/barro/hero-1.webp';
 import heroImg2 from '@/images/case-study/barro/hero-2.webp';
 import heroImg3 from '@/images/case-study/barro/hero-3.webp';
@@ -52,10 +53,10 @@ export default function WineryWebsite() {
       <CaseStudyLayout
         projectUrl="https://www.dibarro.com"
         prevUrl="/work/vierin"
-        nextUrl="/work/vierin"
+        nextUrl="/work/alpitude"
       >
         <PageIntro
-          title={`Redesigning a winery’s website with an effortless detail-oriented experience for users`}
+          title="Redesigning a winery’s website with an effortless detail-oriented experience for users"
           tools={['Figma', 'Photoshop']}
         />
         <MobileOverlappingImages
