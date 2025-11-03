@@ -1,4 +1,5 @@
-import type { JSX } from "react";
+import type { JSX } from 'react';
+
 function ArrowBendUpLeftIcon(props: React.ComponentPropsWithRef<'svg'>) {
   return (
     <svg
@@ -175,7 +176,9 @@ function ExternalLinkIcon(
   );
 }
 
-function CheckIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
+function CheckSquareIcon(
+  props: React.ComponentPropsWithRef<'svg'>,
+): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -236,6 +239,19 @@ function CopyIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
       {...props}
     >
       <path d="M216,28H88A12,12,0,0,0,76,40V76H40A12,12,0,0,0,28,88V216a12,12,0,0,0,12,12H168a12,12,0,0,0,12-12V180h36a12,12,0,0,0,12-12V40A12,12,0,0,0,216,28ZM156,204H52V100H156Zm48-48H180V88a12,12,0,0,0-12-12H100V52H204Z"></path>
+    </svg>
+  );
+}
+
+function CheckIcon(props: React.ComponentPropsWithRef<'svg'>): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
     </svg>
   );
 }
@@ -408,6 +424,7 @@ export {
   BoldIcon,
   CheckBadgeIcon,
   CheckIcon,
+  CheckSquareIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   CopyIcon,

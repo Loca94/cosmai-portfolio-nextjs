@@ -20,9 +20,11 @@ export default function PageIntro({
           <PackageIcon className="h-6 w-6" />
           <span className="ml-2 text-lg font-medium">Toolbox</span>
         </h2>
-        <BadgeList>
+        <BadgeList className="flex-row-reverse">
           {tools.map((tool) => (
-            <BadgeListItem key={tool}>{tool}</BadgeListItem>
+            <BadgeListItem key={tool} className="lg:text-base" size="sm">
+              {tool}
+            </BadgeListItem>
           ))}
         </BadgeList>
       </aside>

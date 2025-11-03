@@ -5,7 +5,7 @@ type BadgeVariants = 'default' | 'active' | 'disabled' | 'darker' | 'orange';
 type SizeVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 const badgeVariants = cva(
-  'inline-flex w-fit items-center rounded-full px-2.5 py-1 text-base font-medium transition-colors ease-in-out duration-500',
+  'inline-flex w-fit items-center rounded-full px-2.5 py-1 text-base font-medium transition-colors ease-in-out duration-500 whitespace-nowrap',
   {
     variants: {
       variant: {

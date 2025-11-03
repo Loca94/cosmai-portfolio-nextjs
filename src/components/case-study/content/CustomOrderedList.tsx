@@ -1,3 +1,4 @@
+import { CheckIcon } from '@/components/Icons';
 import { cn } from '@/lib/utils';
 
 function CustomOrderedList({
@@ -16,7 +17,7 @@ function CustomOrderedListItem({
   children,
 }: {
   className?: string;
-  index: number;
+  index?: number;
   children: React.ReactNode;
 }) {
   return (
@@ -27,7 +28,7 @@ function CustomOrderedListItem({
       )}
     >
       <span className="group-hover:bg-orange-accent mt-0.5 mr-2 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-slate-700 text-[0.625rem] font-bold text-slate-900 transition-colors duration-200">
-        {index}
+        {index ?? <CheckIcon className="size-2.5" />}
       </span>
       <span>{children}</span>
     </li>

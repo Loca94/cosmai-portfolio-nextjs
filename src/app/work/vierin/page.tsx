@@ -1,7 +1,6 @@
 import { UserPersona } from '@/lib/types';
 import { Badge } from '@/components/ui/Badge';
 import { Card, CardHeader, CardContent } from '@/components/ui/Card';
-import UserPersonaTabs from '@/components/case-study/UserPersonaTabs';
 import CaseStudyLayout from '@/components/case-study/layout/CaseStudyLayout';
 import PageIntro from '@/components/case-study/layout/PageIntro';
 import Chapter from '@/components/case-study/content/Chapter';
@@ -18,6 +17,10 @@ import {
 } from '@/components/case-study/content/BulletList';
 import MobileOverlappingImages from '@/components/case-study/media/MobileOverlappingImages';
 import DesktopBentoGrid from '@/components/case-study/media/DesktopBentoGrid';
+import {
+  CustomOrderedList,
+  CustomOrderedListItem,
+} from '@/components/case-study/content/CustomOrderedList';
 
 import heroImg1 from '@/images/case-study/vierin/hero-1.webp';
 import heroImg2 from '@/images/case-study/vierin/hero-2.webp';
@@ -43,13 +46,15 @@ import floatingBtnImg from '@/images/case-study/vierin/floating-button.webp';
 import goalsFrustrationsImg from '@/images/case-study/vierin/goals-frustrations-objectives.webp';
 import reviewsImg from '@/images/case-study/vierin/reviews.webp';
 import rankingKeywordsImg from '@/images/case-study/vierin/ranking-keywords.webp';
+import UserPersonaCard from '@/components/case-study/ui/UserPersonaCard';
+import Tabs from '@/components/case-study/ui/Tabs';
 
 const userPersonas: UserPersona[] = [
   {
     fullName: 'Monica Petti',
     avatarSrc: monicaImg,
     background:
-      "Monica is a working mum, she is usually really tired, constantly divided among job, household chores and childcare. She is overprotective towards her children therefore she doesn’t trust a service in information's absence or inaccessibility. She needs to quickly understand because she lacks time and energies. Her son has a tooth decay.",
+      "Monica is a working mum, she is usually really tired, constantly divided among job, household chores and childcare. She is overprotective towards her children therefore she doesn’t trust a service in information's absence or inaccessibility. She needs to quickly understand because she lacks time and energies. Her son has a tooth decay.",
     goals: [
       'Quickly find dental services available',
       'Schedule an appointment for her son',
@@ -65,7 +70,7 @@ const userPersonas: UserPersona[] = [
     fullName: 'Giorgio Meier',
     avatarSrc: georgeImg,
     background:
-      'George is a Swiss architect. He’s often travelling among Italy, France and Germany. He has a second home in Valle d’Aosta. He loves eating crunchy foods and mountain-biking. He has an irrational fear of blood. During his holidays he accidentally broke one of his front tooth. He needs urgent treatment/care.',
+      'George is a Swiss architect. He’s often travelling among Italy, France and Germany. He has a second home in Valle d’Aosta. He loves eating crunchy foods and mountain-biking. He has an irrational fear of blood. During his holidays he accidentally broke one of his front tooth. He needs urgent treatment/care.',
     goals: [
       'Quickly make an appointment',
       'Send tooth’s photo via WhatsApp',
@@ -77,7 +82,7 @@ const userPersonas: UserPersona[] = [
     fullName: 'Matilda Lorenzi',
     avatarSrc: matildaImg,
     background:
-      'Matilda is a university student. She is young, self-absorbed and social network addicted. She spends most of her time doing self-care or studying. She thinks that her lips are too thin. She recently discovered about the lip filler treatment and she wants to try it. She needs to find a place where this service is provided.',
+      'Matilda is a university student. She is young, self-absorbed and social network addicted. She spends most of her time doing self-care or studying. She thinks that her lips are too thin. She recently discovered about the lip filler treatment and she wants to try it. She needs to find a place where this service is provided.',
     goals: [
       'Ensure there is a qualified team',
       'Book appointments via WhatsApp',
@@ -88,6 +93,12 @@ const userPersonas: UserPersona[] = [
 ];
 
 export default function DentalWebsite() {
+  const userPersonaTabs = userPersonas.map((userPersona, idx) => ({
+    id: userPersona.fullName,
+    label: `User ${idx + 1}`,
+    content: <UserPersonaCard userPersona={userPersona} />,
+  }));
+
   return (
     <>
       <CaseStudyLayout
@@ -167,9 +178,9 @@ export default function DentalWebsite() {
               <BoldText>
                 defining the client objectives, target user and visual style
               </BoldText>
-              . The client wanted to differentiate his website
-              from competitor's, trying an original approach and stand out,
-              evincing the style he was looking for.
+              . The client wanted to differentiate his website from
+              competitor's, trying an original approach and stand out, evincing
+              the style he was looking for.
             </Paragraph>
             <Paragraph>
               While analysing competitor websites I identified their content
@@ -230,7 +241,7 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              Narrowing down the target user, our selection was composed of
+              Narrowing down the target user, our selection was composed of
               patients seeking oral hygiene, individuals in urgent need of
               dental procedures, parents bringing their children and those
               interested in cosmetic treatments like lip fillers. By
@@ -242,7 +253,10 @@ export default function DentalWebsite() {
             </Paragraph>
           </Prose>
 
-          <UserPersonaTabs userPersonas={userPersonas} />
+          <Tabs
+            tabs={userPersonaTabs}
+            defaultActiveId={userPersonas[0].fullName}
+          />
 
           <Prose>
             <Paragraph>
@@ -256,11 +270,11 @@ export default function DentalWebsite() {
               language and breaking content in short easily digestible
               paragraphs, I could{' '}
               <BoldText>
-                prevent users from feeling overwhelmed by improving content’s
+                prevent users from feeling overwhelmed by improving content’s
                 understanding
               </BoldText>
-              . Adding consistent and customised illustrations I could provide
-              a visual support to texts, evoke users’ positive emotions and make
+              . Adding consistent and customised illustrations I could provide a
+              visual support to texts, evoke users’ positive emotions and make
               the user experience memorable.
             </Paragraph>
           </Prose>
@@ -349,7 +363,7 @@ export default function DentalWebsite() {
               with a profile card, comprehensive of role, name and photo.
             </Paragraph>
             <Paragraph>
-              Aiming for the best achievable outcome, I edited the profile
+              Aiming for the best achievable outcome, I edited the profile
               photos in Adobe Photoshop, retouching minor imperfections,
               enhancing them through colour correction and ensuring uniform
               lighting.
@@ -480,8 +494,8 @@ export default function DentalWebsite() {
 
           <Prose>
             <Paragraph>
-              When choosing typefaces, I considered possible emotive responses
-              to the letterforms and if multiple weights and styles were
+              When choosing typefaces, I considered possible emotive responses
+              to the letterforms and if multiple weights and styles were
               included. I selected a font that aligned with the brand and
               improved overall readability; a rounded sans-serif font meant for
               display typography and its non-rounded terminal version.
@@ -591,7 +605,7 @@ export default function DentalWebsite() {
               different patients’ standpoints about the clinic. To this extent I
               depicted different situations,{' '}
               <BoldText>
-                fulfilling the user’s sense of belonging and demonstrating the
+                fulfilling the user’s sense of belonging and demonstrating the
                 dental office's prestige
               </BoldText>
               .
@@ -615,7 +629,7 @@ export default function DentalWebsite() {
               visioned the final figma file, gave support in development and
               discussed various optimisations in order to have faster load times
               and to rank higher in search engine results. To{' '}
-              <BoldText>reduce the visual load on users</BoldText> and speed up
+              <BoldText>reduce the visual load on users</BoldText> and speed up
               the website's loading, we decided to set the treatments' cards
               animations on play only when the user's cursor is on focus on a
               card otherwise always on pause.
@@ -635,6 +649,34 @@ export default function DentalWebsite() {
             captionContent="Keyword's implementation benefits"
             imgNumber="4.0"
           />
+        </Chapter>
+
+        <Chapter>
+          <Prose>
+            <ChapterTitle>Takeaways</ChapterTitle>
+          </Prose>
+
+          <Prose>
+            <Paragraph>
+              Overall I think that it was a good opportunity to test my
+              creativity, familiarise myself with the healthcare industry and
+              face new design challenges. While reviewing the delivered website
+              and related data, I thought ...
+            </Paragraph>
+
+            <CustomOrderedList className="mb-4">
+              <CustomOrderedListItem>
+                The reviews’s implementation fulfilled its purpose and proved
+                its value becoming the most viewed section along with the
+                Treatments and Contact sections.
+              </CustomOrderedListItem>
+              <CustomOrderedListItem>
+                Animated visuals played a big role in the whole experience
+                engaging users and fostering a positive behaviour in them
+                towards dental chair
+              </CustomOrderedListItem>
+            </CustomOrderedList>
+          </Prose>
         </Chapter>
       </CaseStudyLayout>
     </>

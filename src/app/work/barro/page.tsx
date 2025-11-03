@@ -5,7 +5,7 @@ import CaseStudyLink from '@/components/case-study/content/Link';
 import PageIntro from '@/components/case-study/layout/PageIntro';
 import BoldText from '@/components/case-study/content/BoldText';
 import Paragraph from '@/components/case-study/content/Paragraph';
-import UserPersonaCard from '@/components/case-study/UserPersonaCard';
+import UserPersonaCard from '@/components/case-study/ui/UserPersonaCard';
 import ChapterTitle from '@/components/case-study/content/ChapterTitle';
 import CaseStudyLayout from '@/components/case-study/layout/CaseStudyLayout';
 import AnimatedBadgeList from '@/components/animations/AnimatedBadgeList';
@@ -425,8 +425,7 @@ export default function WineryWebsite() {
               badges={[
                 'Prototyping',
                 'Testing prototypes',
-                'Face To Face survey',
-                'User persona',
+                'Collecting feedbacks',
               ]}
             />
           </div>
