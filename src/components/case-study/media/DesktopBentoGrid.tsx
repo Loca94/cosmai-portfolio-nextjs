@@ -27,7 +27,6 @@ export default function DesktopBentoGrid({
           </FadeIn>
           <FadeIn className="col-span-1 row-span-1 rounded-lg border border-slate-700 bg-slate-900 p-2">
             <div className="h-full w-full overflow-hidden rounded-sm border border-slate-700">
-              {/* TODO: add priority to image? */}
               <CaseStudyImage
                 className="object-cover md:h-[250px] lg:h-[310px]"
                 src={images[1].src}
@@ -41,7 +40,6 @@ export default function DesktopBentoGrid({
 
           <FadeIn className="col-span-1 row-span-1 rounded-lg border border-slate-700 bg-slate-900 p-2">
             <div className="h-full w-full overflow-hidden rounded-sm border border-slate-700">
-              {/* Image Here with priority */}
               <CaseStudyImage
                 className="object-cover md:h-[250px] lg:h-[310px]"
                 src={images[2].src}
@@ -54,7 +52,6 @@ export default function DesktopBentoGrid({
           </FadeIn>
           <FadeIn className="col-span-2 row-span-1 overflow-hidden rounded-lg border border-slate-700 bg-slate-900">
             <SafariBrowserHeaderSkeleton />
-            {/* Image Here with priority */}
             <CaseStudyImage
               className="object-cover md:h-[238px] lg:h-[295px]"
               src={images[3].src}

@@ -4,6 +4,8 @@ import HeroComponents from '@/components/HeroComponents';
 import WordsTimeline from '@/components/animations/WordsTimeline';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import Balancer from 'react-wrap-balancer';
+import { Button } from '@/components/ui/Button';
+import { ChevronRightIcon } from '@/components/Icons';
 
 function SelectedProjects({ className, ...props }: { className?: string }) {
   const projects = [
@@ -87,26 +89,34 @@ function SelectedProjects({ className, ...props }: { className?: string }) {
         <Link
           key={project.projectName}
           href={`/work/${project.href}`}
-          className="group md:transition-transform md:duration-200 md:ease-out md:hover:-translate-y-2"
+          className="group"
           passHref
         >
-          <Card className="border border-transparent pt-3 md:transition-colors md:duration-200 md:ease-out md:group-hover:border-slate-400/30">
-            <CardHeader>
+          <Card className="border-transparent pt-3 md:transition-[filter] md:duration-200 md:ease-out md:will-change-transform md:group-hover:brightness-110">
+            <CardHeader className="flex !flex-row items-center justify-between">
               <CardTitle className="mb-2">
                 <Balancer ratio={0.5}>{project.title}</Balancer>
               </CardTitle>
+              <Button
+                className="flex-shrink-0 rounded-full bg-inherit"
+                variant="outline"
+                size="icon"
+              >
+                <ChevronRightIcon className="size-3" />
+              </Button>
             </CardHeader>
             <CardContent>
               <div className="rounded-xl border border-slate-700 p-1">
-                <div className="grid grid-cols-2 gap-1">
-                  {project.images.map((image) => (
-                    <img
-                      key={image.src}
-                      src={`/homepage/${image.src}`}
-                      alt={image.alt}
-                      className="pointer-events-none h-32 w-full rounded-lg border border-slate-700 object-cover"
-                    />
-                  ))}
+                <div className="h-full w-full overflow-hidden rounded-lg border border-slate-700">
+                  <figure className="hover-gallery">
+                    {project.images.map((image) => (
+                      <img
+                        key={image.src}
+                        src={`/homepage/${image.src}`}
+                        alt={image.alt}
+                      />
+                    ))}
+                  </figure>
                 </div>
               </div>
             </CardContent>

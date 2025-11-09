@@ -9,46 +9,48 @@ import PageIntro from '@/components/case-study/layout/PageIntro';
 import CaseStudyImage from '@/components/case-study/media/CaseStudyImage';
 import DesktopBentoGrid from '@/components/case-study/media/DesktopBentoGrid';
 import Tabs, { Tab } from '@/components/case-study/ui/Tabs';
+import CaseStudyVideo from '@/components/case-study/media/CaseStudyVideo';
 
-import heroImg1 from '@/images/case-study/alpitude/hero-1.webp';
-import heroImg2 from '@/images/case-study/alpitude/hero-2.webp';
-import heroImg3 from '@/images/case-study/alpitude/hero-3.webp';
-import heroImg4 from '@/images/case-study/alpitude/hero-4.webp';
+import heroImg1 from '@/media/images/case-study/alpitude/hero-1.webp';
+import heroImg2 from '@/media/images/case-study/alpitude/hero-2.webp';
+import heroImg3 from '@/media/images/case-study/alpitude/hero-3.webp';
+import heroImg4 from '@/media/images/case-study/alpitude/hero-4.webp';
 
-import theLogoImg from '@/images/case-study/alpitude/logos/the-logo.webp';
-import logoFirstBatchImg from '@/images/case-study/alpitude/logos/logo-first-batch.webp';
-import logoSecondBatchImg from '@/images/case-study/alpitude/logos/logo-second-batch.webp';
-import logoThirdBatchImg from '@/images/case-study/alpitude/logos/logo-third-batch.webp';
-import logoFinalBatchImg from '@/images/case-study/alpitude/logos/logo-final-batch.webp';
-import logoSparesImg from '@/images/case-study/alpitude/logos/logo-spares.webp';
+import theLogoImg from '@/media/images/case-study/alpitude/logos/the-logo.webp';
+import logoFirstBatchImg from '@/media/images/case-study/alpitude/logos/logo-first-batch.webp';
+import logoSecondBatchImg from '@/media/images/case-study/alpitude/logos/logo-second-batch.webp';
+import logoThirdBatchImg from '@/media/images/case-study/alpitude/logos/logo-third-batch.webp';
+import logoFinalBatchImg from '@/media/images/case-study/alpitude/logos/logo-final-batch.webp';
+import logoSparesImg from '@/media/images/case-study/alpitude/logos/logo-spares.webp';
 
-import brandColorsImg from '@/images/case-study/alpitude/brand-colors/brand-colors.webp';
-import otherColorsImg from '@/images/case-study/alpitude/brand-colors/other-colors.webp';
-import colorVariationsImg from '@/images/case-study/alpitude/brand-colors/color-variations.webp';
+import brandColorsImg from '@/media/images/case-study/alpitude/brand-colors/brand-colors.webp';
+import otherColorsImg from '@/media/images/case-study/alpitude/brand-colors/other-colors.webp';
+import colorVariationsImg from '@/media/images/case-study/alpitude/brand-colors/color-variations.webp';
 
-import extraAvatarsImg from '@/images/case-study/alpitude/avatars/extra-avatars.webp';
-import someAvatarsImg from '@/images/case-study/alpitude/avatars/some-avatars.webp';
+import extraAvatarsImg from '@/media/images/case-study/alpitude/avatars/extra-avatars.webp';
+import someAvatarsImg from '@/media/images/case-study/alpitude/avatars/some-avatars.webp';
 
-import mapAostaValleyImg from '@/images/case-study/alpitude/illustrations/map-aosta-valley.webp';
-import heroImageSummerImg from '@/images/case-study/alpitude/illustrations/hero-image-summer.webp';
-import heroImageWinterImg from '@/images/case-study/alpitude/illustrations/hero-image-winter.webp';
-import illustration1Img from '@/images/case-study/alpitude/illustrations/illustration-1.webp';
-import illustration2Img from '@/images/case-study/alpitude/illustrations/illustration-2.webp';
-import illustration3Img from '@/images/case-study/alpitude/illustrations/illustration-3.webp';
-import illustration4Img from '@/images/case-study/alpitude/illustrations/illustration-4.webp';
-import illustration5Img from '@/images/case-study/alpitude/illustrations/illustration-5.webp';
+import mapAostaValleyImg from '@/media/images/case-study/alpitude/illustrations/map-aosta-valley.webp';
+import heroImageSummerImg from '@/media/images/case-study/alpitude/illustrations/hero-image-summer.webp';
+import heroImageWinterImg from '@/media/images/case-study/alpitude/illustrations/hero-image-winter.webp';
+import illustration1Img from '@/media/images/case-study/alpitude/illustrations/illustration-1.webp';
+import illustration2Img from '@/media/images/case-study/alpitude/illustrations/illustration-2.webp';
+import illustration3Img from '@/media/images/case-study/alpitude/illustrations/illustration-3.webp';
+import illustration4Img from '@/media/images/case-study/alpitude/illustrations/illustration-4.webp';
+import illustration5Img from '@/media/images/case-study/alpitude/illustrations/illustration-5.webp';
 
-import googleSlideThemeImg from '@/images/case-study/alpitude/google-slide/google-slide-theme.webp';
-import googleSlideLayoutImg from '@/images/case-study/alpitude/google-slide/google-slide-layout.webp';
-import googleSlideGraphicsImg from '@/images/case-study/alpitude/google-slide/google-slide-graphics.webp';
+import googleSlideThemeImg from '@/media/images/case-study/alpitude/google-slide/google-slide-theme.webp';
+import googleSlideLayoutImg from '@/media/images/case-study/alpitude/google-slide/google-slide-layout.webp';
+import googleSlideGraphicsImg from '@/media/images/case-study/alpitude/google-slide/google-slide-graphics.webp';
 
-import mailImg from '@/images/case-study/alpitude/mail/mail.webp';
-import mailLayoutsImg from '@/images/case-study/alpitude/mail/mail-layouts.webp';
-import mailGraphicsImg from '@/images/case-study/alpitude/mail/mail-graphics.webp';
-import mailIllustrationsImg from '@/images/case-study/alpitude/mail/mail-illustrations.webp';
+import mailImg from '@/media/images/case-study/alpitude/mail/mail.webp';
+import mailLayoutsImg from '@/media/images/case-study/alpitude/mail/mail-layouts.webp';
+import mailGraphicsImg from '@/media/images/case-study/alpitude/mail/mail-graphics.webp';
+import mailIllustrationsImg from '@/media/images/case-study/alpitude/mail/mail-illustrations.webp';
 
-import designSystemImg from '@/images/case-study/alpitude/product-design/design-system.webp';
-import prototypeImg from '@/images/case-study/alpitude/product-design/prototype.webp';
+import designSystemImg from '@/media/images/case-study/alpitude/product-design/design-system.webp';
+import prototypeImg from '@/media/images/case-study/alpitude/product-design/prototype.webp';
+import { Card, CardContent } from '@/components/ui/Card';
 
 export default function DigitalStartupWebsite() {
   const visualIdentityLogoTabs: Tab[] = [
@@ -459,6 +461,41 @@ export default function DigitalStartupWebsite() {
       ),
     },
   ];
+  const releasedProductTabs: Tab[] = [
+    {
+      id: 'vid1',
+      label: 'Header',
+      content: (
+        <CaseStudyVideo
+          src="/alpitude/desktop-video/header-navigation.mp4"
+          captionContent="Homepage Header — Hero"
+          videoNumber="1.1"
+        />
+      ),
+    },
+    {
+      id: 'vid2',
+      label: 'Homepage pt.1',
+      content: (
+        <CaseStudyVideo
+          src="/alpitude/desktop-video/homepage-pt1.mp4"
+          captionContent="Homepage Hero — Sport section"
+          videoNumber="1.2"
+        />
+      ),
+    },
+    {
+      id: 'vid3',
+      label: 'Homepage pt.2',
+      content: (
+        <CaseStudyVideo
+          src="/alpitude/desktop-video/homepage-pt2.mp4"
+          captionContent="Homepage Zones — Register section"
+          videoNumber="1.3"
+        />
+      ),
+    },
+  ];
 
   return (
     <>
@@ -564,7 +601,7 @@ export default function DigitalStartupWebsite() {
           <Tabs tabs={productDesignTabs} defaultActiveId="img1" />
         </Chapter>
 
-        {/*<Chapter>
+        <Chapter>
           <Prose>
             <ChapterTitle>The Released Product</ChapterTitle>
             <AnimatedBadgeList badges={['Videos']} />
@@ -577,10 +614,60 @@ export default function DigitalStartupWebsite() {
               Although the startup is no longer operating and the website has
               been taken offline, these videos capture the final live version,
               showcasing the design, interactions, and overall digital
-              experience as it was originally deployed.
+              experience as it was originally deployed.dsfdfs
             </Paragraph>
           </Prose>
-        </Chapter>*/}
+
+          <Tabs
+            tabs={releasedProductTabs}
+            defaultActiveId="vid1"
+            preserveHeight={true}
+          />
+
+          <Card className="p-12">
+            <div className="md:grid md:grid-cols-3 md:gap-12">
+              <div className="h-fit rounded-lg border border-slate-700 bg-slate-900 p-2">
+                <div className="h-fit w-full overflow-hidden rounded-sm border border-slate-700">
+                  <CaseStudyVideo src="/alpitude/mobile-video/area-page.mp4" />
+                </div>
+              </div>
+
+              <div className="h-fit rounded-lg border border-slate-700 bg-slate-900 p-2">
+                <div className="h-fit w-full overflow-hidden rounded-sm border border-slate-700">
+                  <CaseStudyVideo src="/alpitude/mobile-video/homepage.mp4" />
+                </div>
+              </div>
+
+              <div className="h-fit rounded-lg border border-slate-700 bg-slate-900 p-2">
+                <div className="h-fit w-full overflow-hidden rounded-sm border border-slate-700">
+                  <CaseStudyVideo src="/alpitude/mobile-video/general-research.mp4" />
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-12">
+            <div className="md:grid md:grid-cols-3 md:gap-12">
+              <div className="h-fit rounded-lg border border-slate-700 bg-slate-900 p-2">
+                <div className="h-fit w-full overflow-hidden rounded-sm border border-slate-700">
+                  <CaseStudyVideo src="/alpitude/mobile-video/search-page-trekking.mp4" />
+                </div>
+              </div>
+
+              <div className="h-fit rounded-lg border border-slate-700 bg-slate-900 p-2">
+                <div className="h-fit w-full overflow-hidden rounded-sm border border-slate-700">
+                  <CaseStudyVideo src="/alpitude/mobile-video/profile-page.mp4" />
+                </div>
+              </div>
+
+              <div className="h-fit rounded-lg border border-slate-700 bg-slate-900 p-2">
+                <div className="h-fit w-full overflow-hidden rounded-sm border border-slate-700">
+                  <CaseStudyVideo src="/alpitude/mobile-video/summer-sport-page.mp4" />
+                </div>
+              </div>
+            </div>
+          </Card>
+        </Chapter>
       </CaseStudyLayout>
     </>
   );

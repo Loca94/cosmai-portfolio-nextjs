@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 export interface Tab {
   id: string;
@@ -13,10 +13,32 @@ interface TabsProps {
   tabs: Tab[];
   defaultActiveId?: string;
   className?: string;
+  preserveHeight?: boolean; // ✅ new optional prop
 }
 
-export default function Tabs({ tabs, defaultActiveId, className }: TabsProps) {
+export default function Tabs({
+  tabs,
+  defaultActiveId,
+  className,
+  preserveHeight = false,
+}: TabsProps) {
   const [activeId, setActiveId] = useState(defaultActiveId || tabs[0].id);
+  const [fixedHeight, setFixedHeight] = useState<number | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Measure the height of the tab content
+  useLayoutEffect(() => {
+    if (!preserveHeight) return;
+
+    const el = contentRef.current;
+    if (el) {
+      const height = el.offsetHeight;
+      // Only set the height if we don't have one yet or if it's larger (to handle responsive changes)
+      if (fixedHeight == null || height > fixedHeight) {
+        setFixedHeight(height);
+      }
+    }
+  }, [activeId, preserveHeight]);
 
   return (
     <div className={cn('block', className)}>
@@ -44,10 +66,20 @@ export default function Tabs({ tabs, defaultActiveId, className }: TabsProps) {
       </div>
 
       {/* Tab content */}
-      <div className="mt-6">
-        {tabs.map(
-          (tab) => tab.id === activeId && <div key={tab.id}>{tab.content}</div>,
-        )}
+      <div
+        className="mt-6"
+        style={
+          preserveHeight && fixedHeight
+            ? { height: fixedHeight, overflow: 'hidden' }
+            : {}
+        }
+      >
+        <div ref={contentRef}>
+          {tabs.map(
+            (tab) =>
+              tab.id === activeId && <div key={tab.id}>{tab.content}</div>,
+          )}
+        </div>
       </div>
     </div>
   );

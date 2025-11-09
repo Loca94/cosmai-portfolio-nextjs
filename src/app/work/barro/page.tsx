@@ -17,20 +17,20 @@ import {
   CustomOrderedListItem,
 } from '@/components/case-study/content/CustomOrderedList';
 
-import heroImg1 from '@/images/case-study/barro/hero-1.webp';
-import heroImg2 from '@/images/case-study/barro/hero-2.webp';
-import heroImg3 from '@/images/case-study/barro/hero-3.webp';
-import heroImg4 from '@/images/case-study/barro/hero-4.webp';
-import heroMobileImg1 from '@/images/case-study/barro/hero-mobile-1.webp';
-import heroMobileImg2 from '@/images/case-study/barro/hero-mobile-2.webp';
-import matteoImg from '@/images/case-study/barro/matteo.webp';
-import oldWebsiteProblemsImg from '@/images/case-study/barro/old-website-problems.webp';
-import informationArchitectureImg from '@/images/case-study/barro/information-architecture-flow.webp';
-import wineDetailPageImg from '@/images/case-study/barro/wine-detail-page.webp';
-import fontsImg from '@/images/case-study/barro/fonts.webp';
-import homepageContactsIterationImg from '@/images/case-study/barro/homepage-contacts-iteration.webp';
-import mapImg from '@/images/case-study/barro/map.webp';
-import accessibilityAndPerformanceImg from '@/images/case-study/barro/accessibility-and-performance.webp';
+import heroImg1 from '@/media/images/case-study/barro/hero-1.webp';
+import heroImg2 from '@/media/images/case-study/barro/hero-2.webp';
+import heroImg3 from '@/media/images/case-study/barro/hero-3.webp';
+import heroImg4 from '@/media/images/case-study/barro/hero-4.webp';
+import heroMobileImg1 from '@/media/images/case-study/barro/hero-mobile-1.webp';
+import heroMobileImg2 from '@/media/images/case-study/barro/hero-mobile-2.webp';
+import matteoImg from '@/media/images/case-study/barro/matteo.webp';
+import oldWebsiteProblemsImg from '@/media/images/case-study/barro/old-website-problems.webp';
+import informationArchitectureImg from '@/media/images/case-study/barro/information-architecture-flow.webp';
+import wineDetailPageImg from '@/media/images/case-study/barro/wine-detail-page.webp';
+import fontsImg from '@/media/images/case-study/barro/fonts.webp';
+import homepageContactsIterationImg from '@/media/images/case-study/barro/homepage-contacts-iteration.webp';
+import mapImg from '@/media/images/case-study/barro/map.webp';
+import accessibilityAndPerformanceImg from '@/media/images/case-study/barro/accessibility-and-performance.webp';
 
 const userPersona: UserPersona = {
   fullName: 'Matteo Rossi',
