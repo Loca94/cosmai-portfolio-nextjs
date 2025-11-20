@@ -1,5 +1,5 @@
 import { FadeIn } from '@/components/animations/FadeIn';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tw-utils';
 
 export default function Chapter({
   className,

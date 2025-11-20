@@ -1,5 +1,5 @@
 import { CheckIcon } from '@/components/Icons';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tw-utils';
 
 function CustomOrderedList({
   className,

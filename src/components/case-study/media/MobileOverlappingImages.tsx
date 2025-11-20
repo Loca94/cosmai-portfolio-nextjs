@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tw-utils';
 import { ImgProp } from '@/lib/types';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import CaseStudyImage from '@/components/case-study/media/CaseStudyImage';

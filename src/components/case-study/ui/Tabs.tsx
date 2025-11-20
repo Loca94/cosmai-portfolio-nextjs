@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tw-utils';
 import { useLayoutEffect, useRef, useState } from 'react';
 
 export interface Tab {

@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tw-utils';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   color?: 'primary' | 'secondary';

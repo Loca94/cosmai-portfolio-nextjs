@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tw-utils';
 import { StaticImageData } from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { GrayscaleTransitionImage } from '@/components/animations/GrayscaleTransitionImage';
