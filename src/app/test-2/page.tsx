@@ -15,6 +15,23 @@ const components = {
     id: 'attioSvg',
     width: 4,
     height: 4,
+    gridPosition: {
+      colStart: 3,
+      rowStart: 2,
+      colEnd: 7,
+      rowEnd: 6,
+    },
+  },
+  attioSvg2: {
+    id: 'attioSvg-2',
+    width: 4,
+    height: 4,
+    gridPosition: {
+      colStart: 9,
+      rowStart: 8,
+      colEnd: 13,
+      rowEnd: 12,
+    },
   },
 };
 
@@ -47,6 +64,11 @@ export default function Test2Page() {
     dispatch({
       type: 'ADD_ITEM',
       payload: { item: { ...components.attioSvg, x: 2, y: 1 } },
+    });
+
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: { item: { ...components.attioSvg2, x: 8, y: 7 } },
     });
 
     window.addEventListener('resize', calculateCellSize);
@@ -84,10 +106,6 @@ export default function Test2Page() {
           {state.items.map((item) => (
             <DraggableItem
               key={item.id}
-              colStart={3}
-              rowStart={2}
-              colEnd={7}
-              rowEnd={6}
               item={item}
               state={state}
               cellSize={cellSize}

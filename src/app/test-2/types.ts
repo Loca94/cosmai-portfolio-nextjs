@@ -4,6 +4,12 @@ export interface DraggableItemType extends Point {
   id: string;
   width: number;
   height: number;
+  gridPosition: {
+    colStart: number;
+    rowStart: number;
+    colEnd: number;
+    rowEnd: number;
+  };
 }
 
 export type Cells = string[][];

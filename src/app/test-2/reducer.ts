@@ -91,6 +91,7 @@ export const reducer = (state: DragState, action: Action): DragState => {
 
       const { item } = action.payload;
       const { valid, nextPoint, initialPoint } = state.dragging;
+      console.log({ valid, nextPoint, initialPoint });
 
       const finalPoint = valid ? nextPoint : initialPoint;
 

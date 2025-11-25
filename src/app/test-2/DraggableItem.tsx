@@ -1,15 +1,20 @@
 'use client';
 
-import { animate, motion, MotionValue, useMotionValue } from 'motion/react';
+import {
+  animate,
+  motion,
+  MotionValue,
+  PanInfo,
+  useMotionValue,
+  useMotionValueEvent,
+  useVelocity,
+} from 'motion/react';
 import { Action } from './reducer';
 import { DraggableItemType, DragState } from './types';
 import { COLS_COUNT, ROWS_COUNT } from './constants';
+import { useEffect } from 'react';
 
 interface Props {
-  colStart: number;
-  rowStart: number;
-  colEnd: number;
-  rowEnd: number;
   item: DraggableItemType;
   state: DragState;
   cellSize: { width: number; height: number };
@@ -18,10 +23,6 @@ interface Props {
 }
 
 export default function DraggableItem({
-  colStart,
-  rowStart,
-  colEnd,
-  rowEnd,
   item,
   state,
   cellSize,
@@ -29,21 +30,59 @@ export default function DraggableItem({
   dispatch,
 }: Props) {
   const isDragging = item.id === state.dragging?.id;
+
   const x: MotionValue<number> = useMotionValue(0);
   const y: MotionValue<number> = useMotionValue(0);
+
+  // const xVelocity = useVelocity(x);
+  // useMotionValueEvent(xVelocity, 'change', (latest) => {
+  //   console.log('Velocity', latest);
+  // });
+  // const yVelocity = useVelocity(y);
+  // useMotionValueEvent(yVelocity, 'change', (latest) => {
+  //   console.log('Velocity', latest);
+  // });
+
+  const { colStart, rowStart, colEnd, rowEnd } = item.gridPosition;
   const width = (colEnd - colStart) * cellSize.width;
   const height = (rowEnd - rowStart) * cellSize.height;
 
-  const snap = (value: number, size: number) => Math.round(value / size) * size;
+  useEffect(() => {
+    console.log('are you called again?', { item });
+    const localX = (item.x - colStart + 1) * cellSize.width;
+    const localY = (item.y - rowStart + 1) * cellSize.height;
 
-  const handleDragEnd = () => {
-    const snapX = snap(x.get(), cellSize?.width);
-    const snapY = snap(y.get(), cellSize.height);
+    animate(x, localX, { duration: 0.15, ease: 'easeOut' });
+    animate(y, localY, { duration: 0.15, ease: 'easeOut' });
+  }, [cellSize.width, cellSize.height, item]);
 
-    animate(x, snapX, { duration: 0.15, ease: 'easeOut' });
-    animate(y, snapY, { duration: 0.15, ease: 'easeOut' });
+  const handleDrag = (
+    event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+  ) => {
+    const currentCoordinates = {
+      x: Math.min(
+        Math.max(item.x + Math.round(info.offset.x / cellSize.width), 0),
+        COLS_COUNT - item.width,
+      ),
+      y: Math.min(
+        Math.max(item.y + Math.round(info.offset.y / cellSize.height), 0),
+        ROWS_COUNT - item.height,
+      ),
+    };
 
-    dispatch({ type: 'DRAG_ENDED', payload: { item } });
+    if (state.dragging) {
+      const { nextPoint } = state.dragging;
+      if (
+        currentCoordinates.x !== nextPoint.x ||
+        currentCoordinates.y !== nextPoint.y
+      ) {
+        dispatch({
+          type: 'DRAG_MOVED',
+          payload: { item, point: currentCoordinates },
+        });
+      }
+    }
   };
 
   return (
@@ -58,32 +97,8 @@ export default function DraggableItem({
         onDragStart={() =>
           dispatch({ type: 'DRAG_STARTED', payload: { item } })
         }
-        onDrag={(_, info) => {
-          const currentCoordinates = {
-            x: Math.min(
-              Math.max(item.x + Math.round(info.offset.x / cellSize.width), 0),
-              COLS_COUNT - item.width,
-            ),
-            y: Math.min(
-              Math.max(item.y + Math.round(info.offset.y / cellSize.height), 0),
-              ROWS_COUNT - item.height,
-            ),
-          };
-
-          if (state.dragging) {
-            const { nextPoint } = state.dragging;
-            if (
-              currentCoordinates.x !== nextPoint.x ||
-              currentCoordinates.y !== nextPoint.y
-            ) {
-              dispatch({
-                type: 'DRAG_MOVED',
-                payload: { item, point: currentCoordinates },
-              });
-            }
-          }
-        }}
-        onDragEnd={handleDragEnd}
+        onDrag={handleDrag}
+        onDragEnd={() => dispatch({ type: 'DRAG_ENDED', payload: { item } })}
         onAnimationComplete={() => dispatch({ type: 'ANIMATION_ENDED' })}
         style={{
           x,
