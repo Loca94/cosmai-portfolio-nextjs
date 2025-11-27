@@ -1,15 +1,18 @@
+import { JSX } from 'react';
+
 export type Point = { x: number; y: number };
 
 export interface DraggableItemType extends Point {
   id: string;
   width: number;
   height: number;
-  gridPosition: {
+  gridPlacement: {
     colStart: number;
     rowStart: number;
     colEnd: number;
     rowEnd: number;
   };
+  component: React.ReactNode;
 }
 
 export type Cells = string[][];
@@ -28,4 +31,10 @@ export type DragState = {
 export type CellSize = {
   width: number;
   height: number;
+};
+
+export type GridLayout = {
+  rows: number;
+  cols: number;
+  items: DraggableItemType[];
 };

@@ -19,8 +19,14 @@ function clearItemFromCells(item: DraggableItemType, cells: Cells) {
 
 function setItemToCells(item: DraggableItemType, cells: Cells) {
   const next = cells.map((r) => [...r]);
+  console.log({ item, cells, next });
   for (let y = 0; y < item.height; y++) {
     for (let x = 0; x < item.width; x++) {
+      console.log(`Setting cell next[${item.y + y}][${item.x + x}]`, {
+        item,
+        x,
+        y,
+      });
       next[item.y + y][item.x + x] = item.id;
     }
   }
@@ -91,7 +97,6 @@ export const reducer = (state: DragState, action: Action): DragState => {
 
       const { item } = action.payload;
       const { valid, nextPoint, initialPoint } = state.dragging;
-      console.log({ valid, nextPoint, initialPoint });
 
       const finalPoint = valid ? nextPoint : initialPoint;
 

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { CellSize, DragState, DraggableItemType } from './types';
 
-export function DragOverlay({
+export default function DragOverlay({
   state,
   cellSize,
   draggingItem,
@@ -30,7 +30,7 @@ export function DragOverlay({
       />
       {/* colored overlay showing valid/invalid drop area */}
       <motion.div
-        className="absolute border border-black"
+        className="absolute z-10 border border-black"
         style={{
           top: 0,
           left: 0,

@@ -11,23 +11,26 @@ import {
 } from 'motion/react';
 import { Action } from './reducer';
 import { DraggableItemType, DragState } from './types';
-import { COLS_COUNT, ROWS_COUNT } from './constants';
 import { useEffect } from 'react';
 
 interface Props {
   item: DraggableItemType;
   state: DragState;
   cellSize: { width: number; height: number };
-  children: React.ReactNode;
   dispatch: React.Dispatch<Action>;
+  cols: number;
+  rows: number;
+  children: React.ReactNode;
 }
 
 export default function DraggableItem({
   item,
   state,
   cellSize,
-  children,
   dispatch,
+  cols,
+  rows,
+  children,
 }: Props) {
   const isDragging = item.id === state.dragging?.id;
 
@@ -43,12 +46,11 @@ export default function DraggableItem({
   //   console.log('Velocity', latest);
   // });
 
-  const { colStart, rowStart, colEnd, rowEnd } = item.gridPosition;
+  const { colStart, rowStart, colEnd, rowEnd } = item.gridPlacement;
   const width = (colEnd - colStart) * cellSize.width;
   const height = (rowEnd - rowStart) * cellSize.height;
 
   useEffect(() => {
-    console.log('are you called again?', { item });
     const localX = (item.x - colStart + 1) * cellSize.width;
     const localY = (item.y - rowStart + 1) * cellSize.height;
 
@@ -63,11 +65,11 @@ export default function DraggableItem({
     const currentCoordinates = {
       x: Math.min(
         Math.max(item.x + Math.round(info.offset.x / cellSize.width), 0),
-        COLS_COUNT - item.width,
+        cols - item.width,
       ),
       y: Math.min(
         Math.max(item.y + Math.round(info.offset.y / cellSize.height), 0),
-        ROWS_COUNT - item.height,
+        rows - item.height,
       ),
     };
 
