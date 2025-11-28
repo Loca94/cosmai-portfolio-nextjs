@@ -64,6 +64,51 @@ function FadeInReverse(
   );
 }
 
+function FadeInScaleUp({
+  delay,
+  className,
+  style,
+  ...props
+}: {
+  delay?: number;
+  className?: string;
+  style?: React.CSSProperties;
+} & React.ComponentPropsWithoutRef<typeof motion.div>) {
+  const shouldReduceMotion = useReducedMotion();
+  const isInStaggerGroup = useContext(FadeInStaggerContext);
+
+  return (
+    <motion.div
+      className={className}
+      style={style}
+      variants={{
+        hidden: {
+          opacity: 0,
+          scale: shouldReduceMotion ? 1 : 0.9,
+        },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+        },
+      }}
+      transition={{
+        delay: delay ?? 0,
+        duration: 0.3,
+        ease: 'easeOut',
+      }}
+      {...(isInStaggerGroup
+        ? {}
+        : {
+            initial: 'hidden',
+            whileInView: 'visible',
+            viewport,
+          })}
+      {...props}
+    />
+  );
+}
+
 function FadeInStagger({
   faster = false,
   className,
@@ -86,4 +131,4 @@ function FadeInStagger({
   );
 }
 
-export { FadeIn, FadeInReverse, FadeInStagger };
+export { FadeIn, FadeInReverse, FadeInScaleUp, FadeInStagger };

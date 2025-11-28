@@ -60,7 +60,7 @@ export default function DraggableGrid({
   return (
     <div
       className={cn(
-        'size-full border border-slate-300 bg-slate-800',
+        'isolate size-full border border-slate-300 bg-slate-800',
         className,
       )}
     >
@@ -85,21 +85,17 @@ export default function DraggableGrid({
           cellSize={cellSize}
         />
 
-        {state.items.map((item) => (
+        {state.items.map((item, i) => (
           <DraggableItem
             key={item.id}
+            index={i}
             item={item}
             state={state}
             cellSize={cellSize}
             cols={cols}
             rows={rows}
             dispatch={dispatch}
-          >
-            <div className="group relative size-full [perspective:800px]">
-              <div className="size-full">{item.component}</div>
-              <div className="pointer-events-none absolute inset-0 bg-slate-800 opacity-0 mix-blend-plus-lighter transition-opacity duration-150 ease-in-out group-hover:opacity-20 group-active:opacity-0"></div>{' '}
-            </div>
-          </DraggableItem>
+          />
         ))}
       </div>
     </div>

@@ -22,11 +22,6 @@ function setItemToCells(item: DraggableItemType, cells: Cells) {
   console.log({ item, cells, next });
   for (let y = 0; y < item.height; y++) {
     for (let x = 0; x < item.width; x++) {
-      console.log(`Setting cell next[${item.y + y}][${item.x + x}]`, {
-        item,
-        x,
-        y,
-      });
       next[item.y + y][item.x + x] = item.id;
     }
   }
