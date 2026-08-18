@@ -62,4 +62,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Developed by [Davide Locatelli](mailto:davide.loca94@gmail.com). For more information, visit the [repository](https://github.com/Loca94/cosmai-portfolio-nextjs).
+Developed by [Davide Locatelli](mailto:davidelocatelli.dev@gmail.com). For more information, visit the [repository](https://github.com/Loca94/cosmai-portfolio-nextjs).

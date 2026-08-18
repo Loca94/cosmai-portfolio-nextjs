@@ -7,7 +7,7 @@ export default function CaseStudyLayout({
   nextUrl,
   children,
 }: {
-  projectUrl: string;
+  projectUrl?: string;
   prevUrl: string;
   nextUrl: string;
   children: React.ReactNode;

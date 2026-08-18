@@ -10,7 +10,7 @@ export default function StickyProjectNavigator({
   prevUrl,
   nextUrl,
 }: {
-  projectUrl: string;
+  projectUrl?: string;
   prevUrl: string;
   nextUrl: string;
 }) {
@@ -30,7 +30,8 @@ export default function StickyProjectNavigator({
               href={projectUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center px-4 py-3 font-semibold transition-colors hover:bg-slate-900 focus:bg-slate-900"
+              aria-disabled={!projectUrl}
+              className={`flex items-center justify-center px-4 py-3 font-semibold transition-colors hover:bg-slate-900 focus:bg-slate-900 ${!projectUrl && 'opacity-50 cursor-not-allowed select-none'}`}
             >
               <ExternalLinkIcon className="mr-1.5 h-4 w-4" />
               View website

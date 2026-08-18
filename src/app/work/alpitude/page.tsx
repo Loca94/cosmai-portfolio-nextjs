@@ -463,7 +463,6 @@ export default function DigitalStartupWebsite() {
   return (
     <>
       <CaseStudyLayout
-        projectUrl="https://www.dibarro.com"
         prevUrl="/work/alpitude"
         nextUrl="/work/vierin"
       >
